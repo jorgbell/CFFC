@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
     Transform rotationAxis;
     //AudioSource audioSource;
 
-    private ColorType colorType = ColorType.blue;
+    private ColorType colorType = ColorType.red;
 
     [SerializeField]
     private bool onCooldown = false;
@@ -35,6 +35,8 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<MeshRenderer>().material.color = Color.red;
+
         rotationAxis = GetComponentInParent<Transform>();
         //audioSource = GetComponent<AudioSource>();
         //screenShake = camera.GetComponent<ScreenShake>();
