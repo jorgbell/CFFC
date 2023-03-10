@@ -5,8 +5,8 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject camera;
-    public GameObject decalPrefab;
-    public ParticleSystem particleSystem;
+    //public GameObject decalPrefab;
+    //public ParticleSystem particleSystem;
     public float coolDown;
     public float shotForce;
 
@@ -15,17 +15,17 @@ public class Shoot : MonoBehaviour
     public float recoilDuration;
 
     Transform rotationAxis;
-    AudioSource audioSource;
+    //AudioSource audioSource;
 
     [SerializeField]
     private bool onCooldown = false;
 
-    public int maxDecalAmount;
+    //public int maxDecalAmount;
 
-    [SerializeField]
-    List<GameObject> decals;
+    //[SerializeField]
+    //List<GameObject> decals;
 
-    private ScreenShake screenShake;
+    //private ScreenShake screenShake;
     [SerializeField]
     Quaternion startingRotation;
 
@@ -34,8 +34,8 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         rotationAxis = GetComponentInParent<Transform>();
-        audioSource = GetComponent<AudioSource>();
-        screenShake = camera.GetComponent<ScreenShake>();
+        //audioSource = GetComponent<AudioSource>();
+        //screenShake = camera.GetComponent<ScreenShake>();
 
         startingRotation = rotationAxis.localRotation;
     }
@@ -45,10 +45,10 @@ public class Shoot : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && !onCooldown)
         {
-            audioSource.Play();
-            screenShake.Shake(0.0f, 0.1f);
+            //audioSource.Play();
+            //screenShake.Shake(0.0f, 0.1f);
             recoil.PushUpwards(recoilMagnitude, recoilDuration);
-            particleSystem.Play();
+            //particleSystem.Play();
 
             castShot();
 
@@ -85,21 +85,21 @@ public class Shoot : MonoBehaviour
             if (hit.collider.TryGetComponent<Rigidbody>(out Rigidbody targetBody)) targetBody.AddForce(camera.transform.forward * shotForce, ForceMode.Impulse);
 
 
-            GameObject decal;
+            //GameObject decal;
 
-            if (decals.Count < maxDecalAmount) decal = Instantiate(decalPrefab, hit.point + (hit.normal * 0.01f), Quaternion.identity, hit.transform);
+            //if (decals.Count < maxDecalAmount) decal = Instantiate(decalPrefab, hit.point + (hit.normal * 0.01f), Quaternion.identity, hit.transform);
 
-            else 
-            {
-                decal = decals[0];
-                decals.RemoveAt(0);
-                decal.transform.position = hit.point + (hit.normal * 0.01f);
-                decal.transform.parent = hit.transform;
-            }
+            //else 
+            //{
+            //    decal = decals[0];
+            //    decals.RemoveAt(0);
+            //    decal.transform.position = hit.point + (hit.normal * 0.01f);
+            //    decal.transform.parent = hit.transform;
+            //}
 
-            decal.transform.forward = -hit.normal;
+            //decal.transform.forward = -hit.normal;
 
-            decals.Add(decal);
+            //decals.Add(decal);
         }
     }
 }

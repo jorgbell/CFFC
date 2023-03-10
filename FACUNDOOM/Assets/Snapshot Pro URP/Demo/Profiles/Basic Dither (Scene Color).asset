@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-268634501854754537
+--- !u!114 &-6751472389805203843
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,32 +9,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eabbbb92f7e0af448b7f830e73be1edc, type: 3}
-  m_Name: BasicDitherSettings
+  m_Script: {fileID: 11500000, guid: a653b632c2dbbe948b34f6fc7e08ad13, type: 3}
+  m_Name: SharpenSettings
   m_EditorClassIdentifier: 
   active: 1
-  enabled:
+  intensity:
     m_OverrideState: 1
-    m_Value: 1
-  noiseTex:
+    m_Value: 0.886
+--- !u!114 &-3716224347316323158
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e290bf031d9dd468f6d661fd2033de, type: 3}
+  m_Name: UnderwaterSettings
+  m_EditorClassIdentifier: 
+  active: 1
+  bumpMap:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: 610bd9e1f5b143f4fbb377141e14f5a9, type: 3}
+    m_Value: {fileID: 2800000, guid: 5e5d1f1dce29a71498368c03bc1414af, type: 3}
     dimension: 1
-  noiseSize:
+  strength:
     m_OverrideState: 1
-    m_Value: 2.4
-  thresholdOffset:
-    m_OverrideState: 1
-    m_Value: -0.227
-  darkColor:
-    m_OverrideState: 1
-    m_Value: {r: 0.16037738, g: 0.11271807, b: 0.14846255, a: 1}
-  lightColor:
+    m_Value: 3.33
+  waterFogColor:
     m_OverrideState: 0
-    m_Value: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
-  useSceneColor:
-    m_OverrideState: 1
-    m_Value: 1
+    m_Value: {r: 0.9245283, g: 0.30962977, b: 0.7562823, a: 1}
+  fogStrength:
+    m_OverrideState: 0
+    m_Value: 0.027
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,9 +55,12 @@ MonoBehaviour:
   m_Name: Basic Dither (Scene Color)
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -268634501854754537}
+  - {fileID: 2560911209476534410}
   - {fileID: 1646676681305013096}
   - {fileID: 3502284739519827931}
+  - {fileID: -3716224347316323158}
+  - {fileID: -6751472389805203843}
+  - {fileID: 3542042901141809082}
 --- !u!114 &1646676681305013096
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -70,13 +80,48 @@ MonoBehaviour:
     dimension: 1
   strength:
     m_OverrideState: 1
-    m_Value: 0.512
+    m_Value: 0.104
   size:
     m_OverrideState: 1
-    m_Value: 12
+    m_Value: 41
   scrollSpeed:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.56
+--- !u!114 &2560911209476534410
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabbbb92f7e0af448b7f830e73be1edc, type: 3}
+  m_Name: BasicDitherSettings
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
+  noiseTex:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 610bd9e1f5b143f4fbb377141e14f5a9, type: 3}
+    dimension: 1
+  noiseSize:
+    m_OverrideState: 1
+    m_Value: 1
+  thresholdOffset:
+    m_OverrideState: 1
+    m_Value: -0.244
+  darkColor:
+    m_OverrideState: 1
+    m_Value: {r: 0.11320752, g: 0.05606976, b: 0.10912627, a: 0.8784314}
+  lightColor:
+    m_OverrideState: 1
+    m_Value: {r: 0.9245283, g: 0.75444996, b: 0.84382325, a: 1}
+  useSceneColor:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &3502284739519827931
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -92,7 +137,45 @@ MonoBehaviour:
   active: 1
   strength:
     m_OverrideState: 1
-    m_Value: 0.078
+    m_Value: 0.207
   backgroundColor:
     m_OverrideState: 1
+    m_Value: {r: 0.01886791, g: 0.004538978, b: 0.018345669, a: 1}
+--- !u!114 &3542042901141809082
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006ce891136d906459fe975eaf6787f0, type: 3}
+  m_Name: HalftoneSettings
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
+  halftoneTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 400bdb02bf53bc34ab6d1f275c28d9ce, type: 3}
+    dimension: 1
+  softness:
+    m_OverrideState: 1
+    m_Value: 0.332
+  textureSize:
+    m_OverrideState: 1
+    m_Value: 3
+  minMaxLuminance:
+    m_OverrideState: 1
+    m_Value: {x: -0.16, y: 0.93}
+  darkColor:
+    m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
+  lightColor:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  useSceneColor:
+    m_OverrideState: 1
+    m_Value: 1

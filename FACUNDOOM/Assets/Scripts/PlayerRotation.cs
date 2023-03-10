@@ -11,13 +11,18 @@ public class PlayerRotation : MonoBehaviour
     public float ySensitivity = 100f;
 
     public GameObject camera;
+    public GameObject gun;
 
     float xRotation;
     float yRotation;
 
+    Vector3 cameraDeltaPos;
+
     // Start is called before the first frame update
     void Start()
     {
+        cameraDeltaPos = camera.transform.position - transform.position;
+
         xRotation = transform.rotation.y;
         yRotation = camera.transform.rotation.x;
 
@@ -37,7 +42,8 @@ public class PlayerRotation : MonoBehaviour
         yRotation += mouseX;
        
         transform.SetPositionAndRotation(transform.position, Quaternion.Euler(new Vector3(0, yRotation, 0)));
-        camera.transform.SetPositionAndRotation(camera.transform.position, Quaternion.Euler(new Vector3(xRotation, yRotation, 0)));
+        camera.transform.SetPositionAndRotation(transform.position + cameraDeltaPos, Quaternion.Euler(new Vector3(xRotation, yRotation, 0)));
+        gun.transform.SetPositionAndRotation(camera.transform.position, camera.transform.rotation);
 
         Debug.Log("XRotation: " + xRotation + "YRotation: " + yRotation);
     }
