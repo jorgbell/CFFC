@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8004654806592971763
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabbbb92f7e0af448b7f830e73be1edc, type: 3}
+  m_Name: BasicDitherSettings
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    m_OverrideState: 1
+    m_Value: 1
+  noiseTex:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 610bd9e1f5b143f4fbb377141e14f5a9, type: 3}
+    dimension: 1
+  noiseSize:
+    m_OverrideState: 1
+    m_Value: 1
+  thresholdOffset:
+    m_OverrideState: 0
+    m_Value: 0
+  darkColor:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  lightColor:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  useSceneColor:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-3889755850792509621
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -12,13 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a653b632c2dbbe948b34f6fc7e08ad13, type: 3}
   m_Name: SharpenSettings
   m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
+  active: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.4
-    min: 0
-    max: 1
 --- !u!114 &-1837707743951835610
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -32,18 +64,12 @@ MonoBehaviour:
   m_Name: BarrelDistortionSettings
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   strength:
     m_OverrideState: 1
     m_Value: 0.2
-    min: 0
-    max: 1
   backgroundColor:
     m_OverrideState: 1
     m_Value: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +87,7 @@ MonoBehaviour:
   - {fileID: -3889755850792509621}
   - {fileID: 1610644621157835047}
   - {fileID: -1837707743951835610}
+  - {fileID: -8004654806592971763}
 --- !u!114 &1610644621157835047
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -74,25 +101,19 @@ MonoBehaviour:
   m_Name: ScanlinesSettings
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   scanlineTex:
     m_OverrideState: 1
     m_Value: {fileID: 2800000, guid: 99239520169780b4cadf2c961020e675, type: 3}
+    dimension: 1
   strength:
     m_OverrideState: 1
     m_Value: 0.625
-    min: 0
-    max: 1
   size:
     m_OverrideState: 1
     m_Value: 6
-    min: 1
-    max: 64
   scrollSpeed:
     m_OverrideState: 1
     m_Value: 1
-    min: 0
-    max: 10
 --- !u!114 &4796443300841382945
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -106,9 +127,6 @@ MonoBehaviour:
   m_Name: PixelateSettings
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   pixelSize:
     m_OverrideState: 1
     m_Value: 6
-    min: 1
-    max: 256
