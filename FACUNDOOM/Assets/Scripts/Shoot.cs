@@ -17,6 +17,8 @@ public class Shoot : MonoBehaviour
     Transform rotationAxis;
     //AudioSource audioSource;
 
+    private ColorType colorType = ColorType.blue;
+
     [SerializeField]
     private bool onCooldown = false;
 
@@ -84,7 +86,7 @@ public class Shoot : MonoBehaviour
         {
             //if (hit.collider.TryGetComponent<Rigidbody>(out Rigidbody targetBody)) targetBody.AddForce(camera.transform.forward * shotForce, ForceMode.Impulse);
 
-            if (hit.collider.TryGetComponent<Enemy>(out Enemy targetEnemy)) targetEnemy.Death();
+            if (hit.collider.TryGetComponent<Enemy>(out Enemy targetEnemy)) targetEnemy.Hit(colorType);
 
 
             //GameObject decal;
