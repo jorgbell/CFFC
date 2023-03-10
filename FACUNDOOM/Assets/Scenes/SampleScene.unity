@@ -1402,13 +1402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eceff1a46adb9e4a8bec61675e793d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 0.5
-  onCooldown: 0
   camera: {fileID: 213916867}
+  coolDown: 0.5
   shotForce: 20
   recoil: {fileID: 2112116360}
   recoilMagnitude: 50
   recoilDuration: 0.05
+  onCooldown: 0
   startingRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1144537828
 GameObject:
@@ -1447,7 +1447,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 52a57ac6903fa6c45a44c3997c354ef6, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1767,7 +1767,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 52a57ac6903fa6c45a44c3997c354ef6, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
