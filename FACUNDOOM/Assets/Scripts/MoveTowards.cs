@@ -25,6 +25,8 @@ public class MoveTowards : MonoBehaviour
         rb.rotation = Quaternion.LookRotation(movement, Vector3.up);
         //movement = Quaternion.FromToRotation(Vector3.forward, transform.forward) * movement.normalized * moveSpeed;
 
+        movement = movement.normalized * moveSpeed;
+
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
     }
 }
