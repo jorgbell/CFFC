@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ColorType
+public enum EnemyType
 {
-    red,
-    blue,
-    green,
-    lastColor
+    baseEnemy,
+    ranged,
+    fast,
+    lastEnemy
 }
