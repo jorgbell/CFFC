@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public ChangeWeaponEvent m_weaponEvent;
     // Start is called before the first frame update
     Weapon[] weapons = new Weapon[3];
+    [SerializeField]
     WEAPONTYPE actualWeapon = WEAPONTYPE.GUN;
     [SerializeField]
     GameObject gunPrefab;
@@ -33,6 +34,9 @@ public class PlayerController : MonoBehaviour
         weapons[0] = gunPrefab.GetComponentInChildren<Shoot>();
         weapons[1] = knifePrefab.GetComponentInChildren<Knife>();
         weapons[2] = bombPrefab.GetComponentInChildren<Bomb>();
+
+        m_weaponEvent.Invoke(actualWeapon);
+
     }
 
     // Update is called once per frame

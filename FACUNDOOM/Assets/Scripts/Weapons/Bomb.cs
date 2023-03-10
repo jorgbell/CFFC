@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knife : Weapon
+public class Bomb : Weapon
 {
     private void Start()
     {
-        GetComponent<MeshRenderer>().material.color = Color.green;
+        GetComponent<MeshRenderer>().material.color = Color.blue;
 
     }
     public override void Attack()
     {
-        Debug.Log("navajazo");
+        Debug.Log("chiquita bomba");
     }
 
     protected override void AttackAnim()
