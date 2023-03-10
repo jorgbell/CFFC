@@ -66,7 +66,20 @@ public class Enemy : MonoBehaviour
         Vector2 dir = Vector2.Perpendicular(new Vector2(transform.position.x - player.position.x, transform.position.z - player.position.z));
 
         Vector3 axis = new Vector3(dir.x, 0, dir.y).normalized * spawnPosDelta;
-        GameObject clone = Instantiate(gameObject, transform.parent);
+        GameObject clone = new GameObject();
+        switch (enemyType)
+        {
+            case EnemyType.baseEnemy:
+                clone = BasicEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.ranged:
+                clone = RangedEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.fast:
+                clone = FastEnemyPool.Instance.GetPooledObject();
+                break;
+        }
+        clone.SetActive(true);
         clone.GetComponent<Enemy>().colorType = colorType;
         transform.position += axis;
         clone.transform.position -= axis;
@@ -74,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 }

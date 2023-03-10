@@ -28,7 +28,19 @@ public class SpawnEnemies : MonoBehaviour
 
     void SpawnEnemy()
     {
-        GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)], transform);
+        GameObject enemy = new GameObject();
+        switch ((EnemyType)Random.Range(0, enemies.Length))
+        {
+            case EnemyType.baseEnemy:
+                enemy = BasicEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.ranged:
+                enemy = RangedEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.fast:
+                enemy = FastEnemyPool.Instance.GetPooledObject();
+                break;
+        }
         enemy.SetActive(true);
         enemy.transform.position = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized * Random.Range(minSpawnDistance, maxSpawnDistance);
         enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[(int)enemy.GetComponent<Enemy>().enemyType]);
@@ -36,7 +48,19 @@ public class SpawnEnemies : MonoBehaviour
 
     void SpawnEnemyRandomColor()
     {
-        GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)], transform);
+        GameObject enemy = new GameObject();
+        switch ((EnemyType)Random.Range(0, enemies.Length))
+        {
+            case EnemyType.baseEnemy:
+                enemy = BasicEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.ranged:
+                enemy = RangedEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.fast:
+                enemy = FastEnemyPool.Instance.GetPooledObject();
+                break;
+        }
         enemy.SetActive(true);
         enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[Random.Range(0, GetComponent<ColorChanger>().colors.Count)]);
     }

@@ -17,7 +17,7 @@ public class EnemyProjectile : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerMovement>())
         {
             Debug.Log("Proyectil pega a jugador");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
     }

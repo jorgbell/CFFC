@@ -955,6 +955,10 @@ GameObject:
   - component: {fileID: 1455569548}
   - component: {fileID: 1455569550}
   - component: {fileID: 1455569549}
+  - component: {fileID: 1455569554}
+  - component: {fileID: 1455569553}
+  - component: {fileID: 1455569552}
+  - component: {fileID: 1455569551}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1017,6 +1021,66 @@ MonoBehaviour:
   firstSummonTime: 0
   minSpawnDistance: 7
   maxSpawnDistance: 12
+--- !u!114 &1455569551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455569547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 569218382ed685445a165007e9d12fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 1205186041661606801, guid: 46f0e305f5154604799040506c7e764b, type: 3}
+  amountToPool: 30
+--- !u!114 &1455569552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455569547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1165442821cb23e41b4937784fe96f3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 623101519}
+  amountToPool: 30
+--- !u!114 &1455569553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455569547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a620ee6dd2be79a4aa7bae9a7dccafb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 2084494874}
+  amountToPool: 30
+--- !u!114 &1455569554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455569547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27fe114b2091f24d959576f600d6822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 487523451}
+  amountToPool: 30
 --- !u!1 &2084494874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 759693552277363412, guid: 53bf35d7a16aa124498886109912d848, type: 3}

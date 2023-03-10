@@ -92,12 +92,13 @@ public class RunAndShoot : MonoBehaviour
         rb.velocity = Vector3.zero;
         //Instanciar proyectil
         //Esto se deberia mover al proyectil cuando este el gamemanager bien
-        Rigidbody projectile = Instantiate(projectilePrefab).GetComponent<Rigidbody>();
-        projectile.gameObject.SetActive(true);
+        GameObject projectile = ProjectilePool.Instance.GetPooledObject();
+        projectile.SetActive(true);
+        Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
         Vector3 movement = new Vector3(player.position.x - transform.position.x, 0f, player.position.z - transform.position.z);
-        projectile.transform.position = transform.position + movement.normalized;
+        projectileRB.transform.position = transform.position + movement.normalized;
 
-        projectile.velocity = movement.normalized * projectileSpeed;
+        projectileRB.velocity = movement.normalized * projectileSpeed;
 
         Debug.Log("DISPARO");
     }
