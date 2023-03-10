@@ -9,6 +9,9 @@ public class ColorChanger : MonoBehaviour
     public enum ColorChangeType { ChangeAllColors, ChangeAllColorsFullRandom }
     [SerializeField]
     ColorChangeType colorChangeType = ColorChangeType.ChangeAllColors;
+
+    [SerializeField]
+    private float changeFrequency = 2.0f, firstChangeTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +19,7 @@ public class ColorChanger : MonoBehaviour
         {
             colors.Add(((ColorType)i));
         }
-        InvokeRepeating(colorChangeType.ToString(), 0, 2);
+        InvokeRepeating(colorChangeType.ToString(), firstChangeTime, changeFrequency);
 
     }
 
