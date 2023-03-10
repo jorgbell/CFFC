@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 1121282012}
   - component: {fileID: 1121282011}
   - component: {fileID: 1121282013}
+  - component: {fileID: 1121282014}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -863,19 +864,35 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121282008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5eceff1a46adb9e4a8bec61675e793d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 213916867}
   coolDown: 0.5
+  onCooldown: 0
+  camera: {fileID: 213916867}
   shotForce: 20
   recoil: {fileID: 2112116360}
   recoilMagnitude: 50
   recoilDuration: 0.05
-  onCooldown: 0
   startingRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1121282014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121282008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f14da98a99f1df42a8c8722696bfd27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 0
+  onCooldown: 0
+  elapsed: 0
+  colorType: 0
 --- !u!1 &1334583773
 GameObject:
   m_ObjectHideFlags: 0
