@@ -21,6 +21,8 @@ public class StackedSpriteEffect : MonoBehaviour
     // The starting positions of the stacked sprites
     private Vector3[] spriteStartPositions;
 
+    public bool verticalTracking = false;
+
     [SerializeField]
     private GameObject player;
 
@@ -41,15 +43,16 @@ public class StackedSpriteEffect : MonoBehaviour
 
     void Update()
     {
-        transform.forward = new Vector3(player.transform.position.x - transform.position.x, 0, player.transform.position.z - transform.position.z).normalized;
+        transform.forward = new Vector3(player.transform.position.x - transform.position.x,
+            (player.transform.position.y - transform.position.y) * System.Convert.ToInt32(verticalTracking), player.transform.position.z - transform.position.z).normalized;
 
-        Debug.Log(transform.forward);
+        //Debug.Log(transform.forward);
 
         Debug.DrawLine(transform.position, transform.position + transform.forward, Color.yellow);
 
-        float angle = Vector3.SignedAngle(transform.forward, player.GetComponent<Rigidbody>().velocity, Vector3.up) * Mathf.Clamp01(player.GetComponent<Rigidbody>().velocity.magnitude);
+        float angle = Vector3.SignedAngle(transform.forward, player.GetComponent<Rigidbody>().velocity, Vector3.up) * Mathf.Clamp01(player.GetComponent<Rigidbody>().velocity.x);
 
-        horizontalOffset = Mathf.Lerp(horizontalOffset, -maxOffset * (1 - (Mathf.Abs(angle - 90) / 90)), 0.01f);
+        horizontalOffset = Mathf.Lerp(horizontalOffset, -maxOffset * (1 - (Mathf.Abs(angle - 90) / 90)), 0.02f);
 
         // Update the positions of each of the stacked sprites
         for (int i = 0; i < spriteRenderers.Length; i++)
