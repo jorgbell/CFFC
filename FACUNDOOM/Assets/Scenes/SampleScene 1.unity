@@ -1402,13 +1402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eceff1a46adb9e4a8bec61675e793d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 213916867}
   coolDown: 0.5
+  onCooldown: 0
+  camera: {fileID: 213916867}
   shotForce: 20
   recoil: {fileID: 2112116360}
   recoilMagnitude: 50
   recoilDuration: 0.05
-  onCooldown: 0
   startingRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1144537828
 GameObject:
@@ -2364,7 +2364,7 @@ PrefabInstance:
       objectReference: {fileID: 2112116352}
     - target: {fileID: 124045061706684033, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
       propertyPath: maxOffset
-      value: 0.02
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 124045061706684033, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
       propertyPath: verticalTracking
@@ -2425,6 +2425,10 @@ PrefabInstance:
     - target: {fileID: 5430526519275904887, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430526519275904906, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5430526519275904907, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
       propertyPath: target

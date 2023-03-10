@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 124045061835735819}
   - component: {fileID: 124045061835735818}
   m_Layer: 0
-  m_Name: Capa (2)
+  m_Name: Capa (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5430526519275904887}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &124045061835735818
 SpriteRenderer:
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 84650c6d6ab1c754694bc460e107faa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 124045062164914877}
   - component: {fileID: 124045062164914876}
   m_Layer: 0
-  m_Name: Capa (3)
+  m_Name: Capa (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -366,7 +366,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5430526519275904887}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &124045062164914876
 SpriteRenderer:
@@ -408,7 +408,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 23529dc517f84d9479df55adf80cdb17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 124045063170333502}
   - component: {fileID: 124045063170333501}
   m_Layer: 0
-  m_Name: Capa (4)
+  m_Name: Capa (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,7 +870,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5430526519275904887}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &124045063170333501
 SpriteRenderer:
@@ -912,7 +912,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 31595f4c3341cbe49bb0496c793aea92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1045,9 +1045,9 @@ Transform:
   m_Children:
   - {fileID: 124045063437628710}
   - {fileID: 124045062819735201}
+  - {fileID: 124045063170333502}
   - {fileID: 124045061835735819}
   - {fileID: 124045062164914877}
-  - {fileID: 124045063170333502}
   - {fileID: 124045061991428852}
   - {fileID: 124045062516468523}
   - {fileID: 124045061494591079}
@@ -1182,9 +1182,9 @@ MonoBehaviour:
   spriteRenderers:
   - {fileID: 124045063437628711}
   - {fileID: 124045062819735200}
+  - {fileID: 124045063170333501}
   - {fileID: 124045061835735818}
   - {fileID: 124045062164914876}
-  - {fileID: 124045063170333501}
   - {fileID: 124045061991428851}
   - {fileID: 124045062516468522}
   - {fileID: 124045061494591078}
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   - {fileID: 124045062592303429}
   - {fileID: 124045062652841257}
   - {fileID: 124045061945798419}
-  maxOffset: 0.1
+  maxOffset: 0.04
   verticalOffset: 0
   horizontalOffset: 0
   scrollDirection: {x: 0, y: 1, z: 0}
