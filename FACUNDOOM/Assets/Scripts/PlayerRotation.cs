@@ -45,7 +45,7 @@ public class PlayerRotation : MonoBehaviour
         camera.transform.SetPositionAndRotation(transform.position + cameraDeltaPos, Quaternion.Euler(new Vector3(xRotation, yRotation, 0)));
         gun.transform.SetPositionAndRotation(camera.transform.position, camera.transform.rotation);
 
-        Debug.Log("XRotation: " + xRotation + "YRotation: " + yRotation);
+        //Debug.Log("XRotation: " + xRotation + "YRotation: " + yRotation);
     }
 
     public Vector2 getRotations() { return new Vector2(xRotation, yRotation); }
