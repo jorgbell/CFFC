@@ -1447,7 +1447,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 52a57ac6903fa6c45a44c3997c354ef6, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1767,7 +1767,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 52a57ac6903fa6c45a44c3997c354ef6, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2093,6 +2093,7 @@ MonoBehaviour:
   verticalOffset: 0
   horizontalOffset: 0.02
   scrollDirection: {x: 0, y: 1, z: 0}
+  verticalTracking: 0
   player: {fileID: 2112116352}
 --- !u!1 &1691329901
 GameObject:
@@ -2255,6 +2256,8 @@ MonoBehaviour:
   rb: {fileID: 2112116353}
   moving: 0
   jumping: 0
+  floorDistance: 0
+  floorTime: 0
 --- !u!136 &2112116356
 CapsuleCollider:
   m_ObjectHideFlags: 0
