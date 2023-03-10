@@ -1045,6 +1045,7 @@ GameObject:
   - component: {fileID: 2084494876}
   - component: {fileID: 2084494875}
   - component: {fileID: 2084494880}
+  - component: {fileID: 2084494881}
   - component: {fileID: 2084494879}
   m_Layer: 0
   m_Name: Shooter
@@ -1168,6 +1169,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &2084494881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084494874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d990c842d09f5e147bbe15957ce87c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosDelta: 0.6
+  enemyType: 1
+  colorType: 0
+  player: {fileID: 2112116359}
 --- !u!1 &2112116352
 GameObject:
   m_ObjectHideFlags: 0
