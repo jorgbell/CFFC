@@ -7,6 +7,8 @@ public class StackedSpriteEffect : MonoBehaviour
     // The array of sprite renderers for the stacked sprites
     public SpriteRenderer[] spriteRenderers;
 
+    public float maxOffset = 0.1f;
+
     // The vertical offset for each of the stacked sprites
     public float verticalOffset = 10.0f;
 
@@ -45,14 +47,9 @@ public class StackedSpriteEffect : MonoBehaviour
 
         Debug.DrawLine(transform.position, transform.position + transform.forward, Color.yellow);
 
-        float deltaOffset = Input.GetAxis("Horizontal") * 0.001f;
-        float deltaVOffset = Input.GetAxis("Vertical") * 0.001f;
+        float angle = Vector3.SignedAngle(transform.forward, player.GetComponent<Rigidbody>().velocity, Vector3.up) * Mathf.Clamp01(player.GetComponent<Rigidbody>().velocity.magnitude);
 
-        horizontalOffset -= deltaOffset;
-
-        horizontalOffset = Mathf.Clamp(horizontalOffset, -0.2f, 0.2f);
-
-        verticalOffset = Mathf.Clamp(verticalOffset, -0.2f, 0.2f);
+        horizontalOffset = Mathf.Lerp(horizontalOffset, -maxOffset * (1 - (Mathf.Abs(angle - 90) / 90)), 0.01f);
 
         // Update the positions of each of the stacked sprites
         for (int i = 0; i < spriteRenderers.Length; i++)
