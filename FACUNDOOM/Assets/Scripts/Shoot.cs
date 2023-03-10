@@ -17,6 +17,8 @@ public class Shoot : MonoBehaviour
     Transform rotationAxis;
     //AudioSource audioSource;
 
+    private ColorType colorType = ColorType.red;
+
     [SerializeField]
     private bool onCooldown = false;
 
@@ -33,6 +35,8 @@ public class Shoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<MeshRenderer>().material.color = Color.red;
+
         rotationAxis = GetComponentInParent<Transform>();
         //audioSource = GetComponent<AudioSource>();
         //screenShake = camera.GetComponent<ScreenShake>();
@@ -82,7 +86,9 @@ public class Shoot : MonoBehaviour
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 100))
         {
-            if (hit.collider.TryGetComponent<Rigidbody>(out Rigidbody targetBody)) targetBody.AddForce(camera.transform.forward * shotForce, ForceMode.Impulse);
+            //if (hit.collider.TryGetComponent<Rigidbody>(out Rigidbody targetBody)) targetBody.AddForce(camera.transform.forward * shotForce, ForceMode.Impulse);
+
+            if (hit.collider.TryGetComponent<Enemy>(out Enemy targetEnemy)) targetEnemy.Hit(colorType);
 
 
             //GameObject decal;
