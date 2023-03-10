@@ -44,7 +44,8 @@ public class Enemy : MonoBehaviour
         colorType = newColor;
         if (colorType == ColorType.red)
             GetComponent<MeshRenderer>().material.color = Color.red;
-        else GetComponent<MeshRenderer>().material.color = Color.blue;
+        else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
+        else GetComponent<MeshRenderer>().material.color = Color.green;
     }
 
     public void Hit(ColorType hitColor)

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
+    public GameObject[] enemies;
     public GameObject basicEnemy;
+    public GameObject rangedEnemy;
+    public GameObject fastEnemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class SpawnEnemies : MonoBehaviour
 
     void SpawnBasicEnemy()
     {
-        GameObject enemy = Instantiate(basicEnemy, transform);
+        GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)], transform);
         enemy.SetActive(true);
         enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[(int)enemy.GetComponent<Enemy>().enemyType]);
     }
