@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
         if (colorType == ColorType.red)
             GetComponent<MeshRenderer>().material.color = Color.red;
         else GetComponent<MeshRenderer>().material.color = Color.blue;
-        InvokeRepeating("ChangeColor", 2, 2);
+        //InvokeRepeating("ChangeColor", 2, 2);
     }
 
     // Update is called once per frame
