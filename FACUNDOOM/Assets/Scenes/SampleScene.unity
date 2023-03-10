@@ -2093,6 +2093,7 @@ MonoBehaviour:
   verticalOffset: 0
   horizontalOffset: 0.02
   scrollDirection: {x: 0, y: 1, z: 0}
+  verticalTracking: 0
   player: {fileID: 2112116352}
 --- !u!1 &1691329901
 GameObject:
@@ -2255,6 +2256,8 @@ MonoBehaviour:
   rb: {fileID: 2112116353}
   moving: 0
   jumping: 0
+  floorDistance: 0
+  floorTime: 0
 --- !u!136 &2112116356
 CapsuleCollider:
   m_ObjectHideFlags: 0
