@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
 {
+    public List<ColorType> colors = new List<ColorType>();
+
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < ((int)ColorType.lastColor); i++)
+        {
+            colors.Add(((ColorType)i));
+        }
         InvokeRepeating("ChangeAllColors", 0, 2);
+
     }
 
     // Update is called once per frame
@@ -17,9 +24,17 @@ public class ColorChanger : MonoBehaviour
 
     void ChangeAllColors()
     {
-        foreach(Enemy e in GetComponentsInChildren<Enemy>())
+        //Shuffle de tal forma que ningun elemento se quede donde este
+        for (int i = 0; i < colors.Count; i++)
         {
-            e.ChangeColor();
+            int index = Random.Range(i, colors.Count);
+            ColorType aux = colors[i];
+            colors[i] = colors[index];
+            colors[index] = aux;
+        }
+        foreach (Enemy e in GetComponentsInChildren<Enemy>())
+        {
+            e.SetColor(colors[(int)e.enemyType]);
         }
     }
 }
