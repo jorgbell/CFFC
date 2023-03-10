@@ -18,8 +18,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     bool jumping = false;
 
-    float floorDistance;
-    int floorFrames = 0; // How many frames the player has touched the floor, to check if it should be able to jump
+    public float floorDistance;
+    public float floorTime = 0; // How much time the player has touched the floor, to check if it should be able to jump
+
+    int timesJumped = 0;
 
     void Update()
     {
@@ -45,18 +47,24 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit hit1;
         if (Physics.Raycast(transform.position, -Vector3.up, out hit1, 100)) floorDistance = Mathf.Abs(hit1.point.y - transform.position.y);
 
-        if (floorDistance < GetComponent<CapsuleCollider>().height / 2 + 0.1 && rb.velocity.y <= 0f)
+        if (floorDistance < GetComponent<CapsuleCollider>().height / 2 + 0.1/* && rb.velocity.y <= 0f*/)
         {
-            floorFrames++;
-            if (floorFrames > 5) jumping = false;
+            floorTime += Time.deltaTime;
+
+            if (floorTime > 0.1f) jumping = false;
         }
 
-        else floorFrames = 0;
+        else floorTime = 0;
 
         if (Input.GetKey(KeyCode.Space) && !jumping) 
         {
-            if(rb.velocity.y <= 0f) rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            Debug.Log("Jumping: " + jumping + " Velocity: " + rb.velocity.y + " Floor Time: " + floorTime);
+
+            floorTime = 0;
+            rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             jumping = true;
+
+            timesJumped++;
         }
 
         #endregion
