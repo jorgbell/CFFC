@@ -13,16 +13,9 @@ public abstract class Weapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !onCooldown)
-        {
-            Attack();
-            StopAllCoroutines();
-            StartCoroutine(CooldownCoroutine());
-            onCooldown = true;
-        }
     }
 
-    abstract protected void Attack();
+    abstract public void Attack();
     protected IEnumerator CooldownCoroutine()
     {
         elapsed = 0.0f;
