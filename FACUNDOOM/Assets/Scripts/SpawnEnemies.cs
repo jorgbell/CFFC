@@ -18,6 +18,8 @@ public class SpawnEnemies : MonoBehaviour
 
     void SpawnBasicEnemy()
     {
-        Instantiate(basicEnemy, transform);
+        GameObject enemy = Instantiate(basicEnemy, transform);
+        enemy.SetActive(true);
+        enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[(int)enemy.GetComponent<Enemy>().enemyType]);
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float spawnPosDelta = 0.6f;
-    private ColorType colorType = ColorType.red;
+    public int enemyType = 0;
+    public ColorType colorType = ColorType.red;
     public Transform player;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,14 @@ public class Enemy : MonoBehaviour
         else GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 
+    public void SetColor(ColorType newColor)
+    {
+        colorType = newColor;
+        if (colorType == ColorType.red)
+            GetComponent<MeshRenderer>().material.color = Color.red;
+        else GetComponent<MeshRenderer>().material.color = Color.blue;
+    }
+
     public void Hit(ColorType hitColor)
     {
         if (hitColor == colorType)
@@ -55,7 +64,7 @@ public class Enemy : MonoBehaviour
         Vector2 dir = Vector2.Perpendicular(new Vector2(transform.position.x - player.position.x, transform.position.z - player.position.z));
 
         Vector3 axis = new Vector3(dir.x, 0, dir.y).normalized * spawnPosDelta;
-        GameObject clone = Instantiate(gameObject);
+        GameObject clone = Instantiate(gameObject, transform.parent);
         clone.GetComponent<Enemy>().colorType = colorType;
         transform.position += axis;
         clone.transform.position -= axis;
