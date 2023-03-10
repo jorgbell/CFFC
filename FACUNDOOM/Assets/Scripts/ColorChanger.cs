@@ -5,6 +5,8 @@ using UnityEngine;
 public class ColorChanger : MonoBehaviour
 {
     public List<ColorType> colors = new List<ColorType>();
+    [SerializeField]
+    protected ColorComponent oPlayer = null;
 
     // Start is called before the first frame update
     void Start()
@@ -13,6 +15,8 @@ public class ColorChanger : MonoBehaviour
         {
             colors.Add(((ColorType)i));
         }
+        //TODO montar una corutina con algun tipo de logica en vez de tirar esto
+        //Y olvidarnos
         InvokeRepeating("ChangeAllColors", 0, 2);
 
     }

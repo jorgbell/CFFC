@@ -9,7 +9,20 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected bool onCooldown = false;
     protected float elapsed = 0.0f;
-    protected ColorType colorType = ColorType.red;
+    protected ColorComponent m_colorComponent = null;
+
+    void Start()
+    {
+
+    }
+
+    protected void OnColorChanged(ColorType colorType)
+    {
+        if (colorType == ColorType.red)
+            GetComponent<MeshRenderer>().material.color = Color.red;
+        else GetComponent<MeshRenderer>().material.color = Color.blue;
+    }
+
 
     private void Update()
     {
@@ -19,6 +32,15 @@ public abstract class Weapon : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(CooldownCoroutine());
             onCooldown = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ColorComponent weaponColor;
+            if(TryGetComponent(out weaponColor))
+            {
+                weaponColor.SetColor((ColorType)(((int)weaponColor.GetColor() + 1) % (int)ColorType.lastColor));
+            }
         }
     }
 
