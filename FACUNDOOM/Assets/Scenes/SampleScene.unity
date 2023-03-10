@@ -2093,7 +2093,7 @@ MonoBehaviour:
   verticalOffset: 0
   horizontalOffset: 0.02
   scrollDirection: {x: 0, y: 1, z: 0}
-  verticalTracking: 0
+  verticalTracking: 1
   player: {fileID: 2112116352}
 --- !u!1 &1691329901
 GameObject:
@@ -2362,6 +2362,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2112116352}
+    - target: {fileID: 124045061706684033, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
+      propertyPath: maxOffset
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 124045061706684033, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
+      propertyPath: verticalTracking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5430526519275904884, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
       propertyPath: player
       value: 
@@ -2369,6 +2377,14 @@ PrefabInstance:
     - target: {fileID: 5430526519275904887, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430526519275904887, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430526519275904887, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5430526519275904887, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2414,6 +2430,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2112116359}
+    - target: {fileID: 5430526519275904907, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
+      propertyPath: moveSpeed
+      value: 1.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5430526519275904909, guid: bbb404eb084774f4785a65750f80c77a, type: 3}
       propertyPath: m_Name
       value: BasicEnemySprite
