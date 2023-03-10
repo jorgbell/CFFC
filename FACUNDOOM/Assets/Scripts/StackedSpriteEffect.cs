@@ -48,11 +48,11 @@ public class StackedSpriteEffect : MonoBehaviour
         float deltaOffset = Input.GetAxis("Horizontal") * 0.001f;
         float deltaVOffset = Input.GetAxis("Vertical") * 0.001f;
 
-        //horizontalOffset -= deltaOffset;
+        horizontalOffset -= deltaOffset;
 
-        //horizontalOffset = Mathf.Clamp(horizontalOffset, -0.2f, 0.2f);
+        horizontalOffset = Mathf.Clamp(horizontalOffset, -0.2f, 0.2f);
 
-        //verticalOffset = Mathf.Clamp(verticalOffset, -0.2f, 0.2f);
+        verticalOffset = Mathf.Clamp(verticalOffset, -0.2f, 0.2f);
 
         // Update the positions of each of the stacked sprites
         for (int i = 0; i < spriteRenderers.Length; i++)
@@ -61,10 +61,10 @@ public class StackedSpriteEffect : MonoBehaviour
             Vector3 spritePos = spriteStartPositions[i];
 
             // Add the GameObject's position to the sprite position to account for movement
-            spritePos += transform.rotation * new Vector3(horizontalOffset * i, verticalOffset * i, 0);
+            spritePos += new Vector3(horizontalOffset * i, verticalOffset * i);
 
             // Set the position of the sprite
-            spriteRenderers[i].transform.localPosition = new Vector3(spritePos.x, spritePos.y, spritePos.z) ;
+            spriteRenderers[i].transform.localPosition = new Vector3(spritePos.x, spritePos.y, spritePos.z);
         }
     }
 }
