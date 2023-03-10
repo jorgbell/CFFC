@@ -72,7 +72,7 @@ public class Shoot : Weapon
         }
     }
 
-    protected override void Attack()
+    public override void Attack()
     {
         //audioSource.Play();
         //screenShake.Shake(0.0f, 0.1f);
