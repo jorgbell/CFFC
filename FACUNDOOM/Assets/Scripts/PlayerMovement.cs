@@ -59,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
             jumping = true;
         }
 
-
         #endregion
     }
 

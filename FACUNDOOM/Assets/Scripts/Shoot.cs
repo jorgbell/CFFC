@@ -82,7 +82,9 @@ public class Shoot : MonoBehaviour
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out RaycastHit hit, 100))
         {
-            if (hit.collider.TryGetComponent<Rigidbody>(out Rigidbody targetBody)) targetBody.AddForce(camera.transform.forward * shotForce, ForceMode.Impulse);
+            //if (hit.collider.TryGetComponent<Rigidbody>(out Rigidbody targetBody)) targetBody.AddForce(camera.transform.forward * shotForce, ForceMode.Impulse);
+
+            if (hit.collider.TryGetComponent<Enemy>(out Enemy targetEnemy)) targetEnemy.Death();
 
 
             //GameObject decal;
