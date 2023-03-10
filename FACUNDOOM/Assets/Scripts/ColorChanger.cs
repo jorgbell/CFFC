@@ -6,6 +6,9 @@ public class ColorChanger : MonoBehaviour
 {
     public List<ColorType> colors = new List<ColorType>();
 
+    public enum ColorChangeType { ChangeAllColors, ChangeAllColorsFullRandom }
+    [SerializeField]
+    ColorChangeType colorChangeType = ColorChangeType.ChangeAllColors;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +16,7 @@ public class ColorChanger : MonoBehaviour
         {
             colors.Add(((ColorType)i));
         }
-        InvokeRepeating("ChangeAllColors", 0, 2);
+        InvokeRepeating(colorChangeType.ToString(), 0, 2);
 
     }
 
@@ -35,6 +38,14 @@ public class ColorChanger : MonoBehaviour
         foreach (Enemy e in GetComponentsInChildren<Enemy>())
         {
             e.SetColor(colors[(int)e.enemyType]);
+        }
+    }
+
+    void ChangeAllColorsFullRandom()
+    {
+        foreach (Enemy e in GetComponentsInChildren<Enemy>())
+        {
+            e.SetColor((ColorType)(Random.Range(0, colors.Count)));
         }
     }
 }

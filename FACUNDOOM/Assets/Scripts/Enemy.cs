@@ -5,15 +5,16 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float spawnPosDelta = 0.6f;
-    public int enemyType = 0;
-    public ColorType colorType = ColorType.red;
+    public EnemyType enemyType = EnemyType.lastEnemy;
+    public ColorType colorType = ColorType.lastColor;
     public Transform player;
     // Start is called before the first frame update
     void Start()
     {
         if (colorType == ColorType.red)
             GetComponent<MeshRenderer>().material.color = Color.red;
-        else GetComponent<MeshRenderer>().material.color = Color.blue;
+        else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
+        else GetComponent<MeshRenderer>().material.color = Color.green;
         //InvokeRepeating("ChangeColor", 2, 2);
     }
 
