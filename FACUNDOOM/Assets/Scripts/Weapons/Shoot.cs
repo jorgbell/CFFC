@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shoot : Weapon
@@ -36,6 +37,13 @@ public class Shoot : Weapon
         //screenShake = camera.GetComponent<ScreenShake>();
 
         startingRotation = rotationAxis.localRotation;
+
+        if (!TryGetComponent(out m_colorComponent))
+        {
+            Debug.LogWarning("WEAPON HAS NO COLOR COMPONENT");
+        }
+
+        m_colorComponent.OnColorChanged.AddListener(OnColorChanged);
     }
 
     // Update is called once per frame
@@ -51,7 +59,7 @@ public class Shoot : Weapon
             //if (hit.collider.TryGetComponent<Rigidbody>(out Rigidbody targetBody)) targetBody.AddForce(camera.transform.forward * shotForce, ForceMode.Impulse);
 
             if (hit.collider.TryGetComponent<Enemy>(out Enemy targetEnemy))
-                targetEnemy.Hit(colorType);
+                targetEnemy.Hit(m_colorComponent.GetColor());
 
 
             //GameObject decal;
