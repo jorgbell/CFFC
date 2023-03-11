@@ -79,12 +79,7 @@ public class RoundManager : MonoBehaviour
 		if (m_timeSurvived - lastColorChange > 5.0f)
 		{
 			lastColorChange = m_timeSurvived;
-			eRandomizeColors.Invoke();
-		}
-
-		if(m_timeSurvived > 13.0f)
-		{
-			ePlayerDied.Invoke();
+			//eRandomizeColors.Invoke();
 		}
 	}
 
