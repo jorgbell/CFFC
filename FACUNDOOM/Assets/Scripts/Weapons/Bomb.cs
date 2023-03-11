@@ -11,9 +11,9 @@ public class Bomb : Weapon
     public GameObject bombPrefab;
     public GameObject explosionPrefab;
 
-    private void Start()
-    {
-    }
+    //private void Start()
+    //{
+    //}
 
     private void Update()
     {
@@ -23,6 +23,8 @@ public class Bomb : Weapon
     public override void Attack()
     {
         Debug.Log("chiquita bomba");
+
+        explosionPrefab.GetComponentInChildren<ExplosionCollision>().setColor(m_colorComponent);
 
         GameObject bomb = Instantiate(bombPrefab, transform.position + transform.lossyScale.z * transform.forward, Quaternion.identity);
         bomb.GetComponent<BombProjectileBehaviour>().setExplosionSystem(explosionPrefab, explosionPrefab.GetComponentInChildren<ParticleSystem>());

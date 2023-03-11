@@ -9,15 +9,12 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected bool onCooldown = false;
     protected float elapsed = 0.0f;
+
+    [SerializeField] 
     protected ColorComponent m_colorComponent = null;
 
     void Start()
     {
-        if (!TryGetComponent(out m_colorComponent))
-        {
-            Debug.LogWarning("WEAPON HAS NO COLOR COMPONENT");
-        }
-
         m_colorComponent.OnColorChanged.AddListener(OnColorChanged);
     }
 

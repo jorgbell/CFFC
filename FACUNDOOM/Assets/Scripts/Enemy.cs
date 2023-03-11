@@ -56,6 +56,8 @@ public class Enemy : MonoBehaviour
 
 	public void Hit(ColorType hitColor)
 	{
+		Debug.Log("Hit");
+
 		if (hitColor == colorType)
 		{
 			Death();
