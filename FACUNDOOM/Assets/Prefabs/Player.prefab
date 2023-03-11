@@ -193,6 +193,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3163204541062739057}
     m_Modifications:
+    - target: {fileID: 6987881634961725504, guid: 6142872c2ed8cf3499b754b44fb3e61e, type: 3}
+      propertyPath: coolDown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8222928336150799972, guid: 6142872c2ed8cf3499b754b44fb3e61e, type: 3}
       propertyPath: m_Name
       value: KnifePrefab
@@ -241,8 +245,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8222928336675024500, guid: 6142872c2ed8cf3499b754b44fb3e61e, type: 3}
+      propertyPath: m_Name
+      value: knife
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6142872c2ed8cf3499b754b44fb3e61e, type: 3}
+--- !u!1 &7546870655077163949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8222928336675024500, guid: 6142872c2ed8cf3499b754b44fb3e61e, type: 3}
+  m_PrefabInstance: {fileID: 1920340082354785753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4689390875407711040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7546870655077163949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7546870655609777084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8222928336150799973, guid: 6142872c2ed8cf3499b754b44fb3e61e, type: 3}
@@ -320,6 +345,26 @@ PrefabInstance:
       propertyPath: recoil
       value: 
       objectReference: {fileID: 3163204541062739070}
+    - target: {fileID: 2285675807652427806, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+      propertyPath: recoil
+      value: 
+      objectReference: {fileID: 3163204541062739070}
+    - target: {fileID: 2285675807652427806, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+      propertyPath: coolDown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285675807652427806, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+      propertyPath: shotForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285675807652427806, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+      propertyPath: recoilDuration
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285675807652427806, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+      propertyPath: recoilMagnitude
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
 --- !u!1 &3163204540057144638 stripped
@@ -332,6 +377,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1941583422740672669, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
   m_PrefabInstance: {fileID: 3536475878592413090}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3163204541680403758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1941583424363935884, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+  m_PrefabInstance: {fileID: 3536475878592413090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7447408392414844374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163204541680403758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4950872113755878512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -339,6 +401,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3163204541062739057}
     m_Modifications:
+    - target: {fileID: 293055194313068873, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
+      propertyPath: coolDown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812618048251779035, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
+      propertyPath: m_Name
+      value: bomb
+      objectReference: {fileID: 0}
     - target: {fileID: 3812618048792911818, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
       propertyPath: m_RootOrder
       value: 1

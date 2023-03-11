@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1941583422740672668, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
       propertyPath: m_Name
-      value: KnifePrefab
+      value: KnifePrefab Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1941583422740672668, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
       propertyPath: m_IsActive
@@ -69,6 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1941583424363935881, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+    - {fileID: 2285675807652427806, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
 --- !u!1 &8222928336675024500 stripped
 GameObject:

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1941583422740672668, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
       propertyPath: m_Name
-      value: BombPrefab
+      value: BombPrefab Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1941583422740672668, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
       propertyPath: m_IsActive
@@ -59,16 +59,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1941583424363935881, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1941583424363935881, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
-      propertyPath: recoil
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1941583424363935881, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+    - {fileID: 2285675807652427806, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
 --- !u!1 &3812618048251779035 stripped
 GameObject:
@@ -89,3 +81,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 0
   onCooldown: 0
+--- !u!114 &2458541012290717871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3812618048251779035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

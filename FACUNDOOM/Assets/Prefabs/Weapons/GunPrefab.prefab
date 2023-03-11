@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1941583424363935885}
   - component: {fileID: 1941583424363935880}
   - component: {fileID: 1941583424363935887}
-  - component: {fileID: 1941583424363935881}
+  - component: {fileID: 2285675807652427806}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -116,7 +116,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1941583424363935881
+--- !u!114 &2285675807652427806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,11 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eceff1a46adb9e4a8bec61675e793d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 0.5
+  coolDown: 0
   onCooldown: 0
   camera: {fileID: 0}
-  shotForce: 20
+  shotForce: 0
   recoil: {fileID: 0}
-  recoilMagnitude: 50
-  recoilDuration: 0.05
+  recoilMagnitude: 0
+  recoilDuration: 0
   startingRotation: {x: 0, y: 0, z: 0, w: 0}
