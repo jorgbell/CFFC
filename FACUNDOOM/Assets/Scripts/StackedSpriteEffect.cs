@@ -46,10 +46,10 @@ public class StackedSpriteEffect : MonoBehaviour
 
     void Update()
     {
-        transform.forward = new Vector3(player.transform.position.x - transform.position.x,
+        Vector3 newForward = new Vector3(player.transform.position.x - transform.position.x,
             (player.transform.position.y - transform.position.y) * System.Convert.ToInt32(verticalTracking), player.transform.position.z - transform.position.z).normalized;
 
-        //Debug.Log(transform.forward);
+        transform.forward = Vector3.Lerp(transform.forward, new Vector3(newForward.x, Mathf.Clamp(newForward.y, 0, 0.4f), newForward.z).normalized, 0.1f);
 
         Debug.DrawLine(transform.position, transform.position + transform.forward, Color.yellow);
 

@@ -13,6 +13,7 @@ public class ChangeWeaponEvent : UnityEvent<WEAPONTYPE>
 public class PlayerController : MonoBehaviour
 {
     public ChangeWeaponEvent m_weaponEvent;
+
     // Start is called before the first frame update
     Weapon[] weapons = new Weapon[3];
     [SerializeField]
@@ -52,10 +53,20 @@ public class PlayerController : MonoBehaviour
             m_weaponEvent.Invoke(WEAPONTYPE.KNIFE);
         if (Input.GetKeyDown(KeyCode.Alpha3) && m_weaponEvent != null)
             m_weaponEvent.Invoke(WEAPONTYPE.FIRE);
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             weapons[(int)actualWeapon].Attack();
+        }
+
+        //DEBUG
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ColorComponent weaponColor;
+            if (TryGetComponent(out weaponColor))
+            {
+                weaponColor.SetColor((ColorType)(((int)weaponColor.GetColor() + 1) % (int)ColorType.lastColor));
+            }
         }
 
     }
@@ -82,6 +93,7 @@ public class PlayerController : MonoBehaviour
                 bombPrefab.SetActive(true);
                 break;
         }
+        Debug.Log(actualWeapon);
     }
 
     void RandomizeWeaponColors()
@@ -95,7 +107,6 @@ public class PlayerController : MonoBehaviour
         //Shuffle 
         Utilities.ShuffleColorArray(ref colorList);
 
-        //Debug.Log(colorList);
         //Assign colors to the weapons  
         gunPrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[0]);
         knifePrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[1]);

@@ -9,11 +9,13 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected bool onCooldown = false;
     protected float elapsed = 0.0f;
+
+    [SerializeField] 
     protected ColorComponent m_colorComponent = null;
 
     void Start()
     {
-
+        m_colorComponent.OnColorChanged.AddListener(OnColorChanged);
     }
 
     protected void OnColorChanged(ColorType colorType)
@@ -23,26 +25,6 @@ public abstract class Weapon : MonoBehaviour
         else GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && !onCooldown)
-        {
-            Attack();
-            //StopAllCoroutines();
-            //StartCoroutine(CooldownCoroutine());
-            onCooldown = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ColorComponent weaponColor;
-            if(TryGetComponent(out weaponColor))
-            {
-                weaponColor.SetColor((ColorType)(((int)weaponColor.GetColor() + 1) % (int)ColorType.lastColor));
-            }
-        }
-    }
 
     abstract public void Attack();
     protected IEnumerator CooldownCoroutine()

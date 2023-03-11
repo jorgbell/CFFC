@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3163204541062739070}
   - component: {fileID: 3163204541062739063}
   - component: {fileID: 7903803081650945406}
+  - component: {fileID: 7623417929460501645}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -141,6 +142,8 @@ MonoBehaviour:
   ySensitivity: 1000
   camera: {fileID: 0}
   gun: {fileID: 3163204540057144638}
+  knife: {fileID: 7546870655609777085}
+  bomb: {fileID: 8096385944229587899}
 --- !u!114 &3163204541062739070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +189,47 @@ MonoBehaviour:
   gunPrefab: {fileID: 3163204540057144638}
   knifePrefab: {fileID: 7546870655609777085}
   bombPrefab: {fileID: 8096385944229587899}
+--- !u!114 &7623417929460501645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163204541062739062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7385c84b1640d8b4ea3a3c835a53bd6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxHealth: 5
+  m_timeUntilRecover: 2
+  m_timeUntilFullRecover: 3
+  recoveryCurvel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_currentHealth: 2
+  m_healingType: 0
 --- !u!1001 &1920340082354785753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197,6 +241,10 @@ PrefabInstance:
       propertyPath: coolDown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6987881634961725504, guid: 6142872c2ed8cf3499b754b44fb3e61e, type: 3}
+      propertyPath: m_colorComponent
+      value: 
+      objectReference: {fileID: 4689390875407711040}
     - target: {fileID: 8222928336150799972, guid: 6142872c2ed8cf3499b754b44fb3e61e, type: 3}
       propertyPath: m_Name
       value: KnifePrefab
@@ -366,6 +414,10 @@ PrefabInstance:
       propertyPath: recoilMagnitude
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2285675807652427806, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
+      propertyPath: m_colorComponent
+      value: 
+      objectReference: {fileID: 7447408392414844374}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f4206c5906d2c4889e32c8e194fc15, type: 3}
 --- !u!1 &3163204540057144638 stripped
@@ -404,9 +456,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 3163204541062739057}
     m_Modifications:
     - target: {fileID: 293055194313068873, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 3163204541062739062}
+    - target: {fileID: 293055194313068873, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
       propertyPath: coolDown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 293055194313068873, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
+      propertyPath: bombVelocity
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 293055194313068873, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
+      propertyPath: m_colorComponent
+      value: 
+      objectReference: {fileID: 7398140896188775647}
     - target: {fileID: 3812618048251779035, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
       propertyPath: m_Name
       value: bomb
@@ -461,6 +525,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
+--- !u!114 &7398140896188775647 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2458541012290717871, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}
+  m_PrefabInstance: {fileID: 4950872113755878512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8096385944229587898 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3812618048792911818, guid: 7cf90a400be419a40bfacba4f2e95871, type: 3}

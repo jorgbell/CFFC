@@ -4,23 +4,38 @@ using UnityEngine;
 
 public class Knife : Weapon
 {
+    Collider col;
+    Animator anim;
+
     private void Start()
     {
-        GetComponent<MeshRenderer>().material.color = Color.green;
-
+        col = GetComponentInChildren<Collider>(true);
+        col.gameObject.SetActive(false);
+        anim = GetComponent<Animator>();
     }
+
     public override void Attack()
     {
-        Debug.Log("navajazo");
+        if (!onCooldown)
+        {
+            onCooldown = true;
+            col.gameObject.SetActive(true);
+            anim.SetTrigger("attack");
+        }
+    }
+
+    void turnOffCollider()
+    {
+        col.gameObject.SetActive(false);
     }
 
     protected override void AttackAnim()
     {
-        throw new System.NotImplementedException();
     }
 
     protected override void ResetAttackAnim()
     {
-        throw new System.NotImplementedException();
+        onCooldown = false;
     }
+
 }

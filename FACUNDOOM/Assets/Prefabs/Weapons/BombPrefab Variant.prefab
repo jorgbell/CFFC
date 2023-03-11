@@ -81,6 +81,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 0
   onCooldown: 0
+  bombVelocity: 0
+  player: {fileID: 0}
+  bombPrefab: {fileID: 6388091982216924984, guid: 18203a2c416c0164094ffdce1e512319, type: 3}
+  explosionPrefab: {fileID: 3836680309989748505, guid: e650498239cc7304eba4afc4e115012e, type: 3}
 --- !u!114 &2458541012290717871
 MonoBehaviour:
   m_ObjectHideFlags: 0

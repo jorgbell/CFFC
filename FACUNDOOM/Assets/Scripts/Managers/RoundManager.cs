@@ -25,6 +25,7 @@ public class RoundManager : MonoBehaviour
     public UnityEvent<Enemy> eWrongAnswer;
     public UnityEvent<Vector3> eMissedAttack;
     public UnityEvent eRandomizeColors;
+    public UnityEvent ePlayerDied;
     public UnityEvent<Multiplier> eMultiplier;
 
     [SerializeField]
@@ -59,6 +60,7 @@ public class RoundManager : MonoBehaviour
             Debug.Log("GameManager instanced");
             instance = this;
 
+
             if (eEnemyDied == null)
             {
                 eEnemyDied = new UnityEvent();
@@ -74,6 +76,10 @@ public class RoundManager : MonoBehaviour
             if (eMissedAttack == null)
             {
                 eMissedAttack = new UnityEvent<Vector3>();
+            }
+            if (ePlayerDied == null)
+            {
+                ePlayerDied = new UnityEvent();
             }
         }
         else
@@ -97,13 +103,10 @@ public class RoundManager : MonoBehaviour
             m_timeSurvived += Time.deltaTime;
         }
 
-        //If playerDead enseñar la UI de muerto y parar las entidades
-
         if (m_timeSurvived - lastColorChange > 5.0f)
         {
             lastColorChange = m_timeSurvived;
-            //Debug.Log("TOPo");
-            eRandomizeColors.Invoke();
+            //eRandomizeColors.Invoke();
         }
     }
 
@@ -119,16 +122,16 @@ public class RoundManager : MonoBehaviour
 
     void wrongAnswerRM(Enemy e)
     {
-        Debug.Log("RESTA PUNTOS, " + score);
         actualMultiplier = 0; streak = 0;
         score -= (int)(pointsPerDuplicate);
+        Debug.Log("RESTA PUNTOS, " + score);
         if (score < 0) score = 0;
         eMultiplier.Invoke(multipliers[actualMultiplier]);
     }
     void scorePoints()
     {
-        Debug.Log("SUMA PUNTOS, " + score);
         score += (int)(pointsPerDeath * multipliers[actualMultiplier].multValor);
+        Debug.Log("SUMA PUNTOS, " + score);
         streak++;
         if (streak > multipliers[actualMultiplier].killsToPass)
         {

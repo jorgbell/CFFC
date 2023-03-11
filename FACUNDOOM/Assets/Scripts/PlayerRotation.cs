@@ -12,6 +12,8 @@ public class PlayerRotation : MonoBehaviour
 
     public GameObject camera;
     public GameObject gun;
+    public GameObject knife;
+    public GameObject bomb;
 
     float xRotation;
     float yRotation;
@@ -44,6 +46,8 @@ public class PlayerRotation : MonoBehaviour
         transform.SetPositionAndRotation(transform.position, Quaternion.Euler(new Vector3(0, yRotation, 0)));
         camera.transform.SetPositionAndRotation(transform.position + cameraDeltaPos, Quaternion.Euler(new Vector3(xRotation, yRotation, 0)));
         gun.transform.SetPositionAndRotation(camera.transform.position, camera.transform.rotation);
+        bomb.transform.SetPositionAndRotation(camera.transform.position, camera.transform.rotation);
+        knife.transform.SetPositionAndRotation(camera.transform.position, camera.transform.rotation);
 
         //Debug.Log("XRotation: " + xRotation + "YRotation: " + yRotation);
     }

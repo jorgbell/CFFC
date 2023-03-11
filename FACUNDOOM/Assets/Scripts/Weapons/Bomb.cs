@@ -4,14 +4,34 @@ using UnityEngine;
 
 public class Bomb : Weapon
 {
-    private void Start()
-    {
-        GetComponent<MeshRenderer>().material.color = Color.blue;
+    public float bombVelocity;
 
+    public GameObject player;
+
+    public GameObject bombPrefab;
+    public GameObject explosionPrefab;
+
+    //private void Start()
+    //{
+    //}
+
+    private void Update()
+    {
+        Debug.DrawLine(transform.position, transform.position + transform.forward * 10, Color.magenta);
     }
+
     public override void Attack()
     {
         Debug.Log("chiquita bomba");
+
+        explosionPrefab.GetComponentInChildren<ExplosionCollision>().setColor(m_colorComponent);
+
+        GameObject bomb = Instantiate(bombPrefab, transform.position + transform.lossyScale.z * transform.forward, Quaternion.identity);
+        bomb.GetComponent<BombProjectileBehaviour>().setExplosionSystem(explosionPrefab, explosionPrefab.GetComponentInChildren<ParticleSystem>());
+
+        Rigidbody bombRB = bomb.GetComponent<Rigidbody>();
+
+        bombRB.velocity = player.GetComponent<Rigidbody>().velocity + bombVelocity * transform.forward;
     }
 
     protected override void AttackAnim()

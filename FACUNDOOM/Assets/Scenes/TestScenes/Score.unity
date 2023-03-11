@@ -166,6 +166,9 @@ MonoBehaviour:
   eRandomizeColors:
     m_PersistentCalls:
       m_Calls: []
+  ePlayerDied:
+    m_PersistentCalls:
+      m_Calls: []
   eMultiplier:
     m_PersistentCalls:
       m_Calls: []
@@ -382,6 +385,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 213916867}
+    - target: {fileID: 7623417929460501645, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_MaxHealth
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!114 &249624361 stripped
@@ -864,6 +871,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5191496011695507517, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 213916869}
     - target: {fileID: 5191496011695509441, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_Name
       value: GameCanvas
@@ -1205,12 +1216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437cb2107baa5cf468d4d404f55da3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 487523451}
-  - {fileID: 2084494874}
-  - {fileID: 623101519}
   spawnType: 0
-  summonFrequency: 8
+  summonFrequency: 2
   firstSummonTime: 0
   minSpawnDistance: 7
   maxSpawnDistance: 12
