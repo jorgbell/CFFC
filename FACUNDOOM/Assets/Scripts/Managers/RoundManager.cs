@@ -76,11 +76,6 @@ public class RoundManager : MonoBehaviour
 			lastColorChange = m_timeSurvived;
 			eRandomizeColors.Invoke();
 		}
-
-		if(m_timeSurvived > 13.0f)
-		{
-			ePlayerDied.Invoke();
-		}
 	}
 
 	public void StartRound()
