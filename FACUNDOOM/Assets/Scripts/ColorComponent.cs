@@ -14,7 +14,7 @@ public class ColorComponent : MonoBehaviour
 {
 
     private ColorChangedEvent m_eColorChanged = null;
-    private ColorType m_colorType;
+    private ColorType m_colorType = ColorType.red;
 
     public ColorChangedEvent OnColorChanged { get
         {
