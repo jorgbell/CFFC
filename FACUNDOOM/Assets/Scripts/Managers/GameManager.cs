@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     RoundManager m_roundManager;
 
-    int m_playerPoints = 0;
+    int m_playerPoints = 3;
 
     private void Awake()
     {
@@ -85,6 +85,16 @@ public class GameManager : MonoBehaviour
     public RoundManager GetRoundManager()
 	{
         return m_roundManager;
+	}
+
+    public int GetPlayerScore()
+	{
+        return m_playerPoints;
+	}
+
+    public void SetPlayerScore(int score)
+	{
+        m_playerPoints = score;
 	}
 
     /// <summary>
