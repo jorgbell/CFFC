@@ -70,9 +70,7 @@ public class SpawnEnemies : MonoBehaviour
             enemy.SetActive(true);
             enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[Random.Range(0, GetComponent<ColorChanger>().colors.Count)]);
         }
-        enemy.SetActive(true);
-        enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[Random.Range(0, GetComponent<ColorChanger>().colors.Count)]);
-    }
+   }
 
     void Duplicate(Enemy enemy)
     {
