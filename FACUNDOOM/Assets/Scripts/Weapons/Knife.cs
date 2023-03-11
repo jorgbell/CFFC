@@ -6,6 +6,7 @@ public class Knife : Weapon
 {
     Collider col;
     Animator anim;
+
     private void Start()
     {
         col = GetComponentInChildren<Collider>(true);
