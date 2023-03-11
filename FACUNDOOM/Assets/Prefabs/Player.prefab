@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3163204541062739070}
   - component: {fileID: 3163204541062739063}
   - component: {fileID: 7903803081650945406}
+  - component: {fileID: 7623417929460501645}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -188,6 +189,47 @@ MonoBehaviour:
   gunPrefab: {fileID: 3163204540057144638}
   knifePrefab: {fileID: 7546870655609777085}
   bombPrefab: {fileID: 8096385944229587899}
+--- !u!114 &7623417929460501645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163204541062739062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7385c84b1640d8b4ea3a3c835a53bd6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MaxHealth: 5
+  m_timeUntilRecover: 2
+  m_timeUntilFullRecover: 3
+  recoveryCurvel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_currentHealth: 2
+  m_healingType: 0
 --- !u!1001 &1920340082354785753
 PrefabInstance:
   m_ObjectHideFlags: 0

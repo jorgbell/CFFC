@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4045593175265202610}
   - component: {fileID: 4045593175265202509}
   - component: {fileID: 4045593175265202508}
-  - component: {fileID: 4045593175265202511}
+  - component: {fileID: 4045593175265202510}
+  - component: {fileID: -1455861529728423212}
   - component: {fileID: 4045593175265202608}
   - component: {fileID: -1610985147630260113}
-  - component: {fileID: 4045593175265202510}
   - component: {fileID: 8269027579238279849}
   m_Layer: 0
   m_Name: FastEnemySprite
@@ -109,49 +109,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4045593175265202511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4045593175265202505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc46081c914007049a562015b6f51d27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
---- !u!114 &4045593175265202608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4045593175265202505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d990c842d09f5e147bbe15957ce87c9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPosDelta: 0.65
-  enemyType: 3
-  colorComponent: {fileID: -1610985147630260113}
-  wrongAnswerFail: {fileID: 6448086625149793203}
-  colorType: 3
---- !u!114 &-1610985147630260113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4045593175265202505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_colorType: 0
 --- !u!54 &4045593175265202510
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,6 +125,53 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &-1455861529728423212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045593175265202505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea1986471c24f148acc2c67b22d2d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 4
+  jumpDistance: 4
+  jumpForce: 8
+  jumpAngle: 0.6
+  waitTime: 0.5
+  restTime: 0.5
+--- !u!114 &4045593175265202608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045593175265202505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d990c842d09f5e147bbe15957ce87c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosDelta: 0.65
+  enemyType: 2
+  colorComponent: {fileID: -1610985147630260113}
+  wrongAnswerFail: {fileID: 6448086625149793203}
+--- !u!114 &-1610985147630260113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045593175265202505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_colorType: 0
 --- !u!114 &8269027579238279849
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RunAndShoot : MonoBehaviour
 {
-    enum State { RUNNING, SHOOTING }
+    private enum State { RUNNING, SHOOTING }
     State currentState = State.RUNNING;
 
     [SerializeField]
