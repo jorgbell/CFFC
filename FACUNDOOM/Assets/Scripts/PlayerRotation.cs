@@ -19,6 +19,7 @@ public class PlayerRotation : MonoBehaviour
     float yRotation;
 
     Vector3 cameraDeltaPos;
+    Vector3 screenShakePos;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,7 @@ public class PlayerRotation : MonoBehaviour
         yRotation += mouseX;
        
         transform.SetPositionAndRotation(transform.position, Quaternion.Euler(new Vector3(0, yRotation, 0)));
-        camera.transform.SetPositionAndRotation(transform.position + cameraDeltaPos, Quaternion.Euler(new Vector3(xRotation, yRotation, 0)));
+        camera.transform.SetPositionAndRotation(transform.position + cameraDeltaPos + screenShakePos, Quaternion.Euler(new Vector3(xRotation, yRotation, 0)));
         gun.transform.SetPositionAndRotation(camera.transform.position, camera.transform.rotation);
         bomb.transform.SetPositionAndRotation(camera.transform.position, camera.transform.rotation);
         knife.transform.SetPositionAndRotation(camera.transform.position, camera.transform.rotation);
@@ -57,4 +58,6 @@ public class PlayerRotation : MonoBehaviour
     public void addRotationY(float r) { yRotation += r; }
 
     public void addRotationX(float r) { xRotation += r; }
+
+    public void setScreenShake(Vector3 shake) { screenShakePos = shake; }
 }

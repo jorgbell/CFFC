@@ -17,6 +17,7 @@ public class RoundManager : MonoBehaviour
 	public UnityEvent<Vector3> eMissedAttack;
 	public UnityEvent eRandomizeColors;
 	public UnityEvent ePlayerDied;
+	public UnityEvent eBombExploded;
 
 	[SerializeField]
 	PlayerController m_player;
@@ -47,6 +48,10 @@ public class RoundManager : MonoBehaviour
 			if (ePlayerDied == null)
 			{
 				ePlayerDied = new UnityEvent();
+			}
+			if (eBombExploded == null)
+			{
+				eBombExploded = new UnityEvent();
 			}
 		}
 		else
