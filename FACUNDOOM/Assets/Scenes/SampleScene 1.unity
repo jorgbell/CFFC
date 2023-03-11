@@ -2144,7 +2144,6 @@ MonoBehaviour:
   horizontalOffset: 0.02
   scrollDirection: {x: 0, y: 1, z: 0}
   verticalTracking: 1
-  angle: 0
   rawAngle: 0
   player: {fileID: 1221334921}
 --- !u!1 &1691329901
@@ -2453,6 +2452,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1221334930}
+    - target: {fileID: 4045593175265202511, guid: 6a8d9e65e8e12214aae230f520d779fa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4045593175265202511, guid: 6a8d9e65e8e12214aae230f520d779fa, type: 3}
       propertyPath: moveSpeed
       value: 0
