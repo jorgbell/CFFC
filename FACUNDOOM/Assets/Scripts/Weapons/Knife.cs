@@ -5,20 +5,27 @@ using UnityEngine;
 public class Knife : Weapon
 {
     Collider col;
+    Animator anim;
     private void Start()
     {
         col = GetComponentInChildren<Collider>(true);
         col.gameObject.SetActive(false);
+        anim = GetComponent<Animator>();
     }
 
     public override void Attack()
     {
         if (!onCooldown)
         {
+            onCooldown = true;
             col.gameObject.SetActive(true);
-            StopAllCoroutines();
-            StartCoroutine("CooldownCoroutine");
+            anim.SetTrigger("attack");
         }
+    }
+
+    void turnOffCollider()
+    {
+        col.gameObject.SetActive(false);
     }
 
     protected override void AttackAnim()
@@ -27,7 +34,7 @@ public class Knife : Weapon
 
     protected override void ResetAttackAnim()
     {
-        col.gameObject.SetActive(false);
+        onCooldown = false;
     }
 
 }
