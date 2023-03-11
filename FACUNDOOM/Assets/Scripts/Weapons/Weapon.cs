@@ -13,7 +13,12 @@ public abstract class Weapon : MonoBehaviour
 
     void Start()
     {
+        if (!TryGetComponent(out m_colorComponent))
+        {
+            Debug.LogWarning("WEAPON HAS NO COLOR COMPONENT");
+        }
 
+        m_colorComponent.OnColorChanged.AddListener(OnColorChanged);
     }
 
     protected void OnColorChanged(ColorType colorType)
@@ -23,26 +28,6 @@ public abstract class Weapon : MonoBehaviour
         else GetComponent<MeshRenderer>().material.color = Color.blue;
     }
 
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && !onCooldown)
-        {
-            Attack();
-            //StopAllCoroutines();
-            //StartCoroutine(CooldownCoroutine());
-            onCooldown = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ColorComponent weaponColor;
-            if(TryGetComponent(out weaponColor))
-            {
-                weaponColor.SetColor((ColorType)(((int)weaponColor.GetColor() + 1) % (int)ColorType.lastColor));
-            }
-        }
-    }
 
     abstract public void Attack();
     protected IEnumerator CooldownCoroutine()

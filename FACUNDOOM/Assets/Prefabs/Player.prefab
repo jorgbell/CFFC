@@ -141,6 +141,7 @@ MonoBehaviour:
   ySensitivity: 1000
   camera: {fileID: 0}
   gun: {fileID: 3163204540057144638}
+  bomb: {fileID: 8096385944229587899}
 --- !u!114 &3163204541062739070
 MonoBehaviour:
   m_ObjectHideFlags: 0

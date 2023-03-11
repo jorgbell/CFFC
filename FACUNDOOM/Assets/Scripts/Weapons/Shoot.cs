@@ -30,20 +30,11 @@ public class Shoot : Weapon
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<MeshRenderer>().material.color = Color.red;
-
         rotationAxis = GetComponentInParent<Transform>();
         //audioSource = GetComponent<AudioSource>();
         //screenShake = camera.GetComponent<ScreenShake>();
 
         startingRotation = rotationAxis.localRotation;
-
-        if (!TryGetComponent(out m_colorComponent))
-        {
-            Debug.LogWarning("WEAPON HAS NO COLOR COMPONENT");
-        }
-
-        m_colorComponent.OnColorChanged.AddListener(OnColorChanged);
     }
 
     // Update is called once per frame
