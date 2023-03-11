@@ -13,6 +13,7 @@ public class ChangeWeaponEvent : UnityEvent<WEAPONTYPE>
 public class PlayerController : MonoBehaviour
 {
     public ChangeWeaponEvent m_weaponEvent;
+
     // Start is called before the first frame update
     Weapon[] weapons = new Weapon[3];
     [SerializeField]
@@ -79,4 +80,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    public ColorComponent getActualColorComponent() { return weapons[(int)actualWeapon].GetComponent<ColorComponent>(); }
+
 }
