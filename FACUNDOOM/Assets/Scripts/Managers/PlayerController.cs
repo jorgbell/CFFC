@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         //Shuffle 
         Utilities.ShuffleColorArray(ref colorList);
 
-        Debug.Log(colorList);
+        //Debug.Log(colorList);
         //Assign colors to the weapons  
         gunPrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[0]);
         knifePrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[1]);
