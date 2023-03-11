@@ -22,6 +22,9 @@ public class StackedSpriteEffect : MonoBehaviour
     private Vector3[] spriteStartPositions;
 
     public bool verticalTracking = false;
+    
+    [SerializeField]
+    float rawAngle;
 
     [SerializeField]
     private GameObject player;
@@ -50,9 +53,9 @@ public class StackedSpriteEffect : MonoBehaviour
 
         Debug.DrawLine(transform.position, transform.position + transform.forward, Color.yellow);
 
-        float angle = Vector3.SignedAngle(transform.forward, player.GetComponent<Rigidbody>().velocity, Vector3.up) * Mathf.Clamp01(player.GetComponent<Rigidbody>().velocity.x);
+        rawAngle = Vector3.SignedAngle(transform.forward, player.GetComponent<Rigidbody>().velocity.normalized, Vector3.up);
 
-        horizontalOffset = Mathf.Lerp(horizontalOffset, -maxOffset * (1 - (Mathf.Abs(angle - 90) / 90)), 0.02f);
+        horizontalOffset = Mathf.Lerp(horizontalOffset, -maxOffset * (1 - (Mathf.Abs(Mathf.Abs(rawAngle) - 90) / 90)) * Mathf.Sign(rawAngle), 0.02f);
 
         // Update the positions of each of the stacked sprites
         for (int i = 0; i < spriteRenderers.Length; i++)
