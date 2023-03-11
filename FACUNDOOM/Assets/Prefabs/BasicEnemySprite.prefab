@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
-  target: {fileID: 0}
+  target: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!114 &5430526519275904884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   spawnPosDelta: 0.65
   enemyType: 0
   colorType: 0
-  player: {fileID: 0}
+  player: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!54 &5430526519275904906
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1197,4 +1197,4 @@ MonoBehaviour:
   horizontalOffset: 0
   scrollDirection: {x: 0, y: 1, z: 0}
   verticalTracking: 0
-  player: {fileID: 0}
+  player: {fileID: 1319445566615296795, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}

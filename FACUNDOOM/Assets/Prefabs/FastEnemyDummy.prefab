@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
-  target: {fileID: 0}
+  target: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!114 &5396905869315998347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +127,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosDelta: 0.65
-  player: {fileID: 0}
+  enemyType: 3
+  colorType: 3
+  player: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!54 &5396905869315998325
 Rigidbody:
   m_ObjectHideFlags: 0

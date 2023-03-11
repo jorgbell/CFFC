@@ -5,6 +5,8 @@ using UnityEngine;
 public class ColorChanger : MonoBehaviour
 {
     public List<ColorType> colors = new List<ColorType>();
+    [SerializeField]
+    protected ColorComponent oPlayer = null;
 
     public enum ColorChangeType { ChangeAllColors, ChangeAllColorsFullRandom }
     [SerializeField]
