@@ -16,6 +16,7 @@ public class RoundManager : MonoBehaviour
 	public UnityEvent<Enemy> eWrongAnswer;
 	public UnityEvent<Vector3> eMissedAttack;
 	public UnityEvent eRandomizeColors;
+	public UnityEvent ePlayerDied;
 
 	[SerializeField]
 	PlayerController m_player;
@@ -43,6 +44,10 @@ public class RoundManager : MonoBehaviour
 			{
 				eMissedAttack = new UnityEvent<Vector3>();
 			}
+			if (ePlayerDied == null)
+			{
+				ePlayerDied = new UnityEvent();
+			}
 		}
 		else
 		{
@@ -69,8 +74,12 @@ public class RoundManager : MonoBehaviour
 		if (m_timeSurvived - lastColorChange > 5.0f)
 		{
 			lastColorChange = m_timeSurvived;
-			Debug.Log("TOPo");
 			eRandomizeColors.Invoke();
+		}
+
+		if(m_timeSurvived > 13.0f)
+		{
+			ePlayerDied.Invoke();
 		}
 	}
 
