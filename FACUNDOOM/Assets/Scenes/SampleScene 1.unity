@@ -1190,6 +1190,36 @@ Transform:
   m_Father: {fileID: 1657544886}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1077815646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1319445566615296795, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
+  m_PrefabInstance: {fileID: 3933725929181392360}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1077815649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077815646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41116b672a50654469ee215faac77fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eEnemyDied:
+    m_PersistentCalls:
+      m_Calls: []
+  eWrongAnswer:
+    m_PersistentCalls:
+      m_Calls: []
+  eMissedAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  eRandomizeColors:
+    m_PersistentCalls:
+      m_Calls: []
+  m_player: {fileID: 1221334931}
 --- !u!1 &1089467209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1398,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
   m_PrefabInstance: {fileID: 1487302871}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1221334931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7903803081650945406, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+  m_PrefabInstance: {fileID: 1487302871}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221334921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fddb0f4e103a14488bf5efd6a7bd976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1243691337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1656,6 +1697,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3163204541062739060, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: bomb
+      value: 
+      objectReference: {fileID: 1638382536}
+    - target: {fileID: 3163204541062739060, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 213916867}
@@ -1667,10 +1712,26 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 213916867}
+    - target: {fileID: 3163204541680403758, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3363146698152953276, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 213916867}
+    - target: {fileID: 4657887296779150649, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1221334921}
+    - target: {fileID: 4657887296779150649, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: bombPrefab
+      value: 
+      objectReference: {fileID: 6388091982216924984, guid: 18203a2c416c0164094ffdce1e512319, type: 3}
+    - target: {fileID: 7903803081650945406, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: actualWeapon
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!1 &1489571799
@@ -1841,6 +1902,11 @@ Transform:
   m_Father: {fileID: 1657544886}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1638382536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8096385944229587899, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+  m_PrefabInstance: {fileID: 1487302871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1650914418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2341,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1268311926037215889, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
+      propertyPath: m_roundManager
+      value: 
+      objectReference: {fileID: 1077815649}
     - target: {fileID: 1319445566615296795, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
       propertyPath: m_Name
       value: GameManager
