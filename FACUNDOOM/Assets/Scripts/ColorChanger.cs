@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
 {
-    public List<ColorType> colors = new List<ColorType>();
+    public ColorType[] colors;
+    [SerializeField]
+    protected ColorComponent oPlayer = null;
 
     public enum ColorChangeType { ChangeAllColors, ChangeAllColorsFullRandom }
     [SerializeField]
@@ -15,11 +17,12 @@ public class ColorChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        colors = new ColorType[(int)ColorType.lastColor];
         for (int i = 0; i < ((int)ColorType.lastColor); i++)
         {
-            colors.Add(((ColorType)i));
+            colors[i] = (ColorType)i;
         }
-        InvokeRepeating(colorChangeType.ToString(), firstChangeTime, changeFrequency);
+        //InvokeRepeating(colorChangeType.ToString(), firstChangeTime, changeFrequency);
 
     }
 
@@ -31,13 +34,7 @@ public class ColorChanger : MonoBehaviour
     void ChangeAllColors()
     {
         //Shuffle de tal forma que ningun elemento se quede donde este
-        for (int i = 0; i < colors.Count; i++)
-        {
-            int index = Random.Range(i, colors.Count);
-            ColorType aux = colors[i];
-            colors[i] = colors[index];
-            colors[index] = aux;
-        }
+        Utilities.ShuffleColorArray(ref colors);
         foreach (Enemy e in GetComponentsInChildren<Enemy>())
         {
             e.SetColor(colors[(int)e.enemyType]);
@@ -48,7 +45,7 @@ public class ColorChanger : MonoBehaviour
     {
         foreach (Enemy e in GetComponentsInChildren<Enemy>())
         {
-            e.SetColor((ColorType)(Random.Range(0, colors.Count)));
+            e.SetColor((ColorType)(Random.Range(0, colors.Length)));
         }
     }
 }

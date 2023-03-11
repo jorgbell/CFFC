@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ColorType
 {
-    red,
+    red = 0,
     blue,
     green,
     lastColor
