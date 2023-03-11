@@ -62,8 +62,8 @@ public class Enemy : MonoBehaviour
 		}
 		else
 		{
-			wrongAnswerFail?.Play();
 			Duplicate();
+			wrongAnswerFail?.Play();
 		}
 	}
 

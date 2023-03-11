@@ -65,6 +65,7 @@ public class RoundManager : MonoBehaviour
 		}
 
 		//If playerDead enseñar la UI de muerto y parar las entidades
+
 		if (m_timeSurvived - lastColorChange > 5.0f)
 		{
 			lastColorChange = m_timeSurvived;

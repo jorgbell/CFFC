@@ -82,7 +82,7 @@ public class Shoot : Weapon
 
     public override void Attack()
     {
-        Debug.Log("pum");
+        //Debug.Log("pum");
         //audioSource.Play();
         //screenShake.Shake(0.0f, 0.1f);
         recoil.PushUpwards(recoilMagnitude, recoilDuration);
