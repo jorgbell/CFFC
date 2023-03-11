@@ -102,6 +102,7 @@ public class SpawnEnemies : MonoBehaviour
 
 	void RandomizeColors()
 	{
+		Debug.Log("Randomize colors");
 		if (BasicEnemyPool.Instance)
 		{
 			foreach (GameObject obj in BasicEnemyPool.Instance.pooledObjects)

@@ -87,7 +87,6 @@ public class RushAndJump : MonoBehaviour
 
     void Run()
     {
-        Debug.Log(rb.rotation);
         //transform.LookAt(target, Vector3.up);
         Vector3 movement = new Vector3(player.position.x - transform.position.x, 0f, player.position.z - transform.position.z);
         //rb.rotation = Quaternion.LookRotation(movement, Vector3.up);

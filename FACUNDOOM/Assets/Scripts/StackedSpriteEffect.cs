@@ -33,6 +33,7 @@ public class StackedSpriteEffect : MonoBehaviour
 
     void Start()
     {
+        player = RoundManager.instance.getPlayer().gameObject;
         // Initialize the array of starting positions
         spriteStartPositions = new Vector3[spriteRenderers.Length];
         initialRotation = transform.rotation;
