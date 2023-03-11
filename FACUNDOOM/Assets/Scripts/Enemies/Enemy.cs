@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -13,7 +14,18 @@ public class Enemy : MonoBehaviour
 	[SerializeField]
 	ParticleSystem wrongAnswerFail;
 
+<<<<<<< HEAD
 	//public ColorType colorType = ColorType.lastColor;
+=======
+<<<<<<< Updated upstream
+	public ColorType colorType = ColorType.lastColor;
+=======
+	[SerializeField]
+	List<GameObject> colorSprites = new List<GameObject>();
+
+	//public ColorType colorType = ColorType.lastColor;
+>>>>>>> Stashed changes
+>>>>>>> dev-adri
 	//public Transform player;
 	// Start is called before the first frame update
 	void Start()
@@ -21,6 +33,7 @@ public class Enemy : MonoBehaviour
 		GetComponent<MeshRenderer>().material.color = Color.red;
 		colorComponent = GetComponent<ColorComponent>();
 		colorComponent.OnColorChanged.AddListener(SetColor);
+		wrongAnswerFail?.Stop();
 	}
 
 	// Update is called once per frame
@@ -47,11 +60,36 @@ public class Enemy : MonoBehaviour
 
 	public void SetColor(ColorType newColor)
 	{
+<<<<<<< HEAD
 		ColorType colorType = newColor;
+=======
+<<<<<<< Updated upstream
+		colorType = newColor;
+>>>>>>> dev-adri
 		if (colorType == ColorType.red)
 			GetComponent<MeshRenderer>().material.color = Color.red;
 		else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
 		else GetComponent<MeshRenderer>().material.color = Color.green;
+=======
+		ColorType colorType = newColor;
+		if(colorSprites.Count < (int)ColorType.lastColor)
+		{
+			Debug.LogError("Missing Sprites for Enemy");
+		}
+		else
+		{
+            ColorType prevType = GetColor();
+			colorSprites.ForEach(sprite => sprite.SetActive(false));
+            colorSprites[(int)prevType].SetActive(false);
+            colorSprites[(int)newColor].SetActive(true);
+        }
+
+
+		//if (colorType == ColorType.red)
+		//	GetComponent<MeshRenderer>().material.color = Color.red;
+		//else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
+		//else GetComponent<MeshRenderer>().material.color = Color.green;
+>>>>>>> Stashed changes
 	}
 
 	public ColorType GetColor()

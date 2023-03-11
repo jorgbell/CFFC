@@ -2563,5 +2563,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 7179240873008418339, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418340, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418341, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418342, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418343, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> dev-adri
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
