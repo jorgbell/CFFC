@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+        currentWeapon = gunWeapon;
     }
 
     // Update is called once per frame

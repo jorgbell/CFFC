@@ -18,6 +18,7 @@ public class SpawnEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RoundManager.instance.eWrongAnswer.AddListener(Duplicate);
         InvokeRepeating(spawnType.ToString(), firstSummonTime, summonFrequency);
     }
 
@@ -63,5 +64,30 @@ public class SpawnEnemies : MonoBehaviour
         }
         enemy.SetActive(true);
         enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[Random.Range(0, GetComponent<ColorChanger>().colors.Count)]);
+    }
+
+    void Duplicate(Enemy enemy)
+    {
+        Transform player = RoundManager.instance.getPlayer().transform;
+        Vector2 dir = Vector2.Perpendicular(new Vector2(enemy.transform.position.x - player.position.x, enemy.transform.position.z - player.position.z));
+
+        Vector3 axis = new Vector3(dir.x, 0, dir.y).normalized * enemy.spawnPosDelta;
+        GameObject clone = new GameObject();
+        switch (enemy.enemyType)
+        {
+            case EnemyType.baseEnemy:
+                clone = BasicEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.ranged:
+                clone = RangedEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.fast:
+                clone = FastEnemyPool.Instance.GetPooledObject();
+                break;
+        }
+        clone.SetActive(true);
+        clone.GetComponent<Enemy>().colorType = enemy.colorType;
+        clone.transform.position = enemy.transform.position - axis;
+        enemy.transform.position += axis;
     }
 }
