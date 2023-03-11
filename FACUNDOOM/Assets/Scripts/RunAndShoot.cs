@@ -21,14 +21,16 @@ public class RunAndShoot : MonoBehaviour
     private float startRunTime = 0, startShootTime = 0;
 
     //Quitar que esto sea public en cuanto el GameManager tenga un getPlayer
-    public Transform player;
 
     public Transform projectilePrefab;
+
+    Transform player;
 
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        player = RoundManager.instance.getPlayer().transform;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -93,13 +95,16 @@ public class RunAndShoot : MonoBehaviour
         //Instanciar proyectil
         //Esto se deberia mover al proyectil cuando este el gamemanager bien
         GameObject projectile = ProjectilePool.Instance.GetPooledObject();
-        projectile.SetActive(true);
-        Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
-        Vector3 movement = new Vector3(player.position.x - transform.position.x, 0f, player.position.z - transform.position.z);
-        projectileRB.transform.position = transform.position + movement.normalized;
+        if (projectile)
+        {
+            projectile.SetActive(true);
+            Rigidbody projectileRB = projectile.GetComponent<Rigidbody>();
+            Vector3 movement = new Vector3(player.position.x - transform.position.x, 0f, player.position.z - transform.position.z);
+            projectileRB.transform.position = transform.position + movement.normalized;
 
-        projectileRB.velocity = movement.normalized * projectileSpeed;
+            projectileRB.velocity = movement.normalized * projectileSpeed;
 
-        Debug.Log("DISPARO");
+            Debug.Log("DISPARO");
+        }
     }
 }

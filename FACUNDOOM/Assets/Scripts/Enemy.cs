@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public float spawnPosDelta = 0.6f;
     public EnemyType enemyType = EnemyType.lastEnemy;
     public ColorType colorType = ColorType.lastColor;
-    public Transform player;
+    //public Transform player;
     // Start is called before the first frame update
     void Start()
     {

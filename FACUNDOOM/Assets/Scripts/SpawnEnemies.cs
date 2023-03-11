@@ -42,9 +42,12 @@ public class SpawnEnemies : MonoBehaviour
                 enemy = FastEnemyPool.Instance.GetPooledObject();
                 break;
         }
-        enemy.SetActive(true);
-        enemy.transform.position = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized * Random.Range(minSpawnDistance, maxSpawnDistance);
-        enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[(int)enemy.GetComponent<Enemy>().enemyType]);
+        if (enemy)
+        {
+            enemy.SetActive(true);
+            enemy.transform.position = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized * Random.Range(minSpawnDistance, maxSpawnDistance);
+            enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[(int)enemy.GetComponent<Enemy>().enemyType]);
+        }
     }
 
     void SpawnEnemyRandomColor()
@@ -62,12 +65,18 @@ public class SpawnEnemies : MonoBehaviour
                 enemy = FastEnemyPool.Instance.GetPooledObject();
                 break;
         }
+        if (enemy)
+        {
+            enemy.SetActive(true);
+            enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[Random.Range(0, GetComponent<ColorChanger>().colors.Count)]);
+        }
         enemy.SetActive(true);
         enemy.GetComponent<Enemy>().SetColor(GetComponent<ColorChanger>().colors[Random.Range(0, GetComponent<ColorChanger>().colors.Count)]);
     }
 
     void Duplicate(Enemy enemy)
     {
+        Debug.Log("Copia");
         Transform player = RoundManager.instance.getPlayer().transform;
         Vector2 dir = Vector2.Perpendicular(new Vector2(enemy.transform.position.x - player.position.x, enemy.transform.position.z - player.position.z));
 
@@ -85,9 +94,12 @@ public class SpawnEnemies : MonoBehaviour
                 clone = FastEnemyPool.Instance.GetPooledObject();
                 break;
         }
-        clone.SetActive(true);
-        clone.GetComponent<Enemy>().colorType = enemy.colorType;
-        clone.transform.position = enemy.transform.position - axis;
-        enemy.transform.position += axis;
+        if (clone)
+        {
+            clone.SetActive(true);
+            clone.GetComponent<Enemy>().colorType = enemy.colorType;
+            clone.transform.position = enemy.transform.position - axis;
+            enemy.transform.position += axis;
+        }
     }
 }
