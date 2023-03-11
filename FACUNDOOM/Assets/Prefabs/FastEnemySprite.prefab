@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4045593175265202608}
   - component: {fileID: -1610985147630260113}
   - component: {fileID: 8269027579238279849}
+  - component: {fileID: 6643046993214939939}
   m_Layer: 0
   m_Name: FastEnemySprite
   m_TagString: Untagged
@@ -143,6 +144,7 @@ MonoBehaviour:
   jumpAngle: 0.6
   waitTime: 0.5
   restTime: 0.5
+  m_enemy: {fileID: 0}
 --- !u!114 &4045593175265202608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +200,20 @@ MonoBehaviour:
   verticalTracking: 0
   rawAngle: 0
   player: {fileID: 3163204541062739062, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+--- !u!114 &6643046993214939939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045593175265202505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac5faacec3d5ec45965938ba6585179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 1
+  m_CooldownSeconds: 1
 --- !u!1 &7476535423775478895
 GameObject:
   m_ObjectHideFlags: 0

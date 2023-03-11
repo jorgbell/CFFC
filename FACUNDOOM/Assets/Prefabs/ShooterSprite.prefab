@@ -5519,6 +5519,7 @@ GameObject:
   - component: {fileID: 8994549720306809755}
   - component: {fileID: 3837349248543329037}
   - component: {fileID: 5636980885108708367}
+  - component: {fileID: 7036414277139059906}
   m_Layer: 0
   m_Name: ShooterSprite
   m_TagString: Untagged
@@ -5651,7 +5652,6 @@ MonoBehaviour:
   enemyType: 1
   colorComponent: {fileID: 3837349248543329037}
   wrongAnswerFail: {fileID: 4973642098796784635}
-  colorType: 1
 --- !u!114 &8994549720306809755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5717,6 +5717,20 @@ MonoBehaviour:
   moveSpeed: 10
   projectileSpeed: 3
   projectilePrefab: {fileID: 5636980886138277846}
+--- !u!114 &7036414277139059906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636980885108708362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac5faacec3d5ec45965938ba6585179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damage: 1
+  m_CooldownSeconds: 1
 --- !u!1 &6827645940196735776
 GameObject:
   m_ObjectHideFlags: 0
