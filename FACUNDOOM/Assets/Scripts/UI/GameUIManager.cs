@@ -33,7 +33,14 @@ public class GameUIManager : MonoBehaviour
     [SerializeField]
     Animation blinkAnim;
     [SerializeField]
-    Animation deathAnim;
+    Animation anims;
+    [SerializeField]
+    Animation streakAnim;
+
+    [SerializeField]
+    TMPro.TextMeshProUGUI streakText;
+    [SerializeField]
+    TMPro.TextMeshProUGUI scoreText;
 
 
     Vector2 DefaultMinAnchors = new(0.0f,0.0f);
@@ -46,6 +53,7 @@ public class GameUIManager : MonoBehaviour
         _roundManager.getPlayer().m_weaponEvent.AddListener(WeaponChange);
         _roundManager.eWrongAnswer.AddListener(PlayBlink);
         _roundManager.ePlayerDied.AddListener(PlayDeath);
+        _roundManager.eMultiplier.AddListener(PlayStreakText);
         currentGlow = GunGlow;
         CurrentContent = GunContent;
         WeaponChange(WEAPONTYPE.GUN);
@@ -58,6 +66,8 @@ public class GameUIManager : MonoBehaviour
         GunContainer.color = ColorComponent.m_colorList[(int)plr.gunPrefab.GetComponentInChildren<ColorComponent>().GetColor()];
         KnifeContainer.color = ColorComponent.m_colorList[(int)plr.knifePrefab.GetComponentInChildren<ColorComponent>().GetColor()];
         BombContainer.color = ColorComponent.m_colorList[(int)plr.bombPrefab.GetComponentInChildren<ColorComponent>().GetColor()];
+
+        scoreText.text = _roundManager.GetScore().ToString();
     }
 
     void WeaponChange(WEAPONTYPE type)
@@ -95,10 +105,20 @@ public class GameUIManager : MonoBehaviour
     void PlayDeath()
 	{
         Debug.Log("Playing death anim");
-        deathAnim["LoseOverlayFadein"].wrapMode = WrapMode.Once;
-        deathAnim.Play("LoseOverlayFadein");
+        anims["LoseOverlayFadein"].wrapMode = WrapMode.Once;
+        anims.Play("LoseOverlayFadein");
         Invoke("GoToGameOver", 3.5f);
     }
+
+    void PlayStreakText(Multiplier multiplier)
+	{
+        Debug.Log("a");
+        streakText.text = multiplier.text;
+        Debug.Log("b");
+        anims["ShowStreakAnim"].wrapMode = WrapMode.Once;
+        Debug.Log("c");
+        anims.Play("ShowStreakAnim");
+	}
 
     void GoToGameOver()
 	{

@@ -169,7 +169,13 @@ MonoBehaviour:
   ePlayerDied:
     m_PersistentCalls:
       m_Calls: []
+  eMultiplier:
+    m_PersistentCalls:
+      m_Calls: []
   m_player: {fileID: 249624361}
+  actualMultiplier: 0
+  pointsPerDeath: 50
+  pointsPerDuplicate: 50
 --- !u!114 &56145955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,6 +756,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5191496010556821138, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496010807054042, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5191496010880194100, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -768,6 +782,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191496010880194100, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496010939581752, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191496011126390883, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
@@ -1207,10 +1225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437cb2107baa5cf468d4d404f55da3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 487523451}
-  - {fileID: 2084494874}
-  - {fileID: 623101519}
   spawnType: 0
   summonFrequency: 2
   firstSummonTime: 0

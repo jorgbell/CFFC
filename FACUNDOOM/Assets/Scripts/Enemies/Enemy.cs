@@ -100,7 +100,8 @@ public class Enemy : MonoBehaviour
 
 	public void Death()
 	{
-		gameObject.SetActive(false);
+        RoundManager.instance.eEnemyDied.Invoke();
+        gameObject.SetActive(false);
 	}
 
 }
