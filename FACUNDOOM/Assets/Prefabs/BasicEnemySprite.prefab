@@ -1025,6 +1025,7 @@ GameObject:
   - component: {fileID: 6070402002480668342}
   - component: {fileID: 5430526519275904906}
   - component: {fileID: 124045061706684033}
+  - component: {fileID: 8995074047476921525}
   m_Layer: 0
   m_Name: BasicEnemySprite
   m_TagString: Untagged
@@ -1152,7 +1153,6 @@ MonoBehaviour:
   enemyType: 0
   colorComponent: {fileID: 6070402002480668342}
   wrongAnswerFail: {fileID: 2061848805651408574}
-  colorType: 0
 --- !u!114 &6070402002480668342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,6 +1214,18 @@ MonoBehaviour:
   verticalTracking: 0
   rawAngle: 0
   player: {fileID: 1319445566615296795, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
+--- !u!114 &8995074047476921525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5430526519275904909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac5faacec3d5ec45965938ba6585179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6332333015168626434
 GameObject:
   m_ObjectHideFlags: 0
