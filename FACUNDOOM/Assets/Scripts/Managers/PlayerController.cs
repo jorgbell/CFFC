@@ -17,20 +17,20 @@ public class PlayerController : MonoBehaviour
     Weapon[] weapons = new Weapon[3];
     [SerializeField]
     WEAPONTYPE actualWeapon = WEAPONTYPE.GUN;
-    [SerializeField]
-    GameObject gunPrefab;
-    [SerializeField]
-    GameObject knifePrefab;
-    [SerializeField]
-    GameObject bombPrefab;
+    public GameObject gunPrefab;
+    public GameObject knifePrefab;
+    public GameObject bombPrefab;
 
     RoundManager roundManager;
 
-
-    void Start()
-    {
+	private void Awake()
+	{
         if (m_weaponEvent == null)
             m_weaponEvent = new ChangeWeaponEvent();
+    }
+
+	void Start()
+    {
         m_weaponEvent.AddListener(ChangeWeapon);
 
         weapons[0] = gunPrefab.GetComponentInChildren<Shoot>();
@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
         //Shuffle 
         Utilities.ShuffleColorArray(ref colorList);
 
+        Debug.Log(colorList);
         //Assign colors to the weapons  
         gunPrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[0]);
         knifePrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[1]);
