@@ -140,4 +140,6 @@ public class RoundManager : MonoBehaviour
             Debug.Log(multipliers[actualMultiplier].text);
         }
     }
+
+    public int GetScore() { return score; }
 }
