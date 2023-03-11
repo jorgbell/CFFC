@@ -4,23 +4,50 @@ using UnityEngine;
 
 public class Knife : Weapon
 {
+    [SerializeField]
+    Camera camera;
+    private Animator anim;
+    bool isAttacking = false;
     private void Start()
     {
-        GetComponent<MeshRenderer>().material.color = Color.green;
-
+        anim = GetComponent<Animator>();
     }
+
     public override void Attack()
     {
-        Debug.Log("navajazo");
+        if (!onCooldown)
+        {
+            Debug.Log("attacking");
+            onCooldown = true;
+            StopAllCoroutines();
+            StartCoroutine("CooldownCoroutine");
+        }
+
+
+
     }
 
     protected override void AttackAnim()
     {
-        throw new System.NotImplementedException();
+        if (!isAttacking)
+        {
+            anim.SetTrigger("attack");
+            isAttacking = true;
+        }
     }
 
     protected override void ResetAttackAnim()
     {
-        throw new System.NotImplementedException();
+        isAttacking = false;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<Enemy>(out Enemy targetEnemy) && onCooldown)
+        {
+            Debug.Log("navajazo");
+            targetEnemy.Hit(m_colorComponent.GetColor());
+        }
     }
 }

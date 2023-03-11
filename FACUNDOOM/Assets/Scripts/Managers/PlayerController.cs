@@ -55,6 +55,16 @@ public class PlayerController : MonoBehaviour
             weapons[(int)actualWeapon].Attack();
         }
 
+        //DEBUG
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ColorComponent weaponColor;
+            if (TryGetComponent(out weaponColor))
+            {
+                weaponColor.SetColor((ColorType)(((int)weaponColor.GetColor() + 1) % (int)ColorType.lastColor));
+            }
+        }
+
     }
     private void ChangeWeapon(WEAPONTYPE type)
     {

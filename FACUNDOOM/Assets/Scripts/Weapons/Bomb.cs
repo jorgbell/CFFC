@@ -6,8 +6,6 @@ public class Bomb : Weapon
 {
     private void Start()
     {
-        GetComponent<MeshRenderer>().material.color = Color.blue;
-
     }
     public override void Attack()
     {

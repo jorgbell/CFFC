@@ -866,6 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colors: 
+  oPlayer: {fileID: 0}
   colorChangeType: 0
   changeFrequency: 2
   firstChangeTime: 0
@@ -886,7 +887,7 @@ MonoBehaviour:
   - {fileID: 2084494874}
   - {fileID: 623101519}
   spawnType: 0
-  summonFrequency: 0.2
+  summonFrequency: 7
   firstSummonTime: 0
   minSpawnDistance: 7
   maxSpawnDistance: 12
@@ -1013,8 +1014,63 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 213916867}
+    - target: {fileID: 7546870655077163948, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.471524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546870655077163948, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5529
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546870655077163948, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6956
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546870655077163948, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7754
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+--- !u!1 &1700625114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7546870655077163949, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+  m_PrefabInstance: {fileID: 1506260297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1700625120
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700625114}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf4cc7a5edbc1514198ed63e530dce15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &1700625121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700625114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2084494874 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 759693552277363412, guid: 53bf35d7a16aa124498886109912d848, type: 3}
