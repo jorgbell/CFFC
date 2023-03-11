@@ -13,13 +13,13 @@ public class Enemy : MonoBehaviour
 	[SerializeField]
 	ParticleSystem wrongAnswerFail;
 
-	public ColorType colorType = ColorType.lastColor;
+	//public ColorType colorType = ColorType.lastColor;
 	//public Transform player;
 	// Start is called before the first frame update
 	void Start()
 	{
 		GetComponent<MeshRenderer>().material.color = Color.red;
-
+		colorComponent = GetComponent<ColorComponent>();
 		colorComponent.OnColorChanged.AddListener(SetColor);
 	}
 
@@ -29,34 +29,39 @@ public class Enemy : MonoBehaviour
 
 	}
 
-	public void ChangeColor()
-	{
-		List<ColorType> colors = new List<ColorType>();
-		for (int i = 0; i < ((int)ColorType.lastColor); i++)
-		{
-			if (i != ((int)colorType))
+	//public void ChangeColor()
+	//{
+	//	List<ColorType> colors = new List<ColorType>();
+	//	for (int i = 0; i < ((int)ColorType.lastColor); i++)
+	//	{
+	//		if (i != ((int)colorType))
 
-				colors.Add(((ColorType)i));
-		}
-		colorType = colors[Random.Range(0, ((int)ColorType.lastColor) - 1)];
+	//			colors.Add(((ColorType)i));
+	//	}
+	//	colorType = colors[Random.Range(0, ((int)ColorType.lastColor) - 1)];
 
-		if (colorType == ColorType.red)
-			GetComponent<MeshRenderer>().material.color = Color.red;
-		else GetComponent<MeshRenderer>().material.color = Color.blue;
-	}
+	//	if (colorType == ColorType.red)
+	//		GetComponent<MeshRenderer>().material.color = Color.red;
+	//	else GetComponent<MeshRenderer>().material.color = Color.blue;
+	//}
 
 	public void SetColor(ColorType newColor)
 	{
-		colorType = newColor;
+		ColorType colorType = newColor;
 		if (colorType == ColorType.red)
 			GetComponent<MeshRenderer>().material.color = Color.red;
 		else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
 		else GetComponent<MeshRenderer>().material.color = Color.green;
 	}
 
+	public ColorType GetColor()
+    {
+		return colorComponent.GetColor();
+    }
+
 	public void Hit(ColorType hitColor)
 	{
-		if (hitColor == colorType)
+		if (hitColor == colorComponent.GetColor())
 		{
 			Death();
 		}

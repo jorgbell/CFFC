@@ -28,7 +28,7 @@ public class SpawnEnemies : MonoBehaviour
 
 	void SpawnEnemy()
 	{
-		GameObject enemy = new GameObject();
+		GameObject enemy = null;
 		switch ((EnemyType)Random.Range(0, (int)EnemyType.lastEnemy))
 		{
 			case EnemyType.baseEnemy:
@@ -51,7 +51,7 @@ public class SpawnEnemies : MonoBehaviour
 
 	void SpawnEnemyRandomColor()
 	{
-		GameObject enemy = new GameObject();
+		GameObject enemy = null;
 		switch ((EnemyType)Random.Range(0, (int)EnemyType.lastEnemy))
 		{
 			case EnemyType.baseEnemy:
@@ -78,7 +78,7 @@ public class SpawnEnemies : MonoBehaviour
 		Vector2 dir = Vector2.Perpendicular(new Vector2(enemy.transform.position.x - player.position.x, enemy.transform.position.z - player.position.z));
 
 		Vector3 axis = new Vector3(dir.x, 0, dir.y).normalized * enemy.spawnPosDelta;
-		GameObject clone = new GameObject();
+		GameObject clone = null;
 		switch (enemy.enemyType)
 		{
 			case EnemyType.baseEnemy:
@@ -94,7 +94,7 @@ public class SpawnEnemies : MonoBehaviour
 		if (clone)
 		{
 			clone.SetActive(true);
-			clone.GetComponent<Enemy>().SetColor(enemy.colorType);
+			clone.GetComponent<ColorComponent>().SetColor(enemy.GetColor());
 			clone.transform.position = enemy.transform.position - axis;
 			enemy.transform.position += axis;
 		}
