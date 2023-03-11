@@ -46,7 +46,7 @@ public class RunAndShoot : MonoBehaviour
                 {
                     startShootTime = Time.time;
                     currentState = State.SHOOTING;
-                    Shoot();
+                    //Shoot();
                 }
                 break;
             case (State.SHOOTING):

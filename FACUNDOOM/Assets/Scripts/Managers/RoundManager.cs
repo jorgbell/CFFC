@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+using Unity.Mathematics;
 public class RoundManager : MonoBehaviour
 {
 	public static RoundManager instance { get; private set; }
 
 	float m_timeSurvived = 0.0f;
+	float lastColorChange = 0.0f;
+	[SerializeField]
 	bool m_bGameStarted = false;
 
 	public UnityEvent eEnemyDied;
@@ -24,6 +26,23 @@ public class RoundManager : MonoBehaviour
 		{
 			Debug.Log("GameManager instanced");
 			instance = this;
+
+			if (eEnemyDied == null)
+			{
+				eEnemyDied = new UnityEvent();
+			}
+			if (eWrongAnswer == null)
+			{
+				eWrongAnswer = new UnityEvent<Enemy>();
+			}
+			if (eRandomizeColors == null)
+			{
+				eRandomizeColors = new UnityEvent();
+			}
+			if (eMissedAttack == null)
+			{
+				eMissedAttack = new UnityEvent<Vector3>();
+			}
 		}
 		else
 		{
@@ -34,22 +53,7 @@ public class RoundManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		if(eEnemyDied == null)
-		{
-			eEnemyDied = new UnityEvent();
-		}
-		if (eWrongAnswer == null)
-		{
-			eWrongAnswer = new UnityEvent<Enemy>();
-		}
-		if (eRandomizeColors == null)
-		{
-			eRandomizeColors = new UnityEvent();
-		}
-		if(eMissedAttack == null)
-		{
-			eMissedAttack = new UnityEvent<Vector3>();
-		}
+		
 	}
 
 	// Update is called once per frame
@@ -61,6 +65,13 @@ public class RoundManager : MonoBehaviour
 		}
 
 		//If playerDead enseñar la UI de muerto y parar las entidades
+
+		if (m_timeSurvived - lastColorChange > 5.0f)
+		{
+			lastColorChange = m_timeSurvived;
+			Debug.Log("TOPo");
+			eRandomizeColors.Invoke();
+		}
 	}
 
 	public void StartRound()
