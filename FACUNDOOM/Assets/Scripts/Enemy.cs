@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
 	[SerializeField]
 	ColorComponent colorComponent;
 
+	[SerializeField]
+	ParticleSystem wrongAnswerFail;
+
 	public ColorType colorType = ColorType.lastColor;
 	//public Transform player;
 	// Start is called before the first frame update
@@ -59,6 +62,7 @@ public class Enemy : MonoBehaviour
 		}
 		else
 		{
+			wrongAnswerFail?.Play();
 			Duplicate();
 		}
 	}
