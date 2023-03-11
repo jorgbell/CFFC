@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3837349248543329037, guid: 4477ccb8397b2194eae526f2f785930e, type: 3}
+      propertyPath: m_colorType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5636980885108708362, guid: 4477ccb8397b2194eae526f2f785930e, type: 3}
       propertyPath: m_Name
       value: ShooterSprite
@@ -895,6 +899,12 @@ MonoBehaviour:
   eRandomizeColors:
     m_PersistentCalls:
       m_Calls: []
+  ePlayerDied:
+    m_PersistentCalls:
+      m_Calls: []
+  eBombExploded:
+    m_PersistentCalls:
+      m_Calls: []
   m_player: {fileID: 1221334931}
 --- !u!1 &726540307
 GameObject:
@@ -1546,6 +1556,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fddb0f4e103a14488bf5efd6a7bd976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1221334940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221334921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853e81cf39e4685468c988e4540065e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 213916867}
+  duration: 0.6
+  magnitude: 0.2
 --- !u!1 &1243691337
 GameObject:
   m_ObjectHideFlags: 0
