@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    public GameObject[] enemies;
 
     public enum SpawnType { SpawnEnemy, SpawnEnemyRandomColor}
     [SerializeField]
@@ -29,7 +28,7 @@ public class SpawnEnemies : MonoBehaviour
     void SpawnEnemy()
     {
         GameObject enemy = new GameObject();
-        switch ((EnemyType)Random.Range(0, enemies.Length))
+        switch ((EnemyType)Random.Range(0, (int)EnemyType.lastEnemy))
         {
             case EnemyType.baseEnemy:
                 enemy = BasicEnemyPool.Instance.GetPooledObject();
@@ -49,7 +48,7 @@ public class SpawnEnemies : MonoBehaviour
     void SpawnEnemyRandomColor()
     {
         GameObject enemy = new GameObject();
-        switch ((EnemyType)Random.Range(0, enemies.Length))
+        switch ((EnemyType)Random.Range(0, (int)EnemyType.lastEnemy))
         {
             case EnemyType.baseEnemy:
                 enemy = BasicEnemyPool.Instance.GetPooledObject();

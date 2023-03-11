@@ -80,9 +80,9 @@ public class Enemy : MonoBehaviour
                 break;
         }
         clone.SetActive(true);
-        clone.GetComponent<Enemy>().colorType = colorType;
+        clone.GetComponent<Enemy>().SetColor(colorType);
+        clone.transform.position = transform.position - axis;
         transform.position += axis;
-        clone.transform.position -= axis;
     }
 
     public void Death()
