@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
             m_weaponEvent.Invoke(WEAPONTYPE.KNIFE);
         if (Input.GetKeyDown(KeyCode.Alpha3) && m_weaponEvent != null)
             m_weaponEvent.Invoke(WEAPONTYPE.FIRE);
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             weapons[(int)actualWeapon].Attack();
@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
                 bombPrefab.SetActive(true);
                 break;
         }
+        Debug.Log(actualWeapon);
     }
 
     public ColorComponent getActualColorComponent() { return weapons[(int)actualWeapon].GetComponent<ColorComponent>(); }
