@@ -14,19 +14,9 @@ public class Enemy : MonoBehaviour
 	[SerializeField]
 	ParticleSystem wrongAnswerFail;
 
-<<<<<<< HEAD
-	//public ColorType colorType = ColorType.lastColor;
-=======
-<<<<<<< Updated upstream
-	public ColorType colorType = ColorType.lastColor;
-=======
 	[SerializeField]
 	List<GameObject> colorSprites = new List<GameObject>();
 
-	//public ColorType colorType = ColorType.lastColor;
->>>>>>> Stashed changes
->>>>>>> dev-adri
-	//public Transform player;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -60,17 +50,6 @@ public class Enemy : MonoBehaviour
 
 	public void SetColor(ColorType newColor)
 	{
-<<<<<<< HEAD
-		ColorType colorType = newColor;
-=======
-<<<<<<< Updated upstream
-		colorType = newColor;
->>>>>>> dev-adri
-		if (colorType == ColorType.red)
-			GetComponent<MeshRenderer>().material.color = Color.red;
-		else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
-		else GetComponent<MeshRenderer>().material.color = Color.green;
-=======
 		ColorType colorType = newColor;
 		if(colorSprites.Count < (int)ColorType.lastColor)
 		{
@@ -89,7 +68,6 @@ public class Enemy : MonoBehaviour
 		//	GetComponent<MeshRenderer>().material.color = Color.red;
 		//else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
 		//else GetComponent<MeshRenderer>().material.color = Color.green;
->>>>>>> Stashed changes
 	}
 
 	public ColorType GetColor()
