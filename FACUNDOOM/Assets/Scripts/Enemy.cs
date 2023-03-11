@@ -5,15 +5,16 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float spawnPosDelta = 0.6f;
-    public int enemyType = 0;
-    public ColorType colorType = ColorType.red;
+    public EnemyType enemyType = EnemyType.lastEnemy;
+    public ColorType colorType = ColorType.lastColor;
     public Transform player;
     // Start is called before the first frame update
     void Start()
     {
         if (colorType == ColorType.red)
             GetComponent<MeshRenderer>().material.color = Color.red;
-        else GetComponent<MeshRenderer>().material.color = Color.blue;
+        else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
+        else GetComponent<MeshRenderer>().material.color = Color.green;
         //InvokeRepeating("ChangeColor", 2, 2);
     }
 
@@ -44,7 +45,8 @@ public class Enemy : MonoBehaviour
         colorType = newColor;
         if (colorType == ColorType.red)
             GetComponent<MeshRenderer>().material.color = Color.red;
-        else GetComponent<MeshRenderer>().material.color = Color.blue;
+        else if (colorType == ColorType.blue) GetComponent<MeshRenderer>().material.color = Color.blue;
+        else GetComponent<MeshRenderer>().material.color = Color.green;
     }
 
     public void Hit(ColorType hitColor)
@@ -64,7 +66,20 @@ public class Enemy : MonoBehaviour
         Vector2 dir = Vector2.Perpendicular(new Vector2(transform.position.x - player.position.x, transform.position.z - player.position.z));
 
         Vector3 axis = new Vector3(dir.x, 0, dir.y).normalized * spawnPosDelta;
-        GameObject clone = Instantiate(gameObject, transform.parent);
+        GameObject clone = new GameObject();
+        switch (enemyType)
+        {
+            case EnemyType.baseEnemy:
+                clone = BasicEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.ranged:
+                clone = RangedEnemyPool.Instance.GetPooledObject();
+                break;
+            case EnemyType.fast:
+                clone = FastEnemyPool.Instance.GetPooledObject();
+                break;
+        }
+        clone.SetActive(true);
         clone.GetComponent<Enemy>().colorType = colorType;
         transform.position += axis;
         clone.transform.position -= axis;
@@ -72,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 }
