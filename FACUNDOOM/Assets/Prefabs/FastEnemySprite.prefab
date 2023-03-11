@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4045593175265202508}
   - component: {fileID: 4045593175265202511}
   - component: {fileID: 4045593175265202608}
+  - component: {fileID: -1610985147630260113}
   - component: {fileID: 4045593175265202510}
   - component: {fileID: 8269027579238279849}
   m_Layer: 0
@@ -120,7 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  target: {fileID: 0}
 --- !u!114 &4045593175265202608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +135,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosDelta: 0.65
   enemyType: 3
+  colorComponent: {fileID: -1610985147630260113}
   colorType: 3
-  player: {fileID: 0}
+--- !u!114 &-1610985147630260113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045593175265202505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &4045593175265202510
 Rigidbody:
   m_ObjectHideFlags: 0

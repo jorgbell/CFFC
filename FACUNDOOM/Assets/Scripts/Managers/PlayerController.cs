@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject bombPrefab;
 
+    RoundManager roundManager;
+
 
     void Start()
     {
@@ -37,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
         m_weaponEvent.Invoke(actualWeapon);
 
+        roundManager = RoundManager.instance;
+        roundManager.eRandomizeColors.AddListener(RandomizeWeaponColors);
     }
 
     // Update is called once per frame
@@ -78,5 +82,22 @@ public class PlayerController : MonoBehaviour
                 bombPrefab.SetActive(true);
                 break;
         }
+    }
+
+    void RandomizeWeaponColors()
+	{
+        //List of possible colors
+        ColorType[] colorList = new ColorType[(int)ColorType.lastColor];
+        colorList[0] = gunPrefab.GetComponentInChildren<ColorComponent>().GetColor();
+        colorList[1] = knifePrefab.GetComponentInChildren<ColorComponent>().GetColor();
+        colorList[2] = bombPrefab.GetComponentInChildren<ColorComponent>().GetColor();
+
+        //Shuffle 
+        Utilities.ShuffleColorArray(ref colorList);
+
+        //Assign colors to the weapons  
+        gunPrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[0]);
+        knifePrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[1]);
+        bombPrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[2]);
     }
 }

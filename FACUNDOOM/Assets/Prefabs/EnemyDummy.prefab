@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5396905869315998327}
   - component: {fileID: 5396905869315998324}
   - component: {fileID: 5396905869315998347}
+  - component: {fileID: 3592317497223026531}
   - component: {fileID: 5396905869315998325}
   m_Layer: 0
   m_Name: EnemyDummy
@@ -113,7 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
-  target: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!114 &5396905869315998347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +128,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosDelta: 0.65
   enemyType: 3
+  colorComponent: {fileID: 3592317497223026531}
   colorType: 3
-  player: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+--- !u!114 &3592317497223026531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396905869315998322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &5396905869315998325
 Rigidbody:
   m_ObjectHideFlags: 0

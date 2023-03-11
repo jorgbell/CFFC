@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 759693552277363413}
   - component: {fileID: 759693552277363438}
   - component: {fileID: 759693552277363439}
+  - component: {fileID: 8210464207108195795}
   - component: {fileID: 759693552277363409}
   m_Layer: 0
   m_Name: Shooter
@@ -131,8 +132,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPosDelta: 0.6
   enemyType: 1
+  colorComponent: {fileID: 8210464207108195795}
   colorType: 1
-  player: {fileID: 0}
+--- !u!114 &8210464207108195795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759693552277363412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cb2344040232d48a206e2db0c81c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &759693552277363409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +164,6 @@ MonoBehaviour:
   secondsOfShooting: 1
   moveSpeed: 10
   projectileSpeed: 3
-  player: {fileID: 0}
   projectilePrefab: {fileID: 759693551256174856}
 --- !u!1001 &1887948409151179421
 PrefabInstance:
