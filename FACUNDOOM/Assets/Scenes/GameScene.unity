@@ -377,6 +377,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2057491456}
+    - target: {fileID: 7623417929460501645, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_MaxHealth
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!114 &719310923 stripped
@@ -469,6 +473,18 @@ PrefabInstance:
     - target: {fileID: 527742558161534198, guid: e650498239cc7304eba4afc4e115012e, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 527742558161534198, guid: e650498239cc7304eba4afc4e115012e, type: 3}
+      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 527742558161534198, guid: e650498239cc7304eba4afc4e115012e, type: 3}
+      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[0].value
+      value: 0.62162226
+      objectReference: {fileID: 0}
+    - target: {fileID: 527742558161534198, guid: e650498239cc7304eba4afc4e115012e, type: 3}
+      propertyPath: VelocityModule.speedModifier.maxCurve.m_Curve.Array.data[1].value
+      value: -0.0000048577785
       objectReference: {fileID: 0}
     - target: {fileID: 3836680309989748505, guid: e650498239cc7304eba4afc4e115012e, type: 3}
       propertyPath: m_Name

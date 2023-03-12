@@ -4880,11 +4880,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebd260048b18c54990a823f6c69d5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  dashRange: 2
+  moveSpeed: 5
+  dashRange: 3
   dashForce: 9
   animationSpeed: 0.5
-  waitTime: 1
+  waitTime: 0.3
   restTime: 1
   dashDistance: 3
 --- !u!65 &2037182377400396026

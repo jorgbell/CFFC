@@ -3358,13 +3358,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea1986471c24f148acc2c67b22d2d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 8
   jumpDistance: 4
-  jumpForce: 8
+  jumpForce: 9
   animationSpeed: 0.2
   jumpAngle: 0.6
-  waitTime: 0.5
-  restTime: 0.5
+  waitTime: 0.3
+  restTime: 1
 --- !u!114 &5597256493429953691
 MonoBehaviour:
   m_ObjectHideFlags: 0
