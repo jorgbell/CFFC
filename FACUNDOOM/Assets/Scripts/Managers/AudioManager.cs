@@ -36,6 +36,7 @@ public class AudioManager : MonoBehaviour
     {
         RoundManager.instance.eWrongAnswer.AddListener(PlayWrongAnswer);
         RoundManager.instance.eBombExploded.AddListener(PlayBombExploded);
+        RoundManager.instance.eEnemyDied.AddListener(PlayEnemyDied);
 
     }
     void PlayWrongAnswer(Enemy e)
@@ -45,6 +46,10 @@ public class AudioManager : MonoBehaviour
     void PlayBombExploded()
     {
         AudioManager.instance.Play("SFX_explosion");
+    }
+    void PlayEnemyDied()
+    {
+        AudioManager.instance.Play("SFX_Kill");
     }
 
 

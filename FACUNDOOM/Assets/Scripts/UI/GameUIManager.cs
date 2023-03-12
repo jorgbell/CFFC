@@ -230,10 +230,13 @@ public class GameUIManager : MonoBehaviour
 	IEnumerator SetCountdownText()
 	{
 		countdownText.text = "3";
+		AudioManager.instance.Play("SFX_Count");
 		yield return new WaitForSeconds(1.0f);
 		countdownText.text = "2";
-		yield return new WaitForSeconds(1.0f);
+        AudioManager.instance.Play("SFX_Count");
+        yield return new WaitForSeconds(1.0f);
 		countdownText.text = "1";
-		yield return new WaitForSeconds(1.0f);
+        AudioManager.instance.Play("SFX_Count");
+        yield return new WaitForSeconds(1.0f);
 	}
 }

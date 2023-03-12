@@ -150,3 +150,24 @@ MonoBehaviour:
     maxPitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: SFX_jump
+    clip: {fileID: 8300000, guid: 90d102011ea1e5442bf9a22e7f6ddaf4, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Kill
+    clip: {fileID: 8300000, guid: debfd5e4aadc0534a9a36c15740697b5, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Count
+    clip: {fileID: 8300000, guid: 1b0b25d834c3f814e90e5073d43674b0, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
