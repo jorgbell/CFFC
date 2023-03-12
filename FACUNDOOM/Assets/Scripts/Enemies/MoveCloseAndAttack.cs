@@ -16,7 +16,7 @@ public class MoveCloseAndAttack : MonoBehaviour
     [SerializeField]
     public float dashForce = 4;
 
-
+    public float animationSpeed = 0.5f;
 
     [SerializeField]
     public float waitTime = 0.5f, restTime = 1.0f;
@@ -27,6 +27,7 @@ public class MoveCloseAndAttack : MonoBehaviour
 
     float prepareStartTime = 0;
     float restStartTime = 0;
+    float animationChangeTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,10 +40,18 @@ public class MoveCloseAndAttack : MonoBehaviour
     {
         Vector3 toPlayer = new Vector3(player.position.x - transform.position.x, 0f, player.position.z - transform.position.z);
         rb.rotation = Quaternion.LookRotation(toPlayer, Vector3.up);
+
         switch (currentState)
         {
             case (State.RUNNING):
                 Run();
+
+                if (Time.time > animationChangeTime + animationSpeed)
+                {
+                    animationChangeTime = Time.time;
+                    GetComponent<Enemy>().ChangeAnimation();
+                }
+
                 if (toPlayer.magnitude < dashDistance)
                 {
                     rb.velocity = Vector3.zero;
@@ -57,6 +66,7 @@ public class MoveCloseAndAttack : MonoBehaviour
                     rb.AddForce(dash * dashForce, ForceMode.Impulse);
                     currentState = State.DASHING;
                     GetComponent<DamageOnCollision>().Activate();
+                    GetComponent<Enemy>().ChangeAnimation();
                     //Cambia de sprite
                 }
                 break;

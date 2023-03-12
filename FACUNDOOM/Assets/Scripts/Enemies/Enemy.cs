@@ -125,5 +125,10 @@ public class Enemy : MonoBehaviour
         gameObject.SetActive(false);
 	}
 
+	public void ChangeAnimation()
+    {
+		colorSprites[(int)GetColor()].GetComponentInChildren<EnemyAnimation>()?.NextFrame();
+    }
+
 	public float GetTimeAlive() { return timeAlive; }
 }
