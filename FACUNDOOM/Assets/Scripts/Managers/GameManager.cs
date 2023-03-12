@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.Stop("BGM_MainMenu");
             AudioManager.instance.Stop("BGM_GameOver");
             string actualBGM = "BGM_Game" + Random.Range(1, 3).ToString();
-            //AudioManager.instance.Play(actualBGM);
+            AudioManager.instance.Play(actualBGM);
 
             AudioManager.instance.AddListeners();
             m_roundManager.StartRound();
@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
 		{
             AudioManager.instance.Stop("BGM_Game1");
             AudioManager.instance.Stop("BGM_Game2");
-            //AudioManager.instance.Play("BGM_GameOver");
+            AudioManager.instance.Play("BGM_GameOver");
             Cursor.lockState = CursorLockMode.None;
         }
         else if (scene.name == "MainMenuScene")
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
             AudioManager.instance.Stop("BGM_Game2");
             AudioManager.instance.Stop("BGM_Game1");
             AudioManager.instance.Stop("BGM_GameOver");
-            //AudioManager.instance.Play("BGM_MainMenu");
+            AudioManager.instance.Play("BGM_MainMenu");
             Cursor.lockState = CursorLockMode.None;
         }
     }
