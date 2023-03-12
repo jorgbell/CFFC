@@ -29,10 +29,15 @@ public class RoundManager : MonoBehaviour
 	public UnityEvent eBombShot;
 	public UnityEvent eBombExploded;
     public UnityEvent<Multiplier> eMultiplier;
+    public UnityEvent eRandomizeColorsCountdown;
 
     [SerializeField]
     PlayerController m_player;
 
+    [SerializeField]
+    float timeBetweenChanges = 5.0f;
+
+    bool bCountdownStarted = false;
     int score = 0;
     int streak = 0;
     [SerializeField]
@@ -89,6 +94,10 @@ public class RoundManager : MonoBehaviour
 			{
 				eBombExploded = new UnityEvent();
 			}
+            if (eRandomizeColorsCountdown == null)
+			{
+                eRandomizeColorsCountdown = new UnityEvent();
+            }
         }
         else
         {
@@ -111,10 +120,16 @@ public class RoundManager : MonoBehaviour
             m_timeSurvived += Time.deltaTime;
         }
 
-        if (m_timeSurvived - lastColorChange > 5.0f)
+        if(!bCountdownStarted && m_timeSurvived - lastColorChange > timeBetweenChanges - 3.0f)
+		{
+            bCountdownStarted = true;
+            eRandomizeColorsCountdown.Invoke();
+		}
+        if (m_timeSurvived - lastColorChange > timeBetweenChanges)
         {
             lastColorChange = m_timeSurvived;
             eRandomizeColors.Invoke();
+            bCountdownStarted = false;
         }
     }
 

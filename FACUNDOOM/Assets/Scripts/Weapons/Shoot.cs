@@ -102,7 +102,6 @@ public class Shoot : Weapon
     {
         if (elapsed / coolDown <= 0.5) rotationAxis.Rotate(0, 0, -100f * Time.deltaTime, Space.Self);
         else rotationAxis.Rotate(0, 0, 100f * Time.deltaTime, Space.Self);
-        Debug.Log(elapsed);
     }
 
     protected override void ResetAttackAnim()

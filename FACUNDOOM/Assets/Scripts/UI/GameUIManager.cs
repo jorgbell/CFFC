@@ -41,6 +41,9 @@ public class GameUIManager : MonoBehaviour
 	TMPro.TextMeshProUGUI streakText;
 	[SerializeField]
 	TMPro.TextMeshProUGUI scoreText;
+	[SerializeField]
+	TMPro.TextMeshProUGUI countdownText;
+
 
 	[SerializeField]
 	GameObject PauseOverlay;
@@ -74,6 +77,7 @@ public class GameUIManager : MonoBehaviour
 			_roundManager.eWrongAnswer.AddListener(PlayBlink);
 			_roundManager.ePlayerDied.AddListener(PlayDeath);
 			_roundManager.eMultiplier.AddListener(PlayStreakText);
+			_roundManager.eRandomizeColorsCountdown.AddListener(StartCountdown);
 		}
 
 		currentGlow = GunGlow;
@@ -199,5 +203,20 @@ public class GameUIManager : MonoBehaviour
 			_roundManager.getPlayer().GetComponent<PlayerRotation>().xSensitivity = SensXSldr.value;
 			_roundManager.getPlayer().GetComponent<PlayerRotation>().ySensitivity = SensYSldr.value;
 		}
+	}
+
+	void StartCountdown()
+	{
+		anims.Play("ColorCountdown");
+		StartCoroutine("SetCountdownText");
+	}
+
+	IEnumerator SetCountdownText()
+	{
+		countdownText.text = "3";
+		yield return new WaitForSeconds(1.0f);
+		countdownText.text = "2";
+		yield return new WaitForSeconds(1.0f);
+		countdownText.text = "1";
 	}
 }
