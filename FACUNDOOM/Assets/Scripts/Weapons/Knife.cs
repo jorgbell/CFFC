@@ -7,11 +7,15 @@ public class Knife : Weapon
     Collider col;
     Animator anim;
 
+    Transform initialTransform;
+
     private void Start()
     {
         col = GetComponentInChildren<Collider>(true);
         col.gameObject.SetActive(false);
         anim = GetComponent<Animator>();
+        anim.keepAnimatorStateOnDisable = false;
+        initialTransform = transform;
     }
 
     public override void Attack()
@@ -22,6 +26,14 @@ public class Knife : Weapon
             col.gameObject.SetActive(true);
             anim.SetTrigger("attack");
         }
+    }
+
+    private void OnDisable()
+    {
+        transform.localPosition = initialTransform.localPosition;
+        transform.localRotation = initialTransform.localRotation;
+        ResetAttackAnim();
+        turnOffCollider();
     }
 
     void turnOffCollider()
