@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
     private int m_healthAtLastHit;
 
     float TimeSinceLastDamage { get { return Time.time - m_lastTakenDamage;} }
-    float HealthPercentage { get { return m_currentHealth / m_MaxHealth; } }
+    public float HealthPercentage { get { return (float)m_currentHealth / (float)m_MaxHealth; } }
 
     enum HealingType
     {
