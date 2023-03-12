@@ -90,13 +90,26 @@ public class GameManager : MonoBehaviour
     {
         if(scene.name == "GameScene")
 		{
+            AudioManager.instance.Stop("BGM_MainMenu");
+            AudioManager.instance.Stop("BGM_GameOver");
+            string actualBGM = "BGM_Game" + Random.Range(1, 3).ToString();
+            AudioManager.instance.Play(actualBGM);
+
+            AudioManager.instance.AddListeners();
             m_roundManager.StartRound();
 		}else if(scene.name == "GameOverScene")
 		{
+            AudioManager.instance.Stop("BGM_Game1");
+            AudioManager.instance.Stop("BGM_Game2");
+            AudioManager.instance.Play("BGM_GameOver");
             Cursor.lockState = CursorLockMode.None;
         }
         else if (scene.name == "MainMenuScene")
         {
+            AudioManager.instance.Stop("BGM_Game2");
+            AudioManager.instance.Stop("BGM_Game1");
+            AudioManager.instance.Stop("BGM_GameOver");
+            AudioManager.instance.Play("BGM_MainMenu");
             Cursor.lockState = CursorLockMode.None;
         }
     }
@@ -115,50 +128,5 @@ public class GameManager : MonoBehaviour
 	{
         m_playerPoints = score;
 	}
-
-    /// <summary>
-    /// llamar cuando se duplique un enemigo y meter efectos en pantalla y ¿restar puntuacion?
-    /// </summary>
-    public void WrongAnswer()
-    {
-
-    }
-    
-    /// <summary>
-    /// quitar vida al jugador (tiene 2 slots discretos) y activa efectos visuales
-    /// </summary>
-    public void Hit()
-    {
-
-    }
-
-    /// <summary>
-    /// cambiar el arma activa y ¿cambiar el color del marco del crt segun el arma?
-    /// </summary>
-    public void ChangeWeapon()
-    {
-
-    }
-
-    /// <summary>
-    /// activar la ruleta (por definir=
-    /// </summary>
-    public void Roulette()
-    {
-
-    }
-
-    /// <summary>
-    /// cambiar escena
-    /// </summary>
-    public void ChangeScene()
-    {
-
-    }
-
-    //--------------------METODOS QUE HAY QUE DISEÑAR-------
-    /* public void camaraLenta() -> activar camara lenta mediante input
-     * public void increaseVelocity()-> aumentar la velocidad del gameplay, habria que modificar la velocidad de todos los objetos??
-     */
 
 }

@@ -37,7 +37,7 @@ public class RoundManager : MonoBehaviour
     float timeBetweenChanges = 5.0f;
 
     bool bCountdownStarted = false;
-    int score = 0;
+    public int score { get; private set; } = 0;
     int streak = 0;
     [SerializeField]
     Multiplier[] multipliers = new Multiplier[] {
@@ -58,8 +58,6 @@ public class RoundManager : MonoBehaviour
     float pointsPerDeath = 50;
     [SerializeField]
     float pointsPerDuplicate = 50;
-
-    string actualBGM;
 
     private void Awake()
     {
@@ -112,10 +110,6 @@ public class RoundManager : MonoBehaviour
         eWrongAnswer.AddListener(wrongAnswerRM);
         eEnemyDied.AddListener(scorePoints);
         ePlayerDied.AddListener(endGame);
-
-        actualBGM = "BGM_Game"+ Random.Range(1,3).ToString();
-
-        AudioManager.instance.Play(actualBGM);
     }
 
     // Update is called once per frame

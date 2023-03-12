@@ -34,10 +34,16 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        RoundManager.instance.eWrongAnswer.AddListener(PlayWrongAnswer);
-        RoundManager.instance.eBombExploded.AddListener(PlayBombExploded);
-        RoundManager.instance.eEnemyDied.AddListener(PlayEnemyDied);
-
+        AddListeners();
+    }
+    public void AddListeners()
+    {
+        if (RoundManager.instance != null)
+        {
+            RoundManager.instance.eWrongAnswer.AddListener(PlayWrongAnswer);
+            RoundManager.instance.eBombExploded.AddListener(PlayBombExploded);
+            RoundManager.instance.eEnemyDied.AddListener(PlayEnemyDied);
+        }
     }
     void PlayWrongAnswer(Enemy e)
     {
@@ -78,7 +84,7 @@ public class AudioManager : MonoBehaviour
             return;
 
         }
-        s.source.Stop();
+        if(s.source.isPlaying)s.source.Stop();
     }
 }
 

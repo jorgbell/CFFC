@@ -165,6 +165,7 @@ public class GameUIManager : MonoBehaviour
 
 	public void GoToMainMenu()
 	{
+		TogglePause();
 		GameManager._instance.SendCommand("Menu");
 	}
 
@@ -207,19 +208,7 @@ public class GameUIManager : MonoBehaviour
 		}
 	}
 
-	bool hoverButton = false;
-	public void enterHoverButton()
-	{
-		if (!hoverButton)
-		{
-			AudioManager.instance.Play("SFX_moveButton");
-			hoverButton = true;
-        } 
-	}
-    public void exitHoverButton()
-    {
-        hoverButton = false;
-    }
+
 
 	void StartCountdown()
 	{
