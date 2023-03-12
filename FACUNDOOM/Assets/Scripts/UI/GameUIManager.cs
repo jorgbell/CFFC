@@ -53,6 +53,11 @@ public class GameUIManager : MonoBehaviour
 	[SerializeField]
 	Slider FOVSldr;
 
+	[SerializeField]
+	Image VignetteOverlay;
+	[SerializeField]
+	float maxVignetteOpacity = 0.5f;
+
 	public Camera CurCam;
 
 
@@ -87,6 +92,10 @@ public class GameUIManager : MonoBehaviour
 			BombContainer.color = ColorComponent.m_colorList[(int)plr.bombPrefab.GetComponentInChildren<ColorComponent>().GetColor()];
 
 			scoreText.text = _roundManager.GetScore().ToString();
+
+			Color curColor = VignetteOverlay.color;
+			curColor.a = maxVignetteOpacity - maxVignetteOpacity * plr.GetComponent<PlayerHealth>().HealthPercentage;
+			VignetteOverlay.color = curColor;
 		}
 
 		if (Input.GetKeyDown(KeyCode.Escape))
