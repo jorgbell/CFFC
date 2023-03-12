@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 2057491456}
     - target: {fileID: 3163204541062739061, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3163204541062739062, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: m_Name
@@ -454,6 +454,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 527742558161534198, guid: e650498239cc7304eba4afc4e115012e, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3836680309989748505, guid: e650498239cc7304eba4afc4e115012e, type: 3}
       propertyPath: m_Name
       value: ExplosionEmitter
@@ -1098,7 +1102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643315f33ea84ea4386849275befc91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityMultiplier: 1.65
+  gravityMultiplier: 1.5
 --- !u!1 &1700466463
 GameObject:
   m_ObjectHideFlags: 0

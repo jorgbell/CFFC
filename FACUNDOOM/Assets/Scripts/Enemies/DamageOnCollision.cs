@@ -24,7 +24,7 @@ public class DamageOnCollision : MonoBehaviour
 
     private float LastHitTime { get; set; }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (active)
         {

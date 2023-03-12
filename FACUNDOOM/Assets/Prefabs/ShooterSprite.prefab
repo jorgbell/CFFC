@@ -7517,6 +7517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7cd18c106b89748b46f4ffcddaa9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 5
 --- !u!1 &8740899280680078995
 GameObject:
   m_ObjectHideFlags: 0
@@ -7619,6 +7620,7 @@ GameObject:
   - component: {fileID: 8740899280702751133}
   - component: {fileID: 8740899280702751106}
   - component: {fileID: 8740899280702751125}
+  - component: {fileID: 8155434928037599783}
   m_Layer: 6
   m_Name: ShooterSprite
   m_TagString: Untagged
@@ -7704,7 +7706,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8740899280702751107}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.5, y: 2.2, z: 1}
@@ -7808,7 +7810,7 @@ MonoBehaviour:
   secondsOfMovement: 2
   secondsOfShooting: 1
   moveSpeed: 10
-  projectileSpeed: 3
+  projectileSpeed: 10
   projectilePrefab: {fileID: 1205186041661606805, guid: 46f0e305f5154604799040506c7e764b, type: 3}
 --- !u!114 &8740899280702751125
 MonoBehaviour:
@@ -7824,6 +7826,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Damage: 1
   m_CooldownSeconds: 1
+--- !u!65 &8155434928037599783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740899280702751107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 6.82, z: 0.86}
+  m_Center: {x: 0, y: 3.01, z: -0.19}
 --- !u!1 &8740899280796696818
 GameObject:
   m_ObjectHideFlags: 0
