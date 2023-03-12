@@ -62,10 +62,13 @@ public class GameUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerController plr = _roundManager.getPlayer();
-        GunContainer.color = ColorComponent.m_colorList[(int)plr.gunPrefab.GetComponentInChildren<ColorComponent>().GetColor()];
-        KnifeContainer.color = ColorComponent.m_colorList[(int)plr.knifePrefab.GetComponentInChildren<ColorComponent>().GetColor()];
-        BombContainer.color = ColorComponent.m_colorList[(int)plr.bombPrefab.GetComponentInChildren<ColorComponent>().GetColor()];
+		if (_roundManager)
+		{
+            PlayerController plr = _roundManager.getPlayer();
+            GunContainer.color = ColorComponent.m_colorList[(int)plr.gunPrefab.GetComponentInChildren<ColorComponent>().GetColor()];
+            KnifeContainer.color = ColorComponent.m_colorList[(int)plr.knifePrefab.GetComponentInChildren<ColorComponent>().GetColor()];
+            BombContainer.color = ColorComponent.m_colorList[(int)plr.bombPrefab.GetComponentInChildren<ColorComponent>().GetColor()];
+        }
 
         scoreText.text = _roundManager.GetScore().ToString();
     }
