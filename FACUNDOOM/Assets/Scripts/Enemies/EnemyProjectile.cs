@@ -11,11 +11,16 @@ public class EnemyProjectile : MonoBehaviour
     [SerializeField]
     private int m_Damage = 1;
 
-    float actualTime = 0;
+    float startTime = 0;
     void Start()
     {
         //Get Player position del game manager y settea tu direccion para alla
         //De momento esta a pelo donde se instancia
+    }
+
+    private void OnEnable()
+    {
+        startTime = Time.time;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -31,8 +36,9 @@ public class EnemyProjectile : MonoBehaviour
 
     private void Update()
     {
-        actualTime += Time.deltaTime;
-        if (actualTime >= lifeTime)
+        if (Time.time > startTime + lifeTime)
+        {
             gameObject.SetActive(false);
+        }
     }
 }
