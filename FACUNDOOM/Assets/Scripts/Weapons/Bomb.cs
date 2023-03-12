@@ -11,27 +11,44 @@ public class Bomb : Weapon
     public GameObject bombPrefab;
     public GameObject explosionPrefab;
 
-    //private void Start()
-    //{
-    //}
+    private void Start()
+    {
+        resetCooldown();
+        RoundManager.instance.eBombExploded.AddListener(resetCooldown);
+    }
 
     private void Update()
     {
         Debug.DrawLine(transform.position, transform.position + transform.forward * 10, Color.magenta);
     }
 
+    private void OnEnable()
+    {
+        var main = GetComponentInChildren<ParticleSystem>().main;
+        main.prewarm = true;
+    }
+
     public override void Attack()
     {
         Debug.Log("chiquita bomba");
 
-        explosionPrefab.GetComponentInChildren<ExplosionCollision>().setColor(m_colorComponent);
+        if (!onCooldown) 
+        {
+            //var main = GetComponentInChildren<ParticleSystem>().main;
+            GetComponentInChildren<ParticleSystem>().Stop();
+            GetComponentInChildren<ParticleSystem>().Clear();
 
-        GameObject bomb = Instantiate(bombPrefab, transform.position + transform.lossyScale.z * transform.forward, Quaternion.identity);
-        bomb.GetComponent<BombProjectileBehaviour>().setExplosionSystem(explosionPrefab, explosionPrefab.GetComponentInChildren<ParticleSystem>());
+            explosionPrefab.GetComponentInChildren<ExplosionCollision>().setColor(m_colorComponent);
 
-        Rigidbody bombRB = bomb.GetComponent<Rigidbody>();
+            GameObject bomb = Instantiate(bombPrefab, transform.position + transform.lossyScale.z * transform.forward, Quaternion.identity);
+            bomb.GetComponent<BombProjectileBehaviour>().setExplosionSystem(explosionPrefab, explosionPrefab.GetComponentInChildren<ParticleSystem>());
 
-        bombRB.velocity = player.GetComponent<Rigidbody>().velocity + bombVelocity * transform.forward;
+            Rigidbody bombRB = bomb.GetComponent<Rigidbody>();
+
+            bombRB.velocity = player.GetComponent<Rigidbody>().velocity / 2 + bombVelocity * transform.forward;
+
+            onCooldown = true;
+        }
     }
 
     protected override void AttackAnim()
@@ -42,5 +59,12 @@ public class Bomb : Weapon
     protected override void ResetAttackAnim()
     {
         throw new System.NotImplementedException();
+    }
+
+    private void resetCooldown() 
+    { 
+        onCooldown = false;
+        //var main = GetComponentInChildren<ParticleSystem>().main;
+        GetComponentInChildren<ParticleSystem>().Play();
     }
 }

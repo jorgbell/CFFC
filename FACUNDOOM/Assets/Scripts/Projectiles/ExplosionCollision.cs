@@ -9,6 +9,7 @@ public class ExplosionCollision : MonoBehaviour
 
     ParticleSystem ps;
     public List<ParticleCollisionEvent> collisionEvents;
+    List<Rigidbody> collidedRBs = new List<Rigidbody>();
 
     // Start is called before the first frame update
     void Start()
@@ -17,20 +18,46 @@ public class ExplosionCollision : MonoBehaviour
         collisionEvents = new List<ParticleCollisionEvent>();
     }
 
+    private void OnParticleSystemStopped()
+    {
+        collidedRBs = new List<Rigidbody>();
+    }
+
     void OnParticleCollision(GameObject other)
     {
         int numCollisionEvents = ps.GetCollisionEvents(other, collisionEvents);
 
         Rigidbody rb = other.GetComponent<Rigidbody>();
+
         int i = 0;
 
         while (i < numCollisionEvents)
         {
+            if(i > 2) 
+            {
+                int a = 2;
+            }
+
             if (rb)
             {
                 if (rb.TryGetComponent<Enemy>(out Enemy targetEnemy))
                 {
-                    targetEnemy.Hit(m_colorComponent.GetColor());
+                    bool alreadyCollided = false;
+
+                    int j = 0;
+
+                    while (j < collidedRBs.Count && !alreadyCollided)
+                    {
+                        if (rb == collidedRBs[j]) alreadyCollided = true;
+                        j++;
+                    }
+
+                    if (!alreadyCollided)
+                    {
+                        collidedRBs.Add(rb);
+                        targetEnemy.Hit(m_colorComponent.GetColor());
+                        Debug.Log("Hit" + i);
+                    }
                 }
             }
 
