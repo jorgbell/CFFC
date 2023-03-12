@@ -1374,7 +1374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418340, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418341, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
