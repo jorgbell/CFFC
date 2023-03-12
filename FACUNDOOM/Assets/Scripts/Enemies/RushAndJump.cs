@@ -16,6 +16,9 @@ public class RushAndJump : MonoBehaviour
     [SerializeField]
     public float jumpForce = 8;
 
+    public float animationSpeed = 0.5f;
+
+
     [Range(0, 1)]
     public float jumpAngle = 0.6f;
 
@@ -28,6 +31,8 @@ public class RushAndJump : MonoBehaviour
 
     float prepareStartTime = 0;
     float restStartTime = 0;
+    float animationChangeTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,10 +49,18 @@ public class RushAndJump : MonoBehaviour
         {
             case (State.RUNNING):
                 Run();
+
+                if (Time.time > animationChangeTime + animationSpeed)
+                {
+                    animationChangeTime = Time.time;
+                    GetComponent<Enemy>().ChangeAnimation();
+                }
+
                 if (toPlayer.magnitude < jumpDistance)
                 {
                     rb.velocity = Vector3.zero;
                     currentState = State.PREPARING;
+                    GetComponent<Enemy>().ResetAnimation();
                     prepareStartTime = Time.time;
                 }
                 break;
@@ -59,6 +72,7 @@ public class RushAndJump : MonoBehaviour
                     rb.AddForce(jump * jumpForce, ForceMode.Impulse);
                     currentState = State.JUMPING;
                     GetComponent<DamageOnCollision>().Activate();
+                    GetComponent<Enemy>().ChangeAnimation();
                     //Cambia de sprite
                 }
                 break;
