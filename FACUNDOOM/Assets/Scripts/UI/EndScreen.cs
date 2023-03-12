@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.UI;
+using UnityEngine.UI;
 public class EndScreen : MonoBehaviour
 {
     // Start is called before the first frame update
