@@ -834,7 +834,7 @@ MonoBehaviour:
   eMultiplier:
     m_PersistentCalls:
       m_Calls: []
-  m_player: {fileID: 0}
+  m_player: {fileID: 737108515}
   actualMultiplier: 0
   pointsPerDeath: 50
   pointsPerDuplicate: 50
@@ -1033,6 +1033,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3163204541062739062, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
   m_PrefabInstance: {fileID: 1791165943}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &737108515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7903803081650945406, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+  m_PrefabInstance: {fileID: 1791165943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737108513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fddb0f4e103a14488bf5efd6a7bd976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &757356094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1287,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &916610690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3836680309989748505, guid: e650498239cc7304eba4afc4e115012e, type: 3}
+  m_PrefabInstance: {fileID: 688268686}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &978564196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,6 +2298,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2790789152665166982, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 916610690}
+    - target: {fileID: 2831751398923505858, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2334,6 +2358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7487151096738552429, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 213916867}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!1001 &1962850674
