@@ -668,10 +668,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191496010252392743, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191496010252392743, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -700,10 +696,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191496010880194100, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191496010880194100, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -714,10 +706,6 @@ PrefabInstance:
     - target: {fileID: 5191496010880194100, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191496010925927925, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -5.630005
       objectReference: {fileID: 0}
     - target: {fileID: 5191496010939581752, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_SizeDelta.x
@@ -811,6 +799,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 213916869}
+    - target: {fileID: 5191496011695507518, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: CurCam
+      value: 
+      objectReference: {fileID: 213916869}
     - target: {fileID: 5191496011695509441, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_Name
       value: GameCanvas
@@ -821,10 +813,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191496011896679550, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191496011896679550, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
-      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191496011896679550, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}

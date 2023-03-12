@@ -47,28 +47,30 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && m_weaponEvent != null)
-            m_weaponEvent.Invoke(WEAPONTYPE.GUN);
-        if (Input.GetKeyDown(KeyCode.Alpha2) && m_weaponEvent != null)
-            m_weaponEvent.Invoke(WEAPONTYPE.KNIFE);
-        if (Input.GetKeyDown(KeyCode.Alpha3) && m_weaponEvent != null)
-            m_weaponEvent.Invoke(WEAPONTYPE.FIRE);
+		if (GameManager._instance.IsGameRunning())
+		{
+            if (Input.GetKeyDown(KeyCode.Alpha1) && m_weaponEvent != null)
+                m_weaponEvent.Invoke(WEAPONTYPE.GUN);
+            if (Input.GetKeyDown(KeyCode.Alpha2) && m_weaponEvent != null)
+                m_weaponEvent.Invoke(WEAPONTYPE.KNIFE);
+            if (Input.GetKeyDown(KeyCode.Alpha3) && m_weaponEvent != null)
+                m_weaponEvent.Invoke(WEAPONTYPE.FIRE);
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            weapons[(int)actualWeapon].Attack();
-        }
-
-        //DEBUG
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            ColorComponent weaponColor;
-            if (TryGetComponent(out weaponColor))
+            if (Input.GetMouseButtonDown(0))
             {
-                weaponColor.SetColor((ColorType)(((int)weaponColor.GetColor() + 1) % (int)ColorType.lastColor));
+                weapons[(int)actualWeapon].Attack();
+            }
+
+            //DEBUG
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                ColorComponent weaponColor;
+                if (TryGetComponent(out weaponColor))
+                {
+                    weaponColor.SetColor((ColorType)(((int)weaponColor.GetColor() + 1) % (int)ColorType.lastColor));
+                }
             }
         }
-
     }
     private void ChangeWeapon(WEAPONTYPE type)
     {

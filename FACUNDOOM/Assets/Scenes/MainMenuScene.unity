@@ -955,8 +955,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Adrian Alvarez\nJorge Bello Mart\xEDn @jbopp_\nSol Flora\nDavid Godoy\nEsteban
-    Restrepo\nVictor el pana"
+  m_text: "Adrian Alvarez\nJorge Bello Mart\xEDn @jbopp_\nSol Flora\nDavid Godoy\nVictor
+    Guardia\nEsteban Restrepo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0bc6a5333e5c14649a576d2399bf8dfc, type: 2}
   m_sharedMaterial: {fileID: -3956009850455146590, guid: 0bc6a5333e5c14649a576d2399bf8dfc, type: 2}
@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61
+  m_fontSize: 55.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61
+  m_fontSize: 55.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61
+  m_fontSize: 55.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61
+  m_fontSize: 55.8
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

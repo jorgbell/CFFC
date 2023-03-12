@@ -7,11 +7,19 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance { get; private set; }
+    bool GameRunning = true;
 
     [SerializeField]
     RoundManager m_roundManager;
 
     int m_playerPoints = 3;
+
+    public bool IsGameRunning() { return GameRunning; }
+    public void PauseUnpause()
+	{
+        GameRunning = !GameRunning;
+        Time.timeScale = (GameRunning) ? 1f : 0f;
+	}
 
     private void Awake()
     {
