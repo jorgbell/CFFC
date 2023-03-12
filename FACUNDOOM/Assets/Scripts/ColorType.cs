@@ -5,7 +5,7 @@ using UnityEngine;
 public enum ColorType
 {
     red = 0,
-    blue,
+    purple,
     green,
     lastColor
 }

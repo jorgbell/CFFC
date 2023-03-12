@@ -59,7 +59,7 @@ public class RoundManager : MonoBehaviour
     {
         if (instance == null)
         {
-            Debug.Log("GameManager instanced");
+            Debug.Log("RoundManager instanced");
             instance = this;
             if (eEnemyDied == null)
             {
@@ -114,7 +114,7 @@ public class RoundManager : MonoBehaviour
         if (m_timeSurvived - lastColorChange > 5.0f)
         {
             lastColorChange = m_timeSurvived;
-            //eRandomizeColors.Invoke();
+            eRandomizeColors.Invoke();
         }
     }
 
