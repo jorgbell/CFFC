@@ -1,0 +1,75 @@
+using UnityEngine.Audio;
+using UnityEngine;
+using System;
+
+public class AudioManager : MonoBehaviour
+{
+    public static AudioManager instance { get; private set; }
+
+    public Sound[] sounds;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            Debug.Log("AudioManager instanced");
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            s.source.pitch = s.pitch;
+            s.source.volume = s.volume;
+            s.source.loop = s.loop;
+        }
+    }
+
+    public void Play(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("NO SE ENCUENTRA EL AUDIO: " +name);
+            return;
+
+        }
+        s.source.Play();
+    }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("NO SE ENCUENTRA EL AUDIO: " + name);
+            return;
+
+        }
+        s.source.Stop();
+    }
+}
+
+[System.Serializable]
+public class Sound
+{
+    public string name;
+    public AudioClip clip;
+
+    [Range(0f, 1f)]
+    public float volume = 1.0f;
+    [Range(1f, 3f)]
+    public float pitch = 1.0f;
+
+    public bool loop;
+
+    [HideInInspector]
+    public AudioSource source;
+}
