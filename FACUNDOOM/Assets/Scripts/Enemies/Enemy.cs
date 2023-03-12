@@ -58,7 +58,6 @@ public class Enemy : MonoBehaviour
 
 	public void SetColor(ColorType newColor)
 	{
-		Debug.Log("SETCOLOR");
 		if(colorSprites.Count < (int)ColorType.lastColor)
 		{
 			Debug.LogError("Missing Sprites for Enemy");

@@ -95,6 +95,7 @@ public class SpawnEnemies : MonoBehaviour
 		{
 			clone.SetActive(true);
 			clone.GetComponent<ColorComponent>().SetColor(enemy.GetColor());
+			//Esto no deberia hacer falta pero el mensaje no salta
 			clone.GetComponent<Enemy>().SetColor(enemy.GetColor());
 			clone.transform.position = enemy.transform.position - axis;
 			enemy.transform.position += axis;

@@ -18,7 +18,7 @@ public abstract class Weapon : MonoBehaviour
         m_colorComponent.OnColorChanged.AddListener(OnColorChanged);
     }
 
-    protected void OnColorChanged(ColorType colorType)
+    virtual protected void OnColorChanged(ColorType colorType)
     {
         if (colorType == ColorType.red)
             GetComponent<MeshRenderer>().material.color = Color.red;

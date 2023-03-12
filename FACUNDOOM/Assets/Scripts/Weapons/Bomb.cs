@@ -11,8 +11,11 @@ public class Bomb : Weapon
     public GameObject bombPrefab;
     public GameObject explosionPrefab;
 
+    private ParticleSystem particleSystem;
+
     private void Start()
     {
+        m_colorComponent.OnColorChanged.AddListener(OnColorChanged);
         resetCooldown();
         RoundManager.instance.eBombExploded.AddListener(resetCooldown);
     }
@@ -25,6 +28,7 @@ public class Bomb : Weapon
     private void OnEnable()
     {
         var main = GetComponentInChildren<ParticleSystem>().main;
+
         main.prewarm = true;
     }
 
@@ -42,8 +46,12 @@ public class Bomb : Weapon
 
             explosionPrefab.GetComponentInChildren<ExplosionCollision>().setColor(m_colorComponent);
 
+
+            changeParticleColor(explosionPrefab.GetComponentInChildren<ParticleSystem>().colorOverLifetime);
+
             GameObject bomb = Instantiate(bombPrefab, transform.position + transform.lossyScale.z * transform.forward, Quaternion.identity);
             bomb.GetComponent<BombProjectileBehaviour>().setExplosionSystem(explosionPrefab, explosionPrefab.GetComponentInChildren<ParticleSystem>());
+            changeParticleColor(bomb.GetComponentInChildren<ParticleSystem>().colorOverLifetime);
 
             Rigidbody bombRB = bomb.GetComponent<Rigidbody>();
 
@@ -51,6 +59,29 @@ public class Bomb : Weapon
 
             onCooldown = true;
         }
+    }
+
+    void changeParticleColor(ParticleSystem.ColorOverLifetimeModule colorModule)
+    {
+        Gradient gradient = new Gradient();
+        {
+            GradientColorKey[] colorKeys = new GradientColorKey[2];
+            GradientAlphaKey[] alphaKeys = new GradientAlphaKey[1];
+
+            colorKeys[0].color = Color.black;
+            colorKeys[0].time = 0f;
+
+            colorKeys[1].color = ColorComponent.m_colorList[(int)GetComponent<ColorComponent>().GetColor()];
+            colorKeys[1].time = 1f;
+
+            alphaKeys[0].alpha = 1f;
+            alphaKeys[0].time = 0f;
+
+            gradient.SetKeys(colorKeys, alphaKeys);
+        }
+
+
+        colorModule.color = gradient;
     }
 
     protected override void AttackAnim()
@@ -61,6 +92,11 @@ public class Bomb : Weapon
     protected override void ResetAttackAnim()
     {
         throw new System.NotImplementedException();
+    }
+
+    protected override void OnColorChanged(ColorType colorType)
+    {
+        changeParticleColor(GetComponentInChildren<ParticleSystem>().colorOverLifetime);
     }
 
     private void resetCooldown() 

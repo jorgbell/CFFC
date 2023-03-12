@@ -54,11 +54,13 @@ public class ColorComponent : MonoBehaviour
 
 	private void Start()
 	{
-		
+		if (m_eColorChanged == null)
+		{
+			m_eColorChanged = new ColorChangedEvent();
+		}
 	}
 	public void SetColor(ColorType color)
 	{
-		Debug.Log("COMPONENT SETCOLOR");
 		m_colorType = color;
 		m_eColorChanged?.Invoke(color);
 	}
