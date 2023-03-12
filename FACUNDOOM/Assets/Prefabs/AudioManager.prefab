@@ -117,21 +117,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+  - name: BGM_MainMenu
+    clip: {fileID: 8300000, guid: f97491ce764799441b2722c4c80296a1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+  - name: BGM_Game1
+    clip: {fileID: 8300000, guid: 4c90a1347aa553c478d0041e1654a700, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
+  - name: BGM_Game2
+    clip: {fileID: 8300000, guid: 3a21c270672ffc74fb256b01d5f4c521, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
     source: {fileID: 0}

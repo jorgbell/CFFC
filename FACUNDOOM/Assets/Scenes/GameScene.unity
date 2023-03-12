@@ -877,7 +877,11 @@ MonoBehaviour:
   eMultiplier:
     m_PersistentCalls:
       m_Calls: []
+  eRandomizeColorsCountdown:
+    m_PersistentCalls:
+      m_Calls: []
   m_player: {fileID: 719310923}
+  timeBetweenChanges: 5
   actualMultiplier: 0
   pointsPerDeath: 50
   pointsPerDuplicate: 50
@@ -1029,6 +1033,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: sounds.Array.data[14].name
+      value: BGM_Game2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: sounds.Array.data[12].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: sounds.Array.data[13].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: sounds.Array.data[14].volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
       propertyPath: m_RootOrder
       value: 9

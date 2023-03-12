@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Unity.Mathematics;
 
 
 public struct Multiplier
@@ -60,6 +59,8 @@ public class RoundManager : MonoBehaviour
     [SerializeField]
     float pointsPerDuplicate = 50;
 
+    string actualBGM;
+
     private void Awake()
     {
         if (instance == null)
@@ -111,6 +112,10 @@ public class RoundManager : MonoBehaviour
         eWrongAnswer.AddListener(wrongAnswerRM);
         eEnemyDied.AddListener(scorePoints);
         ePlayerDied.AddListener(endGame);
+
+        actualBGM = "BGM_Game"+ Random.Range(1,3).ToString();
+
+        AudioManager.instance.Play(actualBGM);
     }
 
     // Update is called once per frame
