@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4209986527427393696}
   - component: {fileID: 2607052410494106665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6560656136583866772}
   - component: {fileID: 117102013530996677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7746207882678348915}
   - component: {fileID: 4160184171408754450}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6449255579159050944}
   - component: {fileID: 1808314197427212302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 909293572900659886}
   - component: {fileID: 8695394229922425577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5791180835930977439}
   - component: {fileID: 2098580848280104717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1859623989740088780}
   - component: {fileID: 1670725177093519199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6092480290182409293}
   - component: {fileID: 2018445456838404654}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1069738641235971120}
   - component: {fileID: 1161804765357048764}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1108762116415705599}
   - component: {fileID: 87416320897618289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1481620940615627727}
   - component: {fileID: 2020936996793487494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6001873250121369057}
   - component: {fileID: 7702134659093578026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1012,7 +1012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1887610419480763119}
   - component: {fileID: 8031143342419357405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1096,7 +1096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2821628585948820618}
   - component: {fileID: 6295020831842845539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5223024285805406206}
   - component: {fileID: 6962890590511339138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1264,7 +1264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 23654069803403708}
   - component: {fileID: 8820473966976103535}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1342,7 +1342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3083159606032526222}
   - component: {fileID: 5881802671811567283}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1426,7 +1426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3075998313349771111}
   - component: {fileID: 2449033193417975268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,7 +1510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7668852343307882870}
   - component: {fileID: 6218060697772380605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1594,7 +1594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3720113115343982585}
   - component: {fileID: 7747681165318150645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1678,7 +1678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3111449883411688482}
   - component: {fileID: 5328655930390891323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1762,7 +1762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5671727928682667768}
   - component: {fileID: 4372873226796989276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1846,7 +1846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6863090533278039453}
   - component: {fileID: 7787798101588031565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1924,7 +1924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011398305658575166}
   - component: {fileID: 469068957930250825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2008,7 +2008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5518975351950423076}
   - component: {fileID: 3493476857871508962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2092,7 +2092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6218944088707119060}
   - component: {fileID: 4083307047789792618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2176,7 +2176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2280385410409328830}
   - component: {fileID: 1332895867766415473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2260,7 +2260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 932823579148774272}
   - component: {fileID: 5139087165107744713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2344,7 +2344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899280264524754}
   - component: {fileID: 8740899280264524755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2429,7 +2429,7 @@ GameObject:
   - component: {fileID: 8740899280474008762}
   - component: {fileID: 8740899280474008760}
   - component: {fileID: 8740899280474008763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fail_PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7316,7 +7316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899280495072888}
   - component: {fileID: 8740899280495072889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7404,7 +7404,7 @@ GameObject:
   - component: {fileID: 8740899280514575503}
   - component: {fileID: 8740899280514575500}
   - component: {fileID: 8740899280514575501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7527,7 +7527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899280680078957}
   - component: {fileID: 8740899280680078994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7619,7 +7619,7 @@ GameObject:
   - component: {fileID: 8740899280702751133}
   - component: {fileID: 8740899280702751106}
   - component: {fileID: 8740899280702751125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShooterSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7834,7 +7834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899280796696780}
   - component: {fileID: 8740899280796696781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7918,7 +7918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899280872563262}
   - component: {fileID: 8740899280872563263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8002,7 +8002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899280942808596}
   - component: {fileID: 8740899280942808597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8086,7 +8086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899280976106368}
   - component: {fileID: 8740899280976106369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8170,7 +8170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899281186366834}
   - component: {fileID: 8740899281186366835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8254,7 +8254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899281208729547}
   - component: {fileID: 8740899281208729544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8338,7 +8338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899281302720200}
   - component: {fileID: 8740899281302720201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8422,7 +8422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899281383140433}
   - component: {fileID: 8740899281383140438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8506,7 +8506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899281576665197}
   - component: {fileID: 8740899281576665234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8590,7 +8590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740899282142946493}
   - component: {fileID: 8740899282142946466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8674,7 +8674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2900221548169097313}
   - component: {fileID: 3638420232404715915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capa (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

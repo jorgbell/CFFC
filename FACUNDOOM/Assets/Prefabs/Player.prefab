@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5276933374423935581}
   - component: {fileID: 6617206499359536216}
   - component: {fileID: 9071810560392881536}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube_Cube.003_Material.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6692398562995056567}
   - component: {fileID: 1073456778459990791}
   - component: {fileID: 6787211909451063107}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 8460193011331545456}
   - component: {fileID: 2504216933775262211}
   - component: {fileID: 4200867353135232921}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder.002_Cylinder.002_Material.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6311405307970074566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: gunholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 4687426865628800929}
   - component: {fileID: 5068498431858004586}
   - component: {fileID: 1625467798601989958}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder.003_Cylinder.003_Material
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 830316361055735830}
   - component: {fileID: 2249993712151427629}
   - component: {fileID: 1370848891268625691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere.001_Sphere.001_Material.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 7903803081650945406}
   - component: {fileID: 7623417929460501645}
   - component: {fileID: 5255813134487441927}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3163204541062739062}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 2801752362023340196}
   - component: {fileID: 9094333525969290554}
   - component: {fileID: 6656770457334456658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 5601052595902169751}
   - component: {fileID: 2066044170460646161}
   - component: {fileID: 2040038053940904233}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder.004_Cylinder.004_Material.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 2312281929278658827}
   - component: {fileID: 6050212036228474317}
   - component: {fileID: 3760591635436954726}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder.005_Cylinder.005_Material
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2104167393386072096}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: swordholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1014,7 +1014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7405026338545231366}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fireholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1048,7 @@ GameObject:
   - component: {fileID: 3859410836887509039}
   - component: {fileID: 7487151096738552429}
   - component: {fileID: 6341751689955410754}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1122,7 +1122,7 @@ GameObject:
   - component: {fileID: 6745103094585309186}
   - component: {fileID: 687437967633194403}
   - component: {fileID: 9161735937505346693}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere_Sphere_Material.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 4180941932776502026}
   - component: {fileID: 8741686474035882851}
   - component: {fileID: 5307661236232082969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6019,7 +6019,7 @@ GameObject:
   - component: {fileID: 3083902140570065321}
   - component: {fileID: 2412658477321625681}
   - component: {fileID: 7982952991284787757}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6109,6 +6109,10 @@ PrefabInstance:
     - target: {fileID: 889841998541356504, guid: f22a54439ef6d214e89bea76adcbc0b8, type: 3}
       propertyPath: m_Name
       value: BasicDither+Scanlines+BarrelDist
+      objectReference: {fileID: 0}
+    - target: {fileID: 889841998541356504, guid: f22a54439ef6d214e89bea76adcbc0b8, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7729913320867672544, guid: f22a54439ef6d214e89bea76adcbc0b8, type: 3}
       propertyPath: m_RootOrder
