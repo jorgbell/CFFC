@@ -7,6 +7,10 @@ public class EnemyProjectile : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     float lifeTime = 5f;
+
+    [SerializeField]
+    private int m_Damage = 1;
+
     float actualTime = 0;
     void Start()
     {
@@ -14,15 +18,15 @@ public class EnemyProjectile : MonoBehaviour
         //De momento esta a pelo donde se instancia
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        //Feo feo feo
-        if (collision.gameObject.GetComponent<PlayerMovement>())
+        PlayerHealth playerHealth;
+        if (collision.transform.TryGetComponent(out playerHealth))
         {
-            Debug.Log("Proyectil pega a jugador");
+            playerHealth.TakeDamage(m_Damage);
             gameObject.SetActive(false);
+            //GetComponent<Enemy>()?.Death();
         }
-
     }
 
     private void Update()
