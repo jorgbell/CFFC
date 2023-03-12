@@ -94,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49
+  m_fontSize: 29.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1424,6 +1424,7 @@ GameObject:
   - component: {fileID: 6561182263955411959}
   - component: {fileID: 74348546421997424}
   - component: {fileID: 4660557767768996625}
+  - component: {fileID: 6550991463688468058}
   m_Layer: 5
   m_Name: CountdownText
   m_TagString: Untagged
@@ -1548,6 +1549,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!111 &6550991463688468058
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941308518568276664}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 1d599a22582247e47b099db00d526a3a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &4066181194828379379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,6 +3549,7 @@ MonoBehaviour:
   blinkAnim: {fileID: 5191496011457158497}
   anims: {fileID: 6731782564943589558}
   streakAnim: {fileID: 5050118071181898189}
+  countdownAnim: {fileID: 6550991463688468058}
   streakText: {fileID: 403328170600397443}
   scoreText: {fileID: 2761281394072128453}
   countdownText: {fileID: 4660557767768996625}
@@ -3554,7 +3572,6 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 1d599a22582247e47b099db00d526a3a, type: 2}
   - {fileID: 7400000, guid: 9854d38804394124ba5cf4afdfefdc10, type: 2}
   - {fileID: 7400000, guid: 366671a333dd2564a817152088cf204f, type: 2}
   m_WrapMode: 0

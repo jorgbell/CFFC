@@ -36,6 +36,8 @@ public class GameUIManager : MonoBehaviour
 	Animation anims;
 	[SerializeField]
 	Animation streakAnim;
+	[SerializeField]
+	Animation countdownAnim;
 
 	[SerializeField]
 	TMPro.TextMeshProUGUI streakText;
@@ -207,7 +209,7 @@ public class GameUIManager : MonoBehaviour
 
 	void StartCountdown()
 	{
-		anims.Play("ColorCountdown");
+		countdownAnim.Play("ColorCountdown");
 		StartCoroutine("SetCountdownText");
 	}
 
@@ -218,5 +220,6 @@ public class GameUIManager : MonoBehaviour
 		countdownText.text = "2";
 		yield return new WaitForSeconds(1.0f);
 		countdownText.text = "1";
+		yield return new WaitForSeconds(1.0f);
 	}
 }
