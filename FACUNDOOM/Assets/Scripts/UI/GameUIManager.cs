@@ -22,6 +22,10 @@ public class GameUIManager : MonoBehaviour
 	Image currentGlow;
 
 	[SerializeField]
+	Image DamageDirIndicator;
+
+
+	[SerializeField]
 	RectTransform GunContent;
 	[SerializeField]
 	RectTransform KnifeContent;
@@ -80,6 +84,7 @@ public class GameUIManager : MonoBehaviour
 			_roundManager.ePlayerDied.AddListener(PlayDeath);
 			_roundManager.eMultiplier.AddListener(PlayStreakText);
 			_roundManager.eRandomizeColorsCountdown.AddListener(StartCountdown);
+			_roundManager.ePlayerDamaged.AddListener(ShowDamageDir);
 		}
 
 		currentGlow = GunGlow;
@@ -211,6 +216,13 @@ public class GameUIManager : MonoBehaviour
 	{
 		countdownAnim.Play("ColorCountdown");
 		StartCoroutine("SetCountdownText");
+	}
+
+	void ShowDamageDir(Enemy enemy)
+    {
+		Vector2 angle = new Vector2(enemy.transform.position.x - RoundManager.instance.getPlayer().transform.position.x, enemy.transform.position.z - RoundManager.instance.getPlayer().transform.position.z);
+		Debug.Log("Angle: " + Vector2.SignedAngle(Vector2.up, angle));
+		DamageDirIndicator.rectTransform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Acos(angle.normalized.x)));
 	}
 
 	IEnumerator SetCountdownText()

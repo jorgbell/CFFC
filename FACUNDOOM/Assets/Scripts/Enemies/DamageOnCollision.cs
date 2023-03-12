@@ -31,6 +31,7 @@ public class DamageOnCollision : MonoBehaviour
             PlayerHealth playerHealth;
             if (Time.time > LastHitTime + m_CooldownSeconds && collision.transform.TryGetComponent(out playerHealth))
             {
+                RoundManager.instance?.ePlayerDamaged.Invoke(GetComponent<Enemy>());
                 playerHealth.TakeDamage(m_Damage);
                 LastHitTime = Time.time;
                 //GetComponent<Enemy>()?.Death();

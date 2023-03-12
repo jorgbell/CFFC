@@ -30,6 +30,7 @@ public class RoundManager : MonoBehaviour
 	public UnityEvent eBombExploded;
     public UnityEvent<Multiplier> eMultiplier;
     public UnityEvent eRandomizeColorsCountdown;
+    public UnityEvent<Enemy> ePlayerDamaged;
 
     [SerializeField]
     PlayerController m_player;
@@ -97,6 +98,10 @@ public class RoundManager : MonoBehaviour
             if (eRandomizeColorsCountdown == null)
 			{
                 eRandomizeColorsCountdown = new UnityEvent();
+            }
+            if (ePlayerDamaged == null)
+            {
+                ePlayerDamaged = new UnityEvent<Enemy>();
             }
         }
         else
