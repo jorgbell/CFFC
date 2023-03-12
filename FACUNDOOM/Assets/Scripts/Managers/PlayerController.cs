@@ -1,7 +1,9 @@
+using SnapshotShaders.URP;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public enum WEAPONTYPE
 {
@@ -17,6 +19,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     Weapon[] weapons = new Weapon[3];
     [SerializeField]
+    List<GameObject> gunModels = new List<GameObject>();
+    [SerializeField]
+    List<GameObject> swordModels = new List<GameObject>();
     WEAPONTYPE actualWeapon = WEAPONTYPE.GUN;
     public GameObject gunPrefab;
     public GameObject knifePrefab;
@@ -24,13 +29,13 @@ public class PlayerController : MonoBehaviour
 
     RoundManager roundManager;
 
-	private void Awake()
-	{
+    private void Awake()
+    {
         if (m_weaponEvent == null)
             m_weaponEvent = new ChangeWeaponEvent();
     }
 
-	void Start()
+    void Start()
     {
         m_weaponEvent.AddListener(ChangeWeapon);
 
@@ -47,8 +52,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (GameManager._instance.IsGameRunning())
-		{
+        if (GameManager._instance.IsGameRunning())
+        {
             if (Input.GetKeyDown(KeyCode.Alpha1) && m_weaponEvent != null)
                 m_weaponEvent.Invoke(WEAPONTYPE.GUN);
             if (Input.GetKeyDown(KeyCode.Alpha2) && m_weaponEvent != null)
@@ -99,7 +104,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void RandomizeWeaponColors()
-	{
+    {
         //List of possible colors
         ColorType[] colorList = new ColorType[(int)ColorType.lastColor];
         colorList[0] = gunPrefab.GetComponentInChildren<ColorComponent>().GetColor();
@@ -111,7 +116,29 @@ public class PlayerController : MonoBehaviour
 
         //Assign colors to the weapons  
         gunPrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[0]);
+        gunModels.ForEach(sprite => sprite.SetActive(false));
+        gunModels[(int)(colorList[0])].SetActive(true);
         knifePrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[1]);
+        swordModels.ForEach(sprite => sprite.SetActive(false));
+        swordModels[(int)(colorList[1])].SetActive(true);
         bombPrefab.GetComponentInChildren<ColorComponent>().SetColor(colorList[2]);
+    }
+
+    public Color getActualColor()
+    {
+        ColorType c = ColorType.lastColor;
+        switch (actualWeapon)
+        {
+            case WEAPONTYPE.GUN:
+                c = gunPrefab.GetComponentInChildren<ColorComponent>().GetColor();
+                break;
+            case WEAPONTYPE.KNIFE:
+                c = knifePrefab.GetComponentInChildren<ColorComponent>().GetColor();
+                break;
+            case WEAPONTYPE.FIRE:
+                c = bombPrefab.GetComponentInChildren<ColorComponent>().GetColor();
+                break;
+        }
+        return ColorComponent.m_colorListCRT[(int)c];
     }
 }
