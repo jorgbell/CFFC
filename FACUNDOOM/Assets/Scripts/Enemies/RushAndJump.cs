@@ -22,8 +22,6 @@ public class RushAndJump : MonoBehaviour
     [SerializeField]
     public float waitTime = 0.5f, restTime = 0.5f;
 
-    [SerializeField]
-    private Enemy m_enemy;
 
     Transform player;
     Rigidbody rb;
@@ -60,6 +58,8 @@ public class RushAndJump : MonoBehaviour
                     jump.y = jumpAngle;
                     rb.AddForce(jump * jumpForce, ForceMode.Impulse);
                     currentState = State.JUMPING;
+                    GetComponent<DamageOnCollision>().Activate();
+                    //Cambia de sprite
                 }
                 break;
             case (State.JUMPING):
@@ -70,6 +70,7 @@ public class RushAndJump : MonoBehaviour
                 if (floorDistance < GetComponent<BoxCollider>().size.y / 2 + 0.1 && rb.velocity.y <= 0)
                 {
                     currentState = State.RESTING;
+                    GetComponent<DamageOnCollision>().Deactivate();
                     restStartTime = Time.time;
                 }
                 break;

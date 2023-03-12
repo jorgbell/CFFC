@@ -32,6 +32,22 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        RoundManager.instance.eWrongAnswer.AddListener(PlayWrongAnswer);
+        RoundManager.instance.eBombExploded.AddListener(PlayBombExploded);
+
+    }
+    void PlayWrongAnswer(Enemy e)
+    {
+        Play("SFX_WA");
+    }
+    void PlayBombExploded()
+    {
+        AudioManager.instance.Play("SFX_explosion");
+    }
+
+
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

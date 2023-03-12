@@ -1008,6 +1008,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418341, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: amountToPool
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418342, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: amountToPool
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418343, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: amountToPool
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
 --- !u!1001 &1976084308

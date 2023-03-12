@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8611882276681863332}
   - component: {fileID: 5577440535087916623}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: ExplosionEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 527742558161534198}
   - component: {fileID: 4995619057262553501}
   - component: {fileID: 8239466144125790561}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: ParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

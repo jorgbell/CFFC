@@ -29,10 +29,15 @@ public class RoundManager : MonoBehaviour
 	public UnityEvent eBombShot;
 	public UnityEvent eBombExploded;
     public UnityEvent<Multiplier> eMultiplier;
+    public UnityEvent eRandomizeColorsCountdown;
 
     [SerializeField]
     PlayerController m_player;
 
+    [SerializeField]
+    float timeBetweenChanges = 5.0f;
+
+    bool bCountdownStarted = false;
     int score = 0;
     int streak = 0;
     [SerializeField]
@@ -89,6 +94,10 @@ public class RoundManager : MonoBehaviour
 			{
 				eBombExploded = new UnityEvent();
 			}
+            if (eRandomizeColorsCountdown == null)
+			{
+                eRandomizeColorsCountdown = new UnityEvent();
+            }
         }
         else
         {
@@ -101,6 +110,7 @@ public class RoundManager : MonoBehaviour
     {
         eWrongAnswer.AddListener(wrongAnswerRM);
         eEnemyDied.AddListener(scorePoints);
+        ePlayerDied.AddListener(endGame);
     }
 
     // Update is called once per frame
@@ -111,10 +121,16 @@ public class RoundManager : MonoBehaviour
             m_timeSurvived += Time.deltaTime;
         }
 
-        if (m_timeSurvived - lastColorChange > 5.0f)
+        if(!bCountdownStarted && m_timeSurvived - lastColorChange > timeBetweenChanges - 3.0f)
+		{
+            bCountdownStarted = true;
+            eRandomizeColorsCountdown.Invoke();
+		}
+        if (m_timeSurvived - lastColorChange > timeBetweenChanges)
         {
             lastColorChange = m_timeSurvived;
             eRandomizeColors.Invoke();
+            bCountdownStarted = false;
         }
     }
 
@@ -143,10 +159,16 @@ public class RoundManager : MonoBehaviour
         streak++;
         if (streak > multipliers[actualMultiplier].killsToPass)
         {
+            AudioManager.instance.Play("SFX_ComboUp");
             actualMultiplier++;
             eMultiplier.Invoke(multipliers[actualMultiplier]);
             Debug.Log(multipliers[actualMultiplier].text);
         }
+    }
+
+    void endGame()
+    {
+        m_bGameStarted = false;
     }
 
     public int GetScore() { return score; }
