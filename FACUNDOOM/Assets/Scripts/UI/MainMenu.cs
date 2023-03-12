@@ -31,4 +31,14 @@ public class MainMenu : MonoBehaviour
         mainScreen.SetActive(true);
         creditsScreen.SetActive(false);
 	}
+
+    public void Exit()
+	{
+        GameManager._instance.SendCommand("Play");
+    }
+
+    public void Play()
+	{
+        GameManager._instance.SendCommand("Exit");
+    }
 }
