@@ -94,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.85
+  m_fontSize: 30.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3605,7 +3605,7 @@ MonoBehaviour:
   VolumeSldr: {fileID: 1473554491534804900}
   FOVSldr: {fileID: 2035195861818024778}
   VignetteOverlay: {fileID: 7618631345837788516}
-  maxVignetteOpacity: 0.5
+  maxVignetteOpacity: 1
   CurCam: {fileID: 0}
 --- !u!111 &6731782564943589558
 Animation:
