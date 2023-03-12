@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
             floorTime = 0;
             rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
             jumping = true;
+            AudioManager.instance.Play("SFX_jump");
 
             timesJumped++;
         }

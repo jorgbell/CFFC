@@ -48,8 +48,14 @@ public class PlayerHealth : MonoBehaviour
         {
             m_currentHealth -= damage;
             m_healthAtLastHit = m_currentHealth;
-            RoundManager.instance.ePlayerDied.Invoke();
             //Debug.Log("Hit left you at " + m_currentHealth);
+            AudioManager.instance.Play("SFX_PlayerHit");
+        }
+        if(m_currentHealth == 0)
+        {
+            RoundManager.instance.ePlayerDied.Invoke();
+            GameManager._instance.SetPlayerScore(RoundManager.instance.score);
+
         }
         m_lastTakenDamage = Time.time;
         return m_currentHealth > 0;

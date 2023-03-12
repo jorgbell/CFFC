@@ -256,7 +256,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.1
+  m_fontSize: 47.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 96.35
+  m_fontSize: 86.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -853,6 +853,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173552817}
   m_CullTransparentMesh: 1
+--- !u!1001 &1200386975
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323387974775512788, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+--- !u!114 &1200386976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+  m_PrefabInstance: {fileID: 1200386975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d650460bcee892845b44db0b7deb6318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328702902
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +1050,7 @@ GameObject:
   - component: {fileID: 1460741286}
   - component: {fileID: 1460741290}
   - component: {fileID: 1460741291}
+  - component: {fileID: 1460741292}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1099,6 +1168,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b60fd74de23ca459e924f9e7c15aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1460741292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460741285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1e6aa10c74f944d855524304225c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1513215426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1260,7 @@ GameObject:
   - component: {fileID: 1560213724}
   - component: {fileID: 1560213723}
   - component: {fileID: 1560213722}
+  - component: {fileID: 1560213725}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -1263,6 +1345,18 @@ MonoBehaviour:
           m_StringArgument: Play
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1200386976}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_Ok
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1560213723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,6 +1395,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560213720}
   m_CullTransparentMesh: 1
+--- !u!114 &1560213725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560213720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1460741292}
+          m_TargetAssemblyTypeName: HoverButton, Assembly-CSharp
+          m_MethodName: enterHoverButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1460741292}
+          m_TargetAssemblyTypeName: HoverButton, Assembly-CSharp
+          m_MethodName: exitHoverButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1740522767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,7 +1527,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.2
+  m_fontSize: 68.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1623,7 +1762,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.1
+  m_fontSize: 47.6
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

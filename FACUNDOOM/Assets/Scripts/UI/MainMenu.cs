@@ -34,11 +34,11 @@ public class MainMenu : MonoBehaviour
 
     public void Exit()
 	{
-        GameManager._instance.SendCommand("Play");
+        GameManager._instance.SendCommand("Exit");
     }
 
     public void Play()
 	{
-        GameManager._instance.SendCommand("Exit");
+        GameManager._instance.SendCommand("Play");
     }
 }

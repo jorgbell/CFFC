@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Unity.Mathematics;
 
 
 public struct Multiplier
@@ -38,7 +37,7 @@ public class RoundManager : MonoBehaviour
     float timeBetweenChanges = 5.0f;
 
     bool bCountdownStarted = false;
-    int score = 0;
+    public int score { get; private set; } = 0;
     int streak = 0;
     [SerializeField]
     Multiplier[] multipliers = new Multiplier[] {
@@ -159,6 +158,7 @@ public class RoundManager : MonoBehaviour
         streak++;
         if (streak > multipliers[actualMultiplier].killsToPass)
         {
+            AudioManager.instance.Play("SFX_ComboUp");
             actualMultiplier++;
             eMultiplier.Invoke(multipliers[actualMultiplier]);
             Debug.Log(multipliers[actualMultiplier].text);

@@ -25,6 +25,7 @@ public class Knife : Weapon
             onCooldown = true;
             col.gameObject.SetActive(true);
             anim.SetTrigger("attack");
+            AudioManager.instance.Play("SFX_sword");
         }
     }
 

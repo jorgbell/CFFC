@@ -44,3 +44,130 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d650460bcee892845b44db0b7deb6318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: SDX_cancel
+    clip: {fileID: 8300000, guid: 97cc4c391fce5f349b2a6e7b2600d9df, type: 3}
+    volume: 0.5
+    minPitch: 1
+    maxPitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_sword
+    clip: {fileID: 8300000, guid: ea5914a6a8c232343a1839a77e704475, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_explosion
+    clip: {fileID: 8300000, guid: 7080970a1928ec048beaf351f31dda6a, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_throwFire
+    clip: {fileID: 8300000, guid: 2a7e00b17420a8b40a0cc44a853b8227, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_moveButton
+    clip: {fileID: 8300000, guid: 92b420ba032dfe343b67c7161000b30e, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Ok
+    clip: {fileID: 8300000, guid: 37d19e126741ef149bf553c2d61e4bd3, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_step
+    clip: {fileID: 8300000, guid: 136860ec8e261604c81db570af126d50, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_endCombo
+    clip: {fileID: 8300000, guid: 2a97105657c6cfd40a76b0011dda1b0d, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Shot
+    clip: {fileID: 8300000, guid: 4c386f29824aca047b9ad849ec04ad2f, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_PlayerHit
+    clip: {fileID: 8300000, guid: 31f3f111faf12c445b94fcba77473444, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1.5
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_ComboUp
+    clip: {fileID: 8300000, guid: f1505ad90d16cf74a869e171b0ff60b9, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_WA
+    clip: {fileID: 8300000, guid: ff216f77d0070bd499a38f7ba92bff7d, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BGM_MainMenu
+    clip: {fileID: 8300000, guid: f97491ce764799441b2722c4c80296a1, type: 3}
+    volume: 0.2
+    minPitch: 1
+    maxPitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_Game1
+    clip: {fileID: 8300000, guid: 4c90a1347aa553c478d0041e1654a700, type: 3}
+    volume: 0.2
+    minPitch: 1
+    maxPitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BGM_Game2
+    clip: {fileID: 8300000, guid: 3a21c270672ffc74fb256b01d5f4c521, type: 3}
+    volume: 0.2
+    minPitch: 1
+    maxPitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: SFX_jump
+    clip: {fileID: 8300000, guid: 90d102011ea1e5442bf9a22e7f6ddaf4, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Kill
+    clip: {fileID: 8300000, guid: debfd5e4aadc0534a9a36c15740697b5, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SFX_Count
+    clip: {fileID: 8300000, guid: 1b0b25d834c3f814e90e5073d43674b0, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}

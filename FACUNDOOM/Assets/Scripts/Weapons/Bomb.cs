@@ -39,7 +39,7 @@ public class Bomb : Weapon
         if (!onCooldown) 
         {
             RoundManager.instance.eBombShot.Invoke();
-
+            AudioManager.instance.Play("SFX_throwFire");
             //var main = GetComponentInChildren<ParticleSystem>().main;
             GetComponentInChildren<ParticleSystem>().Stop();
             GetComponentInChildren<ParticleSystem>().Clear();
