@@ -39,9 +39,9 @@ public class Shoot : Weapon
 
     // Update is called once per frame
 
-    
 
-    public void castShot() 
+
+    public void castShot()
     {
         Debug.DrawRay(camera.transform.position, camera.transform.forward * 100, Color.red, 10);
 
@@ -73,18 +73,27 @@ public class Shoot : Weapon
 
     public override void Attack()
     {
-        //Debug.Log("pum");
-        //audioSource.Play();
-        //screenShake.Shake(0.0f, 0.1f);
-        recoil.PushUpwards(recoilMagnitude, recoilDuration);
-        //particleSystem.Play();
-        castShot();
+        if (!onCooldown)
+        {
+            //Debug.Log("pum");
+            //audioSource.Play();
+            //screenShake.Shake(0.0f, 0.1f);
+            recoil.PushUpwards(recoilMagnitude, recoilDuration);
+            //particleSystem.Play();
+            castShot();
+            StopAllCoroutines();
+            onCooldown = true;
+
+            StartCoroutine("CooldownCoroutine");
+        }
+        
     }
 
     protected override void AttackAnim()
     {
-        if (elapsed / coolDown <= 0.5) rotationAxis.Rotate(-100f * Time.deltaTime, 0, 0, Space.Self);
-        else rotationAxis.Rotate(100f * Time.deltaTime, 0, 0, Space.Self);
+        if (elapsed / coolDown <= 0.5) rotationAxis.Rotate(0, 0, -100f * Time.deltaTime, Space.Self);
+        else rotationAxis.Rotate(0, 0, 100f * Time.deltaTime, Space.Self);
+        Debug.Log(elapsed);
     }
 
     protected override void ResetAttackAnim()
