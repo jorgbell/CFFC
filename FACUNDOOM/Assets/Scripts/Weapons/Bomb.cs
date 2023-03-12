@@ -47,11 +47,11 @@ public class Bomb : Weapon
             explosionPrefab.GetComponentInChildren<ExplosionCollision>().setColor(m_colorComponent);
 
 
-            changeParticleColor(explosionPrefab.GetComponentInChildren<ParticleSystem>().colorOverLifetime);
+            changeBombParticleColor(explosionPrefab.GetComponentInChildren<ParticleSystem>().colorOverLifetime);
 
             GameObject bomb = Instantiate(bombPrefab, transform.position + transform.lossyScale.z * transform.forward, Quaternion.identity);
             bomb.GetComponent<BombProjectileBehaviour>().setExplosionSystem(explosionPrefab, explosionPrefab.GetComponentInChildren<ParticleSystem>());
-            changeParticleColor(bomb.GetComponentInChildren<ParticleSystem>().colorOverLifetime);
+            changeBombParticleColor(bomb.GetComponentInChildren<ParticleSystem>().colorOverLifetime);
 
             Rigidbody bombRB = bomb.GetComponent<Rigidbody>();
 
@@ -61,7 +61,7 @@ public class Bomb : Weapon
         }
     }
 
-    void changeParticleColor(ParticleSystem.ColorOverLifetimeModule colorModule)
+    void changeHandParticleColor(ParticleSystem.ColorOverLifetimeModule colorModule)
     {
         Gradient gradient = new Gradient();
         {
@@ -73,6 +73,32 @@ public class Bomb : Weapon
 
             colorKeys[1].color = ColorComponent.m_colorList[(int)GetComponent<ColorComponent>().GetColor()];
             colorKeys[1].time = 1f;
+
+            alphaKeys[0].alpha = 1f;
+            alphaKeys[0].time = 0f;
+
+            gradient.SetKeys(colorKeys, alphaKeys);
+        }
+
+
+        colorModule.color = gradient;
+    }
+
+    void changeBombParticleColor(ParticleSystem.ColorOverLifetimeModule colorModule)
+    {
+        Gradient gradient = new Gradient();
+        {
+            GradientColorKey[] colorKeys = new GradientColorKey[3];
+            GradientAlphaKey[] alphaKeys = new GradientAlphaKey[1];
+
+            colorKeys[0].color = Color.white;
+            colorKeys[0].time = 0f;
+
+            colorKeys[1].color = ColorComponent.m_colorList[(int)GetComponent<ColorComponent>().GetColor()];
+            colorKeys[1].time = 0.224f;
+
+            colorKeys[0].color = Color.black;
+            colorKeys[0].time = 1f;
 
             alphaKeys[0].alpha = 1f;
             alphaKeys[0].time = 0f;
@@ -96,7 +122,7 @@ public class Bomb : Weapon
 
     protected override void OnColorChanged(ColorType colorType)
     {
-        changeParticleColor(GetComponentInChildren<ParticleSystem>().colorOverLifetime);
+        changeHandParticleColor(GetComponentInChildren<ParticleSystem>().colorOverLifetime);
     }
 
     private void resetCooldown() 
