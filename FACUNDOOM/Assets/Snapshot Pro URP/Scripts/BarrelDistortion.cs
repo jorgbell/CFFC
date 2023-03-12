@@ -59,7 +59,9 @@
                 cmd.Blit(source, mainTex.id);
 
                 // Set Barrel Distortion effect properties.
-                cmd.SetGlobalColor("_BackgroundColor", settings.backgroundColor.value);
+                
+                if(RoundManager.instance) cmd.SetGlobalColor("_BackgroundColor", RoundManager.instance.getPlayer().getActualColor());
+                else cmd.SetGlobalColor("_BackgroundColor", settings.backgroundColor.value);
                 cmd.SetGlobalFloat("_Strength", settings.strength.value);
 
                 // Execute effect using effect material.
