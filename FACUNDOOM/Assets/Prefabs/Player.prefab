@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b81a50a11825264ba6856b571ffbfb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6.03
+  moveSpeed: 10
   jumpForce: 8
   rb: {fileID: 3163204541062739063}
   moving: 0
@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3163204541062739062}
+  globalMagnitude: 200
 --- !u!54 &3163204541062739063
 Rigidbody:
   m_ObjectHideFlags: 0

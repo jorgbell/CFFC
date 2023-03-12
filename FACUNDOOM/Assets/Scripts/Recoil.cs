@@ -8,6 +8,8 @@ public class Recoil : MonoBehaviour
 
     private PlayerRotation rotation;
 
+    public float globalMagnitude;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class Recoil : MonoBehaviour
 
         while (elapsed < duration)
         {
-            float y = (1 - elapsed / duration) * magnitude * Time.deltaTime;
+            float y = (1 - elapsed / duration) * globalMagnitude * Time.deltaTime;
 
             rotation.addRotationX(-y);
 
