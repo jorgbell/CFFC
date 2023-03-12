@@ -60,7 +60,7 @@
 
                 // Set Barrel Distortion effect properties.
                 
-                if(RoundManager.instance) cmd.SetGlobalColor("_BackgroundColor", RoundManager.instance.getPlayer().getActualColor());
+                if(RoundManager.instance?.getPlayer()) cmd.SetGlobalColor("_BackgroundColor", RoundManager.instance.getPlayer().getActualColor());
                 else cmd.SetGlobalColor("_BackgroundColor", settings.backgroundColor.value);
                 cmd.SetGlobalFloat("_Strength", settings.strength.value);
 
