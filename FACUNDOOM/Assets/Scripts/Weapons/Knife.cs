@@ -6,7 +6,8 @@ public class Knife : Weapon
 {
     Collider col;
     Animator anim;
-    Transform initialTransform;
+    Vector3 initialPos;
+    Quaternion initialRot;
 
     private void Start()
     {
@@ -14,7 +15,8 @@ public class Knife : Weapon
         col.gameObject.SetActive(false);
         anim = GetComponent<Animator>();
         anim.keepAnimatorStateOnDisable = false;
-        initialTransform = transform;
+        initialPos = transform.localPosition;
+        initialRot = transform.localRotation;
     }
 
     public override void Attack()
@@ -31,8 +33,8 @@ public class Knife : Weapon
 
     private void OnDisable()
     {
-        transform.localPosition = initialTransform.localPosition;
-        transform.localRotation = initialTransform.localRotation;
+        transform.localPosition = initialPos;
+        transform.localRotation = initialRot;
         ResetAttackAnim();
         turnOffCollider();
     }

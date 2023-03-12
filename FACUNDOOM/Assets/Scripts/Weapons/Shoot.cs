@@ -25,7 +25,7 @@ public class Shoot : Weapon
     //private ScreenShake screenShake;
     [SerializeField]
     Quaternion startingRotation;
-    Transform initialTransform;
+    Vector3 startingPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class Shoot : Weapon
         //screenShake = camera.GetComponent<ScreenShake>();
 
         startingRotation = rotationAxis.localRotation;
-        initialTransform = transform;
+        startingPosition = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -95,8 +95,8 @@ public class Shoot : Weapon
     {
         onCooldown = false;
         StopAllCoroutines();
-        rotationAxis.localRotation = initialTransform.localRotation;
-        rotationAxis.localPosition = initialTransform.localPosition;
+        rotationAxis.localPosition = startingPosition;
+        rotationAxis.localRotation = startingRotation;
     }
 
     protected override void AttackAnim()
