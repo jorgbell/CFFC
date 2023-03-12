@@ -14,6 +14,9 @@ public class PlayerHealth : MonoBehaviour
     float m_timeUntilFullRecover = 3.0f;
 
     [SerializeField]
+    float m_invulnerabilityTime = 1.0f;
+
+    [SerializeField]
     AnimationCurve recoveryCurvel;
 
     [SerializeField] //TODO solo para poder ver desde el editor pq somos vagos somos perros
@@ -41,10 +44,11 @@ public class PlayerHealth : MonoBehaviour
     //recibe daño y devuelve true si el jugador sigue vivo
     public bool TakeDamage(int damage)
     {
-        if(m_currentHealth > 0)
+        if(m_currentHealth > 0 && TimeSinceLastDamage > m_invulnerabilityTime)
         {
             m_currentHealth -= damage;
             m_healthAtLastHit = m_currentHealth;
+            RoundManager.instance.ePlayerDied.Invoke();
             //Debug.Log("Hit left you at " + m_currentHealth);
         }
         m_lastTakenDamage = Time.time;

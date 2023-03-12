@@ -1952,13 +1952,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5597256493429953694}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bac5faacec3d5ec45965938ba6585179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Damage: 1
-  m_CooldownSeconds: 1
+  m_CooldownSeconds: 2
 --- !u!1 &5597256493444743669
 GameObject:
   m_ObjectHideFlags: 0

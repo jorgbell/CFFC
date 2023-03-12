@@ -110,6 +110,7 @@ public class RoundManager : MonoBehaviour
     {
         eWrongAnswer.AddListener(wrongAnswerRM);
         eEnemyDied.AddListener(scorePoints);
+        ePlayerDied.AddListener(endGame);
     }
 
     // Update is called once per frame
@@ -162,6 +163,11 @@ public class RoundManager : MonoBehaviour
             eMultiplier.Invoke(multipliers[actualMultiplier]);
             Debug.Log(multipliers[actualMultiplier].text);
         }
+    }
+
+    void endGame()
+    {
+        m_bGameStarted = false;
     }
 
     public int GetScore() { return score; }
