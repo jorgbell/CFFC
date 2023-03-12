@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 
 	float timeAlive = 0f;
 
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -57,18 +58,16 @@ public class Enemy : MonoBehaviour
 
 	public void SetColor(ColorType newColor)
 	{
- 		ColorType colorType = newColor;
+		Debug.Log("SETCOLOR");
 		if(colorSprites.Count < (int)ColorType.lastColor)
 		{
-			Debug.Log("Missing Sprites for Enemy");
+			Debug.LogError("Missing Sprites for Enemy");
 		}
 		else
 		{
-			ColorType prevType = GetColor();
 			colorSprites.ForEach(sprite => sprite.SetActive(false));
-            colorSprites[(int)prevType].SetActive(false);
             colorSprites[(int)newColor].SetActive(true);
-        }
+		}
 
 
 		//if (colorType == ColorType.red)

@@ -40,6 +40,7 @@ public class ColorComponent : MonoBehaviour
 	}
 	public void SetColor(ColorType color)
 	{
+		Debug.Log("COMPONENT SETCOLOR");
 		m_colorType = color;
 		m_eColorChanged?.Invoke(color);
 	}

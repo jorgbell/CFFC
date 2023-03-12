@@ -95,6 +95,7 @@ public class SpawnEnemies : MonoBehaviour
 		{
 			clone.SetActive(true);
 			clone.GetComponent<ColorComponent>().SetColor(enemy.GetColor());
+			clone.GetComponent<Enemy>().SetColor(enemy.GetColor());
 			clone.transform.position = enemy.transform.position - axis;
 			enemy.transform.position += axis;
 		}

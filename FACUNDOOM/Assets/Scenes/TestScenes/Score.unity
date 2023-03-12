@@ -335,10 +335,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2299825780141300682, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_colorType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2790789152665166982, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: explosionPrefab
       value: 
       objectReference: {fileID: 1466474951}
+    - target: {fileID: 3083902140570065321, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_colorType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3163204541062739057, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1062,7 +1070,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418340, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: amountToPool
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418341, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: amountToPool
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418342, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
       value: 30
       objectReference: {fileID: 0}
