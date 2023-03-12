@@ -46,6 +46,11 @@ public class Knife : Weapon
         col.gameObject.SetActive(false);
     }
 
+    void turnOnCollider()
+    {
+        col.gameObject.SetActive(true);
+    }
+
     protected override void AttackAnim()
     {
     }
