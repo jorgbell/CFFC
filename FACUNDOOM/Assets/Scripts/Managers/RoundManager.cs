@@ -158,9 +158,10 @@ public class RoundManager : MonoBehaviour
         streak++;
         if (streak > multipliers[actualMultiplier].killsToPass)
         {
-            AudioManager.instance.Play("SFX_ComboUp");
+            //AudioManager.instance.Play("SFX_ComboUp");
             actualMultiplier++;
             eMultiplier.Invoke(multipliers[actualMultiplier]);
+            AudioManager.instance.playStreak(actualMultiplier-1);
             Debug.Log(multipliers[actualMultiplier].text);
         }
     }

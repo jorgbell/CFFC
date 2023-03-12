@@ -171,3 +171,67 @@ MonoBehaviour:
     maxPitch: 1
     loop: 0
     source: {fileID: 0}
+  streakSounds:
+  - name: LEMON
+    clip: {fileID: 8300000, guid: e932ea8baebcafc46b09b84633ba7728, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WLYC
+    clip: {fileID: 8300000, guid: 8d6eb158be08a42429543149e00bd561, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MID
+    clip: {fileID: 8300000, guid: c36ebf9300dd1604babda060d413e81b, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CHILLIN
+    clip: {fileID: 8300000, guid: b4ad0fd54a6583c498d62ae24722f588, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BOMBASTIC
+    clip: {fileID: 8300000, guid: 7c54db4039dea8843bcc46dae730148c, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CRAZY
+    clip: {fileID: 8300000, guid: 8236b2536ef5e634597ac0d0044dab49, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GOD
+    clip: {fileID: 8300000, guid: 1dae353b2d7651e42b2d7842665031a0, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SCRUM
+    clip: {fileID: 8300000, guid: d6144ffd2f5cfde45a5c40ea9f47957a, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FACUNDOOM
+    clip: {fileID: 8300000, guid: 8ec8b6d42e3fe9c419ebddbf04c85069, type: 3}
+    volume: 1
+    minPitch: 1
+    maxPitch: 1
+    loop: 0
+    source: {fileID: 0}

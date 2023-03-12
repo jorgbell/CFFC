@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance { get; private set; }
 
     public Sound[] sounds;
+
+    public Sound[] streakSounds;
     private void Awake()
     {
         if (instance == null)
@@ -22,6 +24,15 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            s.source.pitch = s.minPitch;
+            s.source.volume = s.volume;
+            s.source.loop = s.loop;
+        }
+        foreach (Sound s in streakSounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -84,7 +95,17 @@ public class AudioManager : MonoBehaviour
             return;
 
         }
-        if(s.source.isPlaying)s.source.Stop();
+        if (s.source.isPlaying) s.source.Stop();
+    }
+
+    public void playStreak(int index)
+    {
+        if (index > 0)
+        {
+            if (streakSounds[index - 1].source.isPlaying)
+                streakSounds[index - 1].source.Stop();
+        }
+        streakSounds[index].source.Play();
     }
 }
 
@@ -108,3 +129,5 @@ public class Sound
     [HideInInspector]
     public AudioSource source;
 }
+
+
