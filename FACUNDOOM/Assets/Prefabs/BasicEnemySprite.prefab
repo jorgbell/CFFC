@@ -4880,11 +4880,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  dashDistance: 3
+  dashRange: 2
   dashForce: 9
   animationSpeed: 0.5
   waitTime: 1
   restTime: 1
+  dashDistance: 3
 --- !u!1 &8519165301667803240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,7 +5188,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
