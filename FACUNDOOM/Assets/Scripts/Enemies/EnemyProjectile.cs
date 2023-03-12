@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
+    float lifeTime = 5f;
+    float actualTime = 0;
     void Start()
     {
         //Get Player position del game manager y settea tu direccion para alla
@@ -20,5 +23,12 @@ public class EnemyProjectile : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+    }
+
+    private void Update()
+    {
+        actualTime += Time.deltaTime;
+        if (actualTime >= lifeTime)
+            gameObject.SetActive(false);
     }
 }
