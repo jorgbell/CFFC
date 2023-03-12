@@ -81,6 +81,7 @@ public class Shoot : Weapon
             //screenShake.Shake(0.0f, 0.1f);
             recoil.PushUpwards(recoilMagnitude, recoilDuration);
             //particleSystem.Play();
+            AudioManager.instance.Play("SFX_Shot");
             castShot();
             StopAllCoroutines();
             onCooldown = true;

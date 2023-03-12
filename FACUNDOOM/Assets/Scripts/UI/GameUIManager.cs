@@ -200,4 +200,18 @@ public class GameUIManager : MonoBehaviour
 			_roundManager.getPlayer().GetComponent<PlayerRotation>().ySensitivity = SensYSldr.value;
 		}
 	}
+
+	bool hoverButton = false;
+	public void enterHoverButton()
+	{
+		if (!hoverButton)
+		{
+			AudioManager.instance.Play("SFX_moveButton");
+			hoverButton = true;
+        } 
+	}
+    public void exitHoverButton()
+    {
+        hoverButton = false;
+    }
 }
