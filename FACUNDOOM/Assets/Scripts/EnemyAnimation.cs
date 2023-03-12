@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyAnimation : MonoBehaviour
 {
     // Start is called before the first frame update
-    List<StackedSpriteEffect> frames;
+    public List<StackedSpriteEffect> frames;
 
-    int currentFrame = 0;
+    public int currentFrame = 0;
 
     private void Start()
     {
@@ -16,11 +16,19 @@ public class EnemyAnimation : MonoBehaviour
         {
             frames.Add(sprite);
         }
+        for (int i = 1; i < frames.Count; i++) frames[i].gameObject.SetActive(false);
     }
     public void NextFrame()
     {
         frames[currentFrame].gameObject.SetActive(false);
         currentFrame = (currentFrame + 1) % frames.Count;
+        frames[currentFrame].gameObject.SetActive(true);
+    }
+
+    public void SetStartFrame()
+    {
+        frames[currentFrame].gameObject.SetActive(false);
+        currentFrame = 0;
         frames[currentFrame].gameObject.SetActive(true);
     }
 }

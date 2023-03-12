@@ -11,7 +11,7 @@ public class MoveCloseAndAttack : MonoBehaviour
     public float moveSpeed = 2;
 
     [SerializeField]
-    public float dashDistance = 2;
+    public float dashRange = 2;
 
     [SerializeField]
     public float dashForce = 4;
@@ -19,7 +19,7 @@ public class MoveCloseAndAttack : MonoBehaviour
     public float animationSpeed = 0.5f;
 
     [SerializeField]
-    public float waitTime = 0.5f, restTime = 1.0f;
+    public float waitTime = 0.5f, restTime = 1.0f, dashDistance = 3.0f;
 
 
     Transform player;
@@ -28,6 +28,8 @@ public class MoveCloseAndAttack : MonoBehaviour
     float prepareStartTime = 0;
     float restStartTime = 0;
     float animationChangeTime = 0;
+    Vector3 dashStartPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +54,11 @@ public class MoveCloseAndAttack : MonoBehaviour
                     GetComponent<Enemy>().ChangeAnimation();
                 }
 
-                if (toPlayer.magnitude < dashDistance)
+                if (toPlayer.magnitude < dashRange)
                 {
                     rb.velocity = Vector3.zero;
                     currentState = State.PREPARING;
+                    GetComponent<Enemy>().ResetAnimation();
                     prepareStartTime = Time.time;
                 }
                 break;
@@ -63,7 +66,7 @@ public class MoveCloseAndAttack : MonoBehaviour
                 if (Time.time > prepareStartTime + waitTime)
                 {
                     Vector3 dash = toPlayer.normalized;
-                    rb.AddForce(dash * dashForce, ForceMode.Impulse);
+                    rb.velocity = dash * dashForce;
                     currentState = State.DASHING;
                     GetComponent<DamageOnCollision>().Activate();
                     GetComponent<Enemy>().ChangeAnimation();
@@ -71,11 +74,7 @@ public class MoveCloseAndAttack : MonoBehaviour
                 }
                 break;
             case (State.DASHING):
-                float floorDistance = 0;
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, Vector3.down, out hit)) floorDistance = Mathf.Abs(hit.point.y - transform.position.y);
-                //Si vamos a cambiar de boxcollider a otra cosa hay que cambiar esto
-                if (floorDistance < GetComponent<BoxCollider>().size.y / 2 + 0.1 && rb.velocity.y <= 0)
+                if ((dashStartPos - transform.position).magnitude > dashDistance)
                 {
                     currentState = State.RESTING;
                     GetComponent<DamageOnCollision>().Deactivate();

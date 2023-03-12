@@ -130,5 +130,10 @@ public class Enemy : MonoBehaviour
 		colorSprites[(int)GetColor()].GetComponentInChildren<EnemyAnimation>()?.NextFrame();
     }
 
+	public void ResetAnimation()
+    {
+		colorSprites[(int)GetColor()].GetComponentInChildren<EnemyAnimation>()?.SetStartFrame();
+	}
+
 	public float GetTimeAlive() { return timeAlive; }
 }

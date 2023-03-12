@@ -802,7 +802,11 @@ MonoBehaviour:
   eMultiplier:
     m_PersistentCalls:
       m_Calls: []
+  eRandomizeColorsCountdown:
+    m_PersistentCalls:
+      m_Calls: []
   m_player: {fileID: 719310923}
+  timeBetweenChanges: 5
   actualMultiplier: 0
   pointsPerDeath: 50
   pointsPerDuplicate: 50
