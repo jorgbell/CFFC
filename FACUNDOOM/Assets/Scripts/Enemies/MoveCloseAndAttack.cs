@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RushAndJump : MonoBehaviour
+public class MoveCloseAndAttack : MonoBehaviour
 {
-    private enum State { RUNNING, PREPARING, JUMPING, RESTING }
+    private enum State { RUNNING, PREPARING, DASHING, RESTING }
     State currentState = State.RUNNING;
 
     [Range(0, 10)]
-    public float moveSpeed = 4;
+    public float moveSpeed = 2;
 
     [SerializeField]
-    public float jumpDistance = 4;
+    public float dashDistance = 2;
 
     [SerializeField]
-    public float jumpForce = 8;
+    public float dashForce = 4;
 
-    [Range(0, 1)]
-    public float jumpAngle = 0.6f;
+
 
     [SerializeField]
-    public float waitTime = 0.5f, restTime = 0.5f;
+    public float waitTime = 0.5f, restTime = 1.0f;
 
 
     Transform player;
@@ -44,7 +43,7 @@ public class RushAndJump : MonoBehaviour
         {
             case (State.RUNNING):
                 Run();
-                if (toPlayer.magnitude < jumpDistance)
+                if (toPlayer.magnitude < dashDistance)
                 {
                     rb.velocity = Vector3.zero;
                     currentState = State.PREPARING;
@@ -54,15 +53,14 @@ public class RushAndJump : MonoBehaviour
             case (State.PREPARING):
                 if (Time.time > prepareStartTime + waitTime)
                 {
-                    Vector3 jump = toPlayer.normalized;
-                    jump.y = jumpAngle;
-                    rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-                    currentState = State.JUMPING;
+                    Vector3 dash = toPlayer.normalized;
+                    rb.AddForce(dash * dashForce, ForceMode.Impulse);
+                    currentState = State.DASHING;
                     GetComponent<DamageOnCollision>().Activate();
                     //Cambia de sprite
                 }
                 break;
-            case (State.JUMPING):
+            case (State.DASHING):
                 float floorDistance = 0;
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit)) floorDistance = Mathf.Abs(hit.point.y - transform.position.y);
