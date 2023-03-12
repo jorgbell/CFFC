@@ -5,6 +5,8 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ExplosionCollision : MonoBehaviour
 {
+    [SerializeField] bool checking = true;
+
     protected ColorComponent m_colorComponent = null;
 
     ParticleSystem ps;
@@ -16,11 +18,8 @@ public class ExplosionCollision : MonoBehaviour
     {
         ps = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
-    }
-
-    private void OnParticleSystemStopped()
-    {
-        collidedRBs = new List<Rigidbody>();
+        RoundManager.instance.eBombShot.AddListener(disableChecking);
+        RoundManager.instance.eBombShot.AddListener(clearRBList);
     }
 
     void OnParticleCollision(GameObject other)
@@ -31,7 +30,7 @@ public class ExplosionCollision : MonoBehaviour
 
         int i = 0;
 
-        while (i < numCollisionEvents)
+        while (i < numCollisionEvents && checking)
         {
             if(i > 2) 
             {
@@ -66,4 +65,9 @@ public class ExplosionCollision : MonoBehaviour
     }
 
     public void setColor(ColorComponent c) { m_colorComponent = c; }
+
+    void clearRBList() { collidedRBs = new List<Rigidbody>(); }
+
+    public void disableChecking() { checking = false; }
+    public void enableChecking() { checking = true; }
 }

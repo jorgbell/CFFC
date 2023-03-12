@@ -34,6 +34,8 @@ public class Bomb : Weapon
 
         if (!onCooldown) 
         {
+            RoundManager.instance.eBombShot.Invoke();
+
             //var main = GetComponentInChildren<ParticleSystem>().main;
             GetComponentInChildren<ParticleSystem>().Stop();
             GetComponentInChildren<ParticleSystem>().Clear();

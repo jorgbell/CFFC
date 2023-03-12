@@ -22,6 +22,8 @@ public class BombProjectileBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        explosionObject.GetComponentInChildren<ExplosionCollision>().enableChecking();
+
         explosionObject.transform.position = transform.position;
         explosionSystem.Clear();
         explosionSystem.Play();

@@ -26,6 +26,7 @@ public class RoundManager : MonoBehaviour
 	public UnityEvent<Vector3> eMissedAttack;
 	public UnityEvent eRandomizeColors;
 	public UnityEvent ePlayerDied;
+	public UnityEvent eBombShot;
 	public UnityEvent eBombExploded;
     public UnityEvent<Multiplier> eMultiplier;
 
@@ -80,6 +81,10 @@ public class RoundManager : MonoBehaviour
             {
                 ePlayerDied = new UnityEvent();
             }
+            if (eBombShot == null)
+			{
+                eBombShot = new UnityEvent();
+            }   
             if (eBombExploded == null)
 			{
 				eBombExploded = new UnityEvent();
