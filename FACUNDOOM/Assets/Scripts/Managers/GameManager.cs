@@ -45,6 +45,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+	private void OnEnable()
+	{
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
 	public void SendCommand(string command)
     {
         if (command == "Start")
@@ -86,7 +91,14 @@ public class GameManager : MonoBehaviour
         if(scene.name == "GameScene")
 		{
             m_roundManager.StartRound();
-		}
+		}else if(scene.name == "GameOverScene")
+		{
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (scene.name == "MainMenuScene")
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     public RoundManager GetRoundManager()
