@@ -21,9 +21,9 @@ public class FacUFOMovement : MonoBehaviour
 	{
 		CurrentPos = transform.position;
 		Vector3 newPos = new Vector3(
-			BaseRadius * Mathf.Sin(Time.time) + RadiusVariance * Mathf.Sin(Time.time*4.1f)
+			BaseRadius * Mathf.Sin(Time.time) + RadiusVariance * Mathf.Sin(Time.time*2.1f)
 			, baseHeight + HeightVariance * Mathf.Sin(Time.time * 0.5f)
-			, BaseRadius * Mathf.Cos(Time.time) + RadiusVariance * Mathf.Cos(Time.time*2.3f)); ;
+			, BaseRadius * Mathf.Cos(Time.time) + RadiusVariance * Mathf.Cos(Time.time*1.6f)); ;
 
 		Vector3 look = newPos - CurrentPos;
 
