@@ -6,7 +6,6 @@ public class Knife : Weapon
 {
     Collider col;
     Animator anim;
-
     Transform initialTransform;
 
     private void Start()
@@ -22,6 +21,7 @@ public class Knife : Weapon
     {
         if (!onCooldown)
         {
+            Debug.Log("navajazo");
             onCooldown = true;
             col.gameObject.SetActive(true);
             anim.SetTrigger("attack");
@@ -35,6 +35,11 @@ public class Knife : Weapon
         ResetAttackAnim();
         turnOffCollider();
     }
+    //private void OnEnable()
+    //{
+    //    ResetAttackAnim();
+    //    turnOffCollider();
+    //}
 
     void turnOffCollider()
     {
