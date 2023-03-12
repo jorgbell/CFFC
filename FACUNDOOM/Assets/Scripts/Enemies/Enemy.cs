@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
 	[SerializeField]
 	List<GameObject> colorSprites = new List<GameObject>();
 
+	float timeAlive = 0f;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -29,7 +31,12 @@ public class Enemy : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		timeAlive += Time.deltaTime;
+	}
 
+	void OnEnable()
+	{
+		timeAlive = 0f;
 	}
 
 	//public void ChangeColor()
@@ -120,4 +127,5 @@ public class Enemy : MonoBehaviour
         gameObject.SetActive(false);
 	}
 
+	public float GetTimeAlive() { return timeAlive; }
 }

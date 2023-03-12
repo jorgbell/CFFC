@@ -39,7 +39,7 @@ public class ExplosionCollision : MonoBehaviour
 
             if (rb)
             {
-                if (rb.TryGetComponent<Enemy>(out Enemy targetEnemy))
+                if (rb.TryGetComponent<Enemy>(out Enemy targetEnemy) && targetEnemy.GetTimeAlive() > 0.3f)
                 {
                     bool alreadyCollided = false;
 
