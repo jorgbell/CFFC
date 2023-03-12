@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: sounds.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: streakSounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+      propertyPath: sounds.Array.data[17].name
+      value: SFX_LEMON
+      objectReference: {fileID: 0}
     - target: {fileID: 2463553535119980480, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1339,6 +1351,18 @@ PrefabInstance:
     - target: {fileID: 7179240873008418336, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418340, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: amountToPool
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418341, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: amountToPool
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418343, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: amountToPool
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
