@@ -20,6 +20,8 @@ public class EnemyAnimation : MonoBehaviour
     }
     public void NextFrame()
     {
+        if (currentFrame < 0) currentFrame = 0;
+        if (currentFrame > 1) currentFrame = 1;
         frames[currentFrame].gameObject.SetActive(false);
         currentFrame = (currentFrame + 1) % frames.Count;
         frames[currentFrame].gameObject.SetActive(true);
