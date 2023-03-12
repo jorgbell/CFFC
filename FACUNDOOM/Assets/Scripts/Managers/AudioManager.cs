@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
 
-            s.source.pitch = s.pitch;
+            s.source.pitch = s.minPitch;
             s.source.volume = s.volume;
             s.source.loop = s.loop;
         }
@@ -53,9 +53,13 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
-            Debug.LogWarning("NO SE ENCUENTRA EL AUDIO: " +name);
+            Debug.LogWarning("NO SE ENCUENTRA EL AUDIO: " + name);
             return;
 
+        }
+        if (s.minPitch != s.maxPitch)
+        {
+            s.source.pitch = UnityEngine.Random.Range(s.minPitch, s.maxPitch);
         }
         s.source.Play();
     }
@@ -82,9 +86,13 @@ public class Sound
     [Range(0f, 1f)]
     public float volume = 1.0f;
     [Range(1f, 3f)]
-    public float pitch = 1.0f;
+    public float minPitch = 1.0f;
+    [Range(1f, 3f)]
+    public float maxPitch = 1.0f;
 
     public bool loop;
+
+
 
     [HideInInspector]
     public AudioSource source;
