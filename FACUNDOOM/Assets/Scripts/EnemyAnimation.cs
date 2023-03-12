@@ -30,8 +30,11 @@ public class EnemyAnimation : MonoBehaviour
 
     public void SetStartFrame()
     {
-        frames[currentFrame].gameObject.SetActive(false);
-        currentFrame = 0;
-        frames[currentFrame].gameObject.SetActive(true);
+        if (frames.Count > 0)
+        {
+            frames[currentFrame].gameObject.SetActive(false);
+            currentFrame = 0;
+            frames[currentFrame].gameObject.SetActive(true);
+        }
     }
 }
