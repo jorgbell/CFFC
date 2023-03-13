@@ -349,6 +349,14 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 2057491456}
+    - target: {fileID: 3163204541062739060, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: xSensitivity
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163204541062739060, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: ySensitivity
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3163204541062739061, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: jumpForce
       value: 9
@@ -583,6 +591,22 @@ PrefabInstance:
     - target: {fileID: 757748138115427617, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893757237552936061, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Value
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893757237552936061, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_MaxValue
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447357866170664329, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Value
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447357866170664329, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_MaxValue
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3480419589179345026, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchoredPosition.y
