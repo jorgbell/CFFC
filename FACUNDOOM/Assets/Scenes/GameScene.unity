@@ -616,6 +616,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -253.59998
       objectReference: {fileID: 0}
+    - target: {fileID: 5191496010252392741, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5191496010252392743, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -640,9 +644,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5191496010556821139, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5191496010807054042, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496010807054043, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496010880194098, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5191496010880194100, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchorMax.y
@@ -665,12 +681,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191496010925927925, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -17.060045
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496010925927925, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496010925927925, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496010925927925, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5.630005
+      value: 8.529968
       objectReference: {fileID: 0}
     - target: {fileID: 5191496010939581752, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496010939581753, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5191496011126390883, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -779,6 +811,10 @@ PrefabInstance:
     - target: {fileID: 5191496011695509441, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191496011896679548, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5191496011896679550, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1007,7 +1043,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_player: {fileID: 719310923}
-  timeBetweenChanges: 5
+  timeBetweenChanges: 10
   actualMultiplier: 0
   pointsPerDeath: 50
   pointsPerDuplicate: 50
@@ -1400,21 +1436,25 @@ PrefabInstance:
       propertyPath: summonFrequency
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7179240873008418339, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
+      propertyPath: maxDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418340, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
       value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418341, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418342, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418343, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
