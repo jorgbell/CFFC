@@ -1133,7 +1133,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_player: {fileID: 719310923}
-  timeBetweenChanges: 5
+  timeBetweenChanges: 10
   actualMultiplier: 0
   pointsPerDeath: 50
   pointsPerDuplicate: 50
