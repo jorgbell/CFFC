@@ -1,8 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+
+public struct Score
+{
+    public string name;
+    public int score;
+    public Score(string n, int s) { name = n; score = s; }
+    public static bool operator <(Score s1, Score s2) 
+    {
+        bool sol;
+        if (s1.score < s2.score) sol =  true;
+        else sol= false;
+        return sol;
+    }
+    public static bool operator >(Score s1, Score s2)
+    {
+        return s1 < s2;
+    }
+    public static bool operator ==(Score s1, Score s2)
+    {
+        return s1.score == s2.score;
+    }
+    public static bool operator !=(Score s1, Score s2)
+    {
+        return s1 != s2;
+    }
+    public static bool operator >=(Score s1, Score s2)
+    {
+        return s1 > s2 || s1==s2;
+    }
+    public static bool operator <=(Score s1, Score s2)
+    {
+        return s1 < s2 || s1 == s2;
+    }
+
+}
+
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +53,14 @@ public class GameManager : MonoBehaviour
 
     int m_playerPoints = 3;
 
-    public bool IsGameRunning() { return GameRunning; }
+    public List<Score> scoreboard = new List<Score>();
+    public bool IsGameRunning()
+    { return GameRunning; }
     public void PauseUnpause()
-	{
+    {
         GameRunning = !GameRunning;
         Time.timeScale = (GameRunning) ? 1f : 0f;
-	}
+    }
 
     private void Awake()
     {
@@ -45,12 +86,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-	private void OnEnable()
-	{
+    private void OnEnable()
+    {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-	public void SendCommand(string command)
+    public void SendCommand(string command)
     {
         if (command == "Start")
         {
@@ -63,10 +104,11 @@ public class GameManager : MonoBehaviour
         else if (command == "Play")
         {
             StartCoroutine(LoadSceneAsync("GameScene"));
-        }else if(command == "EndRound")
-		{
+        }
+        else if (command == "EndRound")
+        {
             StartCoroutine(LoadSceneAsync("GameOverScene"));
-		}
+        }
         else if (command == "Exit")
         {
             Debug.Log("Saliendo del juego");
@@ -88,17 +130,18 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "GameScene")
-		{
+        if (scene.name == "GameScene")
+        {
             AudioManager.instance.Stop("BGM_MainMenu");
             AudioManager.instance.Stop("BGM_GameOver");
-            string actualBGM = "BGM_Game" + Random.Range(1, 3).ToString();
+            string actualBGM = "BGM_Game" + UnityEngine.Random.Range(1, 3).ToString();
             AudioManager.instance.Play(actualBGM);
 
             AudioManager.instance.AddListeners();
             m_roundManager.StartRound();
-		}else if(scene.name == "GameOverScene")
-		{
+        }
+        else if (scene.name == "GameOverScene")
+        {
             AudioManager.instance.Stop("BGM_Game1");
             AudioManager.instance.Stop("BGM_Game2");
             AudioManager.instance.Play("BGM_GameOver");
@@ -115,18 +158,20 @@ public class GameManager : MonoBehaviour
     }
 
     public RoundManager GetRoundManager()
-	{
+    {
         return m_roundManager;
-	}
+    }
 
     public int GetPlayerScore()
-	{
+    {
         return m_playerPoints;
-	}
+    }
 
     public void SetPlayerScore(int score)
-	{
+    {
         m_playerPoints = score;
-	}
+    }
+
+    public void addScore(Score s) { scoreboard.Add(s); }
 
 }
