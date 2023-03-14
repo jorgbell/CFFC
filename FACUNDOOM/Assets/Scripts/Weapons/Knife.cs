@@ -8,6 +8,7 @@ public class Knife : Weapon
     Animator anim;
     Vector3 initialPos;
     Quaternion initialRot;
+    AnimatorClipInfo clipInfo;
 
     private void Start()
     {
@@ -17,6 +18,12 @@ public class Knife : Weapon
         anim.keepAnimatorStateOnDisable = false;
         initialPos = transform.localPosition;
         initialRot = transform.localRotation;
+    }
+
+    private void Update()
+    {
+        Debug.Log(anim.speed);
+        anim.speed = 0.9f / coolDown;
     }
 
     public override void Attack()
@@ -38,11 +45,6 @@ public class Knife : Weapon
         ResetAttackAnim();
         turnOffCollider();
     }
-    //private void OnEnable()
-    //{
-    //    ResetAttackAnim();
-    //    turnOffCollider();
-    //}
 
     void turnOffCollider()
     {
