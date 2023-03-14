@@ -5,7 +5,16 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
+
+public struct Settings 
+{
+    public float volume;
+    public float fov;
+    public float xSensitivity;
+    public float ySensitivity;
+}
 
 public struct Score
 {
@@ -51,9 +60,18 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     RoundManager m_roundManager;
 
+    Settings m_settings = new Settings();
+
     int m_playerPoints = 3;
 
     public List<Score> scoreboard = new List<Score>();
+
+    public UnityEvent<Settings> eSetSettings;
+    public UnityEvent<float> eVolumeChanged;
+    public UnityEvent<float> eFovChanged;
+    public UnityEvent<float> eXSensitivityChanged;
+    public UnityEvent<float> eYSensitivityChanged;
+
     public bool IsGameRunning()
     { return GameRunning; }
     public void PauseUnpause()
@@ -79,7 +97,11 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-    }
+        eVolumeChanged.AddListener(SetVol);
+        eFovChanged.AddListener(SetFOV);
+        eXSensitivityChanged.AddListener(SetSensX);
+        eYSensitivityChanged.AddListener(SetSensY);
+    }   
 
     private void Update()
     {
@@ -139,6 +161,7 @@ public class GameManager : MonoBehaviour
 
             AudioManager.instance.AddListeners();
             m_roundManager.StartRound();
+            Invoke("SendSettingsMessage", 0.005f);
         }
         else if (scene.name == "GameOverScene")
         {
@@ -157,6 +180,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SendSettingsMessage() { eSetSettings.Invoke(m_settings); }
+
     public RoundManager GetRoundManager()
     {
         return m_roundManager;
@@ -171,6 +196,14 @@ public class GameManager : MonoBehaviour
     {
         m_playerPoints = score;
     }
+
+    public void SetFOV(float fov) { m_settings.fov = fov; }
+
+    public void SetVol(float Vol) { m_settings.volume = Vol; }
+
+    public void SetSensX(float xSens) { m_settings.xSensitivity = xSens; }
+
+    public void SetSensY(float ySens) { m_settings.ySensitivity = ySens; }
 
     public void addScore(Score s) { scoreboard.Add(s); }
 

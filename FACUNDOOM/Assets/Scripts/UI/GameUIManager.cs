@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -70,6 +71,7 @@ public class GameUIManager : MonoBehaviour
 	Vector2 SelectedMinAnchors = new(0.05f, 0.0f);
 	Vector2 DefaultMaxAnchors = new(0.9f, 1.0f);
 	Vector2 SelectedMaxAnchors = new(0.95f, 1.0f);
+
 	void Start()
 	{
 		_roundManager = RoundManager.instance;
@@ -80,6 +82,7 @@ public class GameUIManager : MonoBehaviour
 			_roundManager.ePlayerDied.AddListener(PlayDeath);
 			_roundManager.eMultiplier.AddListener(PlayStreakText);
 			_roundManager.eRandomizeColorsCountdown.AddListener(StartCountdown);
+			GameManager._instance.eSetSettings.AddListener(SetAllSettings);
 		}
 
 		currentGlow = GunGlow;
@@ -148,7 +151,7 @@ public class GameUIManager : MonoBehaviour
 		Debug.Log("Playing death anim");
 		anims["LoseOverlayFadein"].wrapMode = WrapMode.Once;
 		anims.Play("LoseOverlayFadein");
-		Invoke("GoToGameOver", 3.5f);
+		Invoke("GoToGameOver", 2.5f);
 	}
 
 	void PlayStreakText(Multiplier multiplier)
@@ -192,11 +195,13 @@ public class GameUIManager : MonoBehaviour
 	public void SetFOV()
 	{
 		CurCam.fieldOfView = FOVSldr.value;
+		GameManager._instance.eFovChanged.Invoke(FOVSldr.value);
 	}
 
 	public void SetVol()
 	{
 		AudioListener.volume = VolumeSldr.value;
+		GameManager._instance.eVolumeChanged.Invoke(VolumeSldr.value);
 	}
 
 	public void SetSens()
@@ -205,9 +210,18 @@ public class GameUIManager : MonoBehaviour
 		{
 			_roundManager.getPlayer().GetComponent<PlayerRotation>().xSensitivity = SensXSldr.value;
 			_roundManager.getPlayer().GetComponent<PlayerRotation>().ySensitivity = SensYSldr.value;
+			GameManager._instance.eXSensitivityChanged.Invoke(SensXSldr.value);
+			GameManager._instance.eYSensitivityChanged.Invoke(SensYSldr.value);
 		}
 	}
 
+	public void SetAllSettings(Settings s) 
+	{
+		if (s.volume > 0) VolumeSldr.value = s.volume;
+		if (s.fov > 0) FOVSldr.value = s.fov;
+		if (s.xSensitivity > 0) SensXSldr.value = s.xSensitivity;
+		if (s.ySensitivity > 0) SensYSldr.value = s.ySensitivity;
+	}
 
 
 	void StartCountdown()
