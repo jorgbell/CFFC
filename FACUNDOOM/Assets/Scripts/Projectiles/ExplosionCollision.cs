@@ -13,6 +13,8 @@ public class ExplosionCollision : MonoBehaviour
     public List<ParticleCollisionEvent> collisionEvents;
     List<Rigidbody> collidedRBs = new List<Rigidbody>();
 
+    float timeChecking = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,20 @@ public class ExplosionCollision : MonoBehaviour
         collisionEvents = new List<ParticleCollisionEvent>();
         RoundManager.instance.eBombShot.AddListener(disableChecking);
         RoundManager.instance.eBombShot.AddListener(clearRBList);
+    }
+
+    private void Update()
+    {
+        if (checking)
+        {
+            timeChecking += Time.deltaTime;
+            if (timeChecking > 0.2f)
+            {
+                disableChecking();
+                clearRBList();
+            }
+        }
+        else timeChecking = 0;
     }
 
     void OnParticleCollision(GameObject other)
@@ -39,7 +55,7 @@ public class ExplosionCollision : MonoBehaviour
 
             if (rb)
             {
-                if (rb.TryGetComponent<Enemy>(out Enemy targetEnemy) && targetEnemy.GetTimeAlive() > 0.3f)
+                if (rb.TryGetComponent<Enemy>(out Enemy targetEnemy) && targetEnemy.GetTimeAlive() > 0.2f)
                 {
                     bool alreadyCollided = false;
 
