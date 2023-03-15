@@ -32,6 +32,8 @@ public class RoundManager : MonoBehaviour
 
     [SerializeField]
     PlayerController m_player;
+    [SerializeField]
+    public Camera CurCam;
 
     [SerializeField]
     float timeBetweenChanges = 5.0f;
@@ -110,8 +112,19 @@ public class RoundManager : MonoBehaviour
         eWrongAnswer.AddListener(wrongAnswerRM);
         eEnemyDied.AddListener(scorePoints);
         ePlayerDied.AddListener(endGame);
-    }
+        GameManager._instance.eSetSettings.AddListener(SetSettings);
+        GameManager._instance.ebackToMainMenu.AddListener(ShowMain);
+        SetSettings(GameManager._instance.m_settings); //inicializa segun lo guardado en gamemanager
 
+    }
+    void SetSettings(Settings s)
+    {
+        AudioListener.volume = s.volume;
+        getPlayer().GetComponent<PlayerRotation>().xSensitivity = s.xSensitivity;
+        getPlayer().GetComponent<PlayerRotation>().ySensitivity = s.ySensitivity;
+        CurCam.fieldOfView = s.fov;
+    }
+    void ShowMain() { GameManager._instance.SendCommand("Menu"); }
     // Update is called once per frame
     void Update()
     {

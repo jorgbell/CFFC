@@ -94,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.25
+  m_fontSize: 26.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -602,8 +602,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5191496011695507518}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 1752441087101166440}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: SetVol
         m_Mode: 1
         m_Arguments:
@@ -705,8 +705,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5191496011695507518}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 1752441087101166440}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: SetFOV
         m_Mode: 1
         m_Arguments:
@@ -808,8 +808,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5191496011695507518}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 1752441087101166440}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: SetSens
         m_Mode: 1
         m_Arguments:
@@ -943,8 +943,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5191496011695507518}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 1752441087101166440}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -2162,8 +2162,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5191496011695507518}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 1752441087101166440}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: SetSens
         m_Mode: 1
         m_Arguments:
@@ -3600,14 +3600,9 @@ MonoBehaviour:
   streakText: {fileID: 403328170600397443}
   scoreText: {fileID: 2761281394072128453}
   countdownText: {fileID: 4660557767768996625}
-  PauseOverlay: {fileID: 7621361155235622140}
-  SensXSldr: {fileID: 3447357866170664329}
-  SensYSldr: {fileID: 1893757237552936061}
-  VolumeSldr: {fileID: 1473554491534804900}
-  FOVSldr: {fileID: 2035195861818024778}
+  options: {fileID: 1752441087101166440}
   VignetteOverlay: {fileID: 7618631345837788516}
   maxVignetteOpacity: 1
-  CurCam: {fileID: 0}
 --- !u!111 &6731782564943589558
 Animation:
   m_ObjectHideFlags: 0
@@ -5131,6 +5126,7 @@ GameObject:
   - component: {fileID: 3595729463800770665}
   - component: {fileID: 4275566472593549015}
   - component: {fileID: 5307120606424206391}
+  - component: {fileID: 1752441087101166440}
   m_Layer: 5
   m_Name: PauseOverlay
   m_TagString: Untagged
@@ -5198,6 +5194,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1752441087101166440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7621361155235622140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91aebd1ededeaee4cbfe4a323d9118ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SensXSldr: {fileID: 3447357866170664329}
+  SensYSldr: {fileID: 1893757237552936061}
+  VolumeSldr: {fileID: 1473554491534804900}
+  FOVSldr: {fileID: 2035195861818024778}
 --- !u!1 &7906172087681729287
 GameObject:
   m_ObjectHideFlags: 0
@@ -5534,7 +5546,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5191496011695507518}
         m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: TogglePause
+        m_MethodName: returnToGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

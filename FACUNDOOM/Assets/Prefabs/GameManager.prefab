@@ -44,3 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7148481faf0c7d47922b78a23364af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_roundManager: {fileID: 0}
+  m_settings:
+    volume: 1
+    fov: 60
+    xSensitivity: 600
+    ySensitivity: 200
+  eSetSettings:
+    m_PersistentCalls:
+      m_Calls: []

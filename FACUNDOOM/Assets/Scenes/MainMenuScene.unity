@@ -495,8 +495,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 336123774}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: SetFOV
         m_Mode: 1
         m_Arguments:
@@ -598,8 +598,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 336123774}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: SetVol
         m_Mode: 1
         m_Arguments:
@@ -1386,6 +1386,7 @@ GameObject:
   - component: {fileID: 336123771}
   - component: {fileID: 336123773}
   - component: {fileID: 336123772}
+  - component: {fileID: 336123774}
   m_Layer: 5
   m_Name: PauseOverlay
   m_TagString: Untagged
@@ -1453,6 +1454,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336123770}
   m_CullTransparentMesh: 1
+--- !u!114 &336123774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336123770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91aebd1ededeaee4cbfe4a323d9118ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SensXSldr: {fileID: 644271696}
+  SensYSldr: {fileID: 1540535118}
+  VolumeSldr: {fileID: 160420699}
+  FOVSldr: {fileID: 144415011}
 --- !u!1 &417094244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,6 +1861,7 @@ MonoBehaviour:
   mainScreen: {fileID: 1976670868}
   creditsScreen: {fileID: 1777519050}
   scoreScreen: {fileID: 1280490731}
+  optionsScreen: {fileID: 336123770}
   prefab: {fileID: 1213039991}
   contentSlider: {fileID: 312253481}
 --- !u!114 &479988803
@@ -2481,8 +2499,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 336123774}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: SetSens
         m_Mode: 1
         m_Arguments:
@@ -2714,7 +2732,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.85
+  m_fontSize: 47.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2986,7 +3004,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.85
+  m_fontSize: 47.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3370,7 +3388,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.85
+  m_fontSize: 47.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4910,7 +4928,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 479988802}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ShowScore
+        m_MethodName: ShowOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5195,7 +5213,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.85
+  m_fontSize: 47.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5642,8 +5660,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 336123774}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: SetSens
         m_Mode: 1
         m_Arguments:
@@ -5815,7 +5833,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.85
+  m_fontSize: 47.55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7041,7 +7059,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 479988803}
           m_TargetAssemblyTypeName: HoverButton, Assembly-CSharp
           m_MethodName: enterHoverButton
           m_Mode: 1
@@ -7057,7 +7075,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 479988803}
           m_TargetAssemblyTypeName: HoverButton, Assembly-CSharp
           m_MethodName: exitHoverButton
           m_Mode: 1
@@ -7113,8 +7131,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 336123774}
+        m_TargetAssemblyTypeName: OptionsBehaviour, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:

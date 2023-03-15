@@ -571,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 757748138115427617, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1534878986}
     - target: {fileID: 757748138115427617, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -615,6 +615,10 @@ PrefabInstance:
     - target: {fileID: 4885840015717900699, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -253.59998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011963979609707714, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -61.039993
       objectReference: {fileID: 0}
     - target: {fileID: 5191496010252392741, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_Color.a
@@ -847,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 7655456159956255078, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1534878986}
     - target: {fileID: 7655456159956255078, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -870,6 +874,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 889233685ed37df4b9eb4fcd6bab33fd, type: 3}
+--- !u!114 &1534878986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1723960827946810154, guid: a3b3ee4aab54f3c4bbe22aba07184837, type: 3}
+  m_PrefabInstance: {fileID: 137661032}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d650460bcee892845b44db0b7deb6318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1560958450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1058,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_player: {fileID: 719310923}
+  CurCam: {fileID: 2057491458}
   timeBetweenChanges: 10
   actualMultiplier: 0
   pointsPerDeath: 50
@@ -1073,6 +1089,18 @@ PrefabInstance:
       propertyPath: m_roundManager
       value: 
       objectReference: {fileID: 1582114782}
+    - target: {fileID: 1268311926037215889, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
+      propertyPath: eSetSettings.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268311926037215889, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
+      propertyPath: eSetSettings.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268311926037215889, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
+      propertyPath: eSetSettings.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1319445566615296795, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1169,6 +1197,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_player: {fileID: 719310923}
+  CurCam: {fileID: 0}
   timeBetweenChanges: 10
   actualMultiplier: 0
   pointsPerDeath: 50

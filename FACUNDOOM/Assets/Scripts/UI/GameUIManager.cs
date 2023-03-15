@@ -47,25 +47,13 @@ public class GameUIManager : MonoBehaviour
 	[SerializeField]
 	TMPro.TextMeshProUGUI countdownText;
 
-
 	[SerializeField]
-	GameObject PauseOverlay;
-	[SerializeField]
-	Slider SensXSldr;
-	[SerializeField]
-	Slider SensYSldr;
-	[SerializeField]
-	Slider VolumeSldr;
-	[SerializeField]
-	Slider FOVSldr;
+	OptionsBehaviour options;
 
 	[SerializeField]
 	Image VignetteOverlay;
 	[SerializeField]
 	float maxVignetteOpacity = 0.5f;
-
-	public Camera CurCam;
-
 
 	Vector2 DefaultMinAnchors = new(0.0f, 0.0f);
 	Vector2 SelectedMinAnchors = new(0.05f, 0.0f);
@@ -82,7 +70,6 @@ public class GameUIManager : MonoBehaviour
 			_roundManager.ePlayerDied.AddListener(PlayDeath);
 			_roundManager.eMultiplier.AddListener(PlayStreakText);
 			_roundManager.eRandomizeColorsCountdown.AddListener(StartCountdown);
-			GameManager._instance.eSetSettings.AddListener(SetAllSettings);
 		}
 
 		currentGlow = GunGlow;
@@ -110,7 +97,7 @@ public class GameUIManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			//Toggle pause menu
-			TogglePause();
+			returnToGame();
 		}
 	}
 
@@ -165,66 +152,12 @@ public class GameUIManager : MonoBehaviour
 	{
 		GameManager._instance.SendCommand("EndRound");
 	}
-
-	public void GoToMainMenu()
+	public void returnToGame()
 	{
-		TogglePause();
-		GameManager._instance.SendCommand("Menu");
-	}
+        options.gameObject.SetActive(GameManager._instance.IsGameRunning());
+    }
 
-	public void TogglePause()
-	{
-		GameManager._instance.PauseUnpause();
-		PauseOverlay.SetActive(!GameManager._instance.IsGameRunning());
-		Cursor.lockState = (GameManager._instance.IsGameRunning()) ? CursorLockMode.Locked : CursorLockMode.None;
-		//Set values of sliders to current ones
-		if (PauseOverlay.activeSelf)
-		{
-			VolumeSldr.value = AudioListener.volume;
-			FOVSldr.value = CurCam.fieldOfView;
-			if(_roundManager && _roundManager.getPlayer())
-			{
-				SensXSldr.value = _roundManager.getPlayer().GetComponent<PlayerRotation>().xSensitivity;
-				SensYSldr.value = _roundManager.getPlayer().GetComponent<PlayerRotation>().ySensitivity;
-			}
-			//SensitivitySldr.value = 
-		}
-
-	}
-
-	public void SetFOV()
-	{
-		CurCam.fieldOfView = FOVSldr.value;
-		GameManager._instance.eFovChanged.Invoke(FOVSldr.value);
-	}
-
-	public void SetVol()
-	{
-		AudioListener.volume = VolumeSldr.value;
-		GameManager._instance.eVolumeChanged.Invoke(VolumeSldr.value);
-	}
-
-	public void SetSens()
-	{
-		if (_roundManager)
-		{
-			_roundManager.getPlayer().GetComponent<PlayerRotation>().xSensitivity = SensXSldr.value;
-			_roundManager.getPlayer().GetComponent<PlayerRotation>().ySensitivity = SensYSldr.value;
-			GameManager._instance.eXSensitivityChanged.Invoke(SensXSldr.value);
-			GameManager._instance.eYSensitivityChanged.Invoke(SensYSldr.value);
-		}
-	}
-
-	public void SetAllSettings(Settings s) 
-	{
-		if (s.volume > 0) VolumeSldr.value = s.volume;
-		if (s.fov > 0) FOVSldr.value = s.fov;
-		if (s.xSensitivity > 0) SensXSldr.value = s.xSensitivity;
-		if (s.ySensitivity > 0) SensYSldr.value = s.ySensitivity;
-	}
-
-
-	void StartCountdown()
+    void StartCountdown()
 	{
 		countdownAnim.Play("ColorCountdown");
 		StartCoroutine("SetCountdownText");

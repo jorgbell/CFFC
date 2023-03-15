@@ -7,13 +7,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-
+[System.Serializable]
 public struct Settings 
 {
+    [SerializeField]
     public float volume;
+    [SerializeField]
     public float fov;
+    [SerializeField]
     public float xSensitivity;
+    [SerializeField]
     public float ySensitivity;
+    public Settings(float v, float f, float x, float y) { volume = v; fov = f; xSensitivity = x; ySensitivity = y; }
 }
 
 public struct Score
@@ -60,17 +65,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     RoundManager m_roundManager;
 
-    Settings m_settings = new Settings();
+    [SerializeField]
+    public Settings m_settings;
 
     int m_playerPoints = 3;
 
     public List<Score> scoreboard = new List<Score>();
 
     public UnityEvent<Settings> eSetSettings;
-    public UnityEvent<float> eVolumeChanged;
-    public UnityEvent<float> eFovChanged;
-    public UnityEvent<float> eXSensitivityChanged;
-    public UnityEvent<float> eYSensitivityChanged;
+    public UnityEvent ebackToMainMenu;
 
     public bool IsGameRunning()
     { return GameRunning; }
@@ -97,21 +100,15 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        eVolumeChanged.AddListener(SetVol);
-        eFovChanged.AddListener(SetFOV);
-        eXSensitivityChanged.AddListener(SetSensX);
-        eYSensitivityChanged.AddListener(SetSensY);
+        eSetSettings.AddListener(SetSettings);
     }   
-
-    private void Update()
-    {
-
-    }
 
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    void SetSettings(Settings s) { m_settings = s; }
 
     public void SendCommand(string command)
     {
@@ -180,8 +177,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SendSettingsMessage() { eSetSettings.Invoke(m_settings); }
-
     public RoundManager GetRoundManager()
     {
         return m_roundManager;
@@ -196,14 +191,6 @@ public class GameManager : MonoBehaviour
     {
         m_playerPoints = score;
     }
-
-    public void SetFOV(float fov) { m_settings.fov = fov; }
-
-    public void SetVol(float Vol) { m_settings.volume = Vol; }
-
-    public void SetSensX(float xSens) { m_settings.xSensitivity = xSens; }
-
-    public void SetSensY(float ySens) { m_settings.ySensitivity = ySens; }
 
     public void addScore(Score s) { scoreboard.Add(s); }
 
