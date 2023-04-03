@@ -1,3 +1,4 @@
+using Dan.Main;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -61,7 +62,7 @@ public class SerializaztionManager : MonoBehaviour
     public void SaveScoreboard()
     {
         string json = JsonUtility.ToJson(GameManager._instance.localScoreboard);
-        WriteToFile(scoreboardFileName, json);  
+        WriteToFile(scoreboardFileName, json);
     }
 
 

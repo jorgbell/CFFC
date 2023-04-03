@@ -1,3 +1,4 @@
+using Dan.Main;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -77,6 +78,8 @@ public class MainMenu : MonoBehaviour
         globalScoreboardContent.gameObject.SetActive(false);
         scoreboardScrollRect.verticalScrollbar.size = 1;
         scoreboardScrollRect.content = selectScoreboardContent;
+
+        //local load scoreboard
         foreach (Score s in GameManager._instance.localScoreboard.scoreboard)
         {
             GameObject newScore = Instantiate(TextFieldObject, localScoreboardContent.gameObject.transform);
@@ -84,13 +87,21 @@ public class MainMenu : MonoBehaviour
             loadedScores.Add(newScore);
         }
         //load global scoreboard
-        foreach (Score s in GameManager._instance.globalScoreboard.scoreboard)
-        {
-            GameObject newScore = Instantiate(TextFieldObject, globalScoreboardContent.gameObject.transform);
-            newScore.GetComponent<TMP_Text>().text = s.name + "   " + s.score;
-            loadedScores.Add(newScore);
+        Debug.Log(GameManager._instance.globalScoreboard.getKey());
+        Debug.Log("loading global leaderboard...");
+        LeaderboardCreator.GetLeaderboard(GameManager._instance.globalScoreboard.getKey(),
+            ((msg) =>
+            {
+                Debug.Log(msg.Length);
+                //callback function que se llama cuando se ha cargado el leaderboard
+                for(int i = 0; i<msg.Length; ++i)
+                {
+                    GameObject newScore = Instantiate(TextFieldObject, globalScoreboardContent.gameObject.transform);
+                    newScore.GetComponent<TMP_Text>().text = msg[i].Username + "   " + msg[i].Score;
+                    loadedScores.Add(newScore);
+                }
+            }));
 
-        }
     }
 
     public void ShowScoreboardContent(bool local)

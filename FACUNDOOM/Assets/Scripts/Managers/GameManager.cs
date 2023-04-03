@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Dan.Main;
 
 [System.Serializable]
 public class Settings 
@@ -28,6 +29,7 @@ public class Score
     public string name;
     [SerializeField]
     public int score;
+    
     public Score(string n, int s) { name = n; score = s; }
     public static bool operator <(Score s1, Score s2) 
     {
@@ -69,7 +71,9 @@ public class ScoreList
 {
     [SerializeField]
     public List<Score> scoreboard;
+    private string publicKey = "8406d599367cdfaefe46f0ad56af02240a1e37ae92fa141fcff769b3d5931986";
     public ScoreList() { scoreboard = new List<Score>(); }
+    public string getKey() { return publicKey; }
 }
 
 public class GameManager : MonoBehaviour
