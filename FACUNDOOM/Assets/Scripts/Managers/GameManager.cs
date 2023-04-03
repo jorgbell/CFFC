@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 [System.Serializable]
-public struct Settings 
+public class Settings 
 {
     [SerializeField]
     public float volume;
@@ -18,12 +18,15 @@ public struct Settings
     public float xSensitivity;
     [SerializeField]
     public float ySensitivity;
-    public Settings(float v, float f, float x, float y) { volume = v; fov = f; xSensitivity = x; ySensitivity = y; }
+    public Settings(float v = 1, float f = 60, float x = 600, float y = 200) { volume = v; fov = f; xSensitivity = x; ySensitivity = y; }
 }
 
-public struct Score
+[System.Serializable]
+public class Score
 {
+    [SerializeField]
     public string name;
+    [SerializeField]
     public int score;
     public Score(string n, int s) { name = n; score = s; }
     public static bool operator <(Score s1, Score s2) 
@@ -57,6 +60,18 @@ public struct Score
 }
 
 
+/// <summary>
+/// clase para permitir serializar una lista de scores
+/// </summary>
+/// 
+[System.Serializable]
+public class ScoreList
+{
+    [SerializeField]
+    public List<Score> scoreboard;
+    public ScoreList() { scoreboard = new List<Score>(); }
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance { get; private set; }
@@ -70,7 +85,8 @@ public class GameManager : MonoBehaviour
 
     int m_playerPoints = 3;
 
-    public List<Score> scoreboard = new List<Score>();
+    public ScoreList localScoreboard = new ScoreList();
+    public ScoreList globalScoreboard = new ScoreList();
 
     public UnityEvent<Settings> eSetSettings;
     public UnityEvent ebackToMainMenu;
@@ -101,14 +117,23 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         eSetSettings.AddListener(SetSettings);
-    }   
+        SerializaztionManager._instance.LoadSettings();
+        SerializaztionManager._instance.LoadScoreboard();
+        for (int i = 0; i < 3; i++)
+        {
+            globalScoreboard.scoreboard.Add(new Score("FACUN2", 1000));
+        }
+    }
 
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void SetSettings(Settings s) { m_settings = s; }
+    void SetSettings(Settings s) {
+        m_settings = s;
+        AudioListener.volume = s.volume;
+    }
 
     public void SendCommand(string command)
     {
@@ -192,6 +217,14 @@ public class GameManager : MonoBehaviour
         m_playerPoints = score;
     }
 
-    public void addScore(Score s) { scoreboard.Add(s); }
+    public void addScore(Score s) { 
+        localScoreboard.scoreboard.Add(s);
+        localScoreboard.scoreboard.Sort(SortByScore);
+        localScoreboard.scoreboard.Reverse();
+    }
+    static int SortByScore(Score p1, Score p2)
+    {
+        return p1.score.CompareTo(p2.score);
+    }
 
 }

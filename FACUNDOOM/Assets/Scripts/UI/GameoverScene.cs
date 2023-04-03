@@ -9,13 +9,17 @@ public class GameoverScene : MonoBehaviour
 	TMP_InputField inputField;
     public void Retry()
 	{
-		GameManager._instance.scoreboard.Add(new Score(inputField.text, GameManager._instance.GetPlayerScore()));
+		string name = (string.IsNullOrWhiteSpace(inputField.text)) ? "FACUN" : inputField.text;
+		GameManager._instance.addScore(new Score(name, GameManager._instance.GetPlayerScore()));
+		SerializaztionManager._instance.SaveScoreboard();
 		GameManager._instance.SendCommand("Play");
 	}
 
 	public void GoMenu()
 	{
-        GameManager._instance.scoreboard.Add(new Score(inputField.text, GameManager._instance.GetPlayerScore()));
+        string name = (string.IsNullOrWhiteSpace(inputField.text)) ? "FACUN" : inputField.text;
+        GameManager._instance.addScore(new Score(name, GameManager._instance.GetPlayerScore()));
+        SerializaztionManager._instance.SaveScoreboard();
         GameManager._instance.SendCommand("Menu");
 	}
 

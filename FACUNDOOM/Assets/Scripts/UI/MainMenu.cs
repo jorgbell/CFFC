@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,10 +16,18 @@ public class MainMenu : MonoBehaviour
     GameObject scoreScreen;
     [SerializeField]
     GameObject optionsScreen;
+    //scoreboard
     [SerializeField]
-    GameObject prefab;
+    GameObject TextFieldObject;
     [SerializeField]
-    Transform contentSlider;
+    RectTransform localScoreboardContent;
+    [SerializeField]
+    RectTransform globalScoreboardContent;
+    [SerializeField]
+    RectTransform selectScoreboardContent;
+    [SerializeField]
+    ScrollRect scoreboardScrollRect;
+    List<GameObject> loadedScores = new List<GameObject>();
 
     private void Start()
     {
@@ -39,6 +48,7 @@ public class MainMenu : MonoBehaviour
         mainScreen.SetActive(true);
         scoreScreen.SetActive(false);
         creditsScreen.SetActive(false);
+
     }
     public void ShowOptions()
     {
@@ -49,23 +59,48 @@ public class MainMenu : MonoBehaviour
     }
     public void ShowScore()
     {
+
         optionsScreen.SetActive(false);
         mainScreen.SetActive(false);
         creditsScreen.SetActive(false);
         scoreScreen.SetActive(true);
-        List<Score> scoreboard = GameManager._instance.scoreboard;
-        scoreboard.Sort(SortByScore);
-        scoreboard.Reverse();
-        foreach (Score s in scoreboard)
+        LoadScoreboards();
+    }
+    void LoadScoreboards()
+    {
+        foreach(GameObject instanced in loadedScores)
         {
-            GameObject newScore = Instantiate(prefab, contentSlider);
+            Destroy(instanced);
+        }
+        selectScoreboardContent.gameObject.SetActive(true);
+        localScoreboardContent.gameObject.SetActive(false);
+        globalScoreboardContent.gameObject.SetActive(false);
+        scoreboardScrollRect.verticalScrollbar.size = 1;
+        scoreboardScrollRect.content = selectScoreboardContent;
+        foreach (Score s in GameManager._instance.localScoreboard.scoreboard)
+        {
+            GameObject newScore = Instantiate(TextFieldObject, localScoreboardContent.gameObject.transform);
             newScore.GetComponent<TMP_Text>().text = s.name + "   " + s.score;
+            loadedScores.Add(newScore);
+        }
+        //load global scoreboard
+        foreach (Score s in GameManager._instance.globalScoreboard.scoreboard)
+        {
+            GameObject newScore = Instantiate(TextFieldObject, globalScoreboardContent.gameObject.transform);
+            newScore.GetComponent<TMP_Text>().text = s.name + "   " + s.score;
+            loadedScores.Add(newScore);
+
         }
     }
-    static int SortByScore(Score p1, Score p2)
+
+    public void ShowScoreboardContent(bool local)
     {
-        return p1.score.CompareTo(p2.score);
+        selectScoreboardContent.gameObject.SetActive(false);
+        scoreboardScrollRect.content = local ? localScoreboardContent : globalScoreboardContent;
+        localScoreboardContent.gameObject.SetActive(local);
+        globalScoreboardContent.gameObject.SetActive(!local);
     }
+
     public void Exit()
     {
         GameManager._instance.SendCommand("Exit");

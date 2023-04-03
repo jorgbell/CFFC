@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7873630902832519261}
   - component: {fileID: 1268311926037215889}
+  - component: {fileID: 1732615163403692409}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -53,3 +54,20 @@ MonoBehaviour:
   eSetSettings:
     m_PersistentCalls:
       m_Calls: []
+  ebackToMainMenu:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1732615163403692409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319445566615296795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0530f109a8e61e745add382115ca35df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsFileName: playerSettings.json
+  scoreboardFileName: scoreboard.json
