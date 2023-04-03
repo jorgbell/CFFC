@@ -30,11 +30,15 @@ public class OptionsBehaviour : MonoBehaviour
         actualSettings = GameManager._instance.m_settings;
         previousSettings = new Settings { fov = actualSettings.fov, volume = actualSettings.volume, xSensitivity = actualSettings.xSensitivity, ySensitivity = actualSettings.ySensitivity};
         SetUIValues();
-        if (RoundManager.instance != null) TogglePause();
+        if (RoundManager.instance != null) 
+            TogglePause();
     }
     private void OnDisable()
     {
-        if (RoundManager.instance != null) TogglePause();
+        if (RoundManager.instance != null)
+        {
+            TogglePause();
+        }
     }
     public void GoToMainMenu()
     {
@@ -44,7 +48,7 @@ public class OptionsBehaviour : MonoBehaviour
             actualSettings = previousSettings;
             SetUIValues();
         }
-        if (RoundManager.instance != null) { TogglePause(); }
+        if(RoundManager.instance != null) gameObject.SetActive(false);
         GameManager._instance.ebackToMainMenu.Invoke();
     }
     public void TogglePause()

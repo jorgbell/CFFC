@@ -124,7 +124,10 @@ public class RoundManager : MonoBehaviour
         getPlayer().GetComponent<PlayerRotation>().ySensitivity = s.ySensitivity;
         CurCam.fieldOfView = s.fov;
     }
-    void ShowMain() { GameManager._instance.SendCommand("Menu"); }
+    void ShowMain() { 
+
+        GameManager._instance.SendCommand("Menu");
+    }
     // Update is called once per frame
     void Update()
     {

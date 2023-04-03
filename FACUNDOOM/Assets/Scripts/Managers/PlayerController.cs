@@ -60,7 +60,22 @@ public class PlayerController : MonoBehaviour
                 m_weaponEvent.Invoke(WEAPONTYPE.KNIFE);
             if (Input.GetKeyDown(KeyCode.Alpha3) && m_weaponEvent != null)
                 m_weaponEvent.Invoke(WEAPONTYPE.FIRE);
+            
+            float mouseScroll = Input.GetAxisRaw("Mouse ScrollWheel");
+            if (mouseScroll < 0f)
+            {
+                int i = (int)actualWeapon;
+                actualWeapon = (WEAPONTYPE)((i + 1) % 3);
+                m_weaponEvent.Invoke(actualWeapon);
 
+            }
+            else if (mouseScroll > 0f)
+            {
+                int i = (int)actualWeapon;
+                actualWeapon = (WEAPONTYPE)((i + -1+3) % 3);
+                m_weaponEvent.Invoke(actualWeapon);
+
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 weapons[(int)actualWeapon].Attack();
