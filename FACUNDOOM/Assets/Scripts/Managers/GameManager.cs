@@ -121,20 +121,20 @@ public class GameManager : MonoBehaviour
     }
     private void SetScreenSize()
     {
-        // Obtener la resolución actual de la pantalla
-        int screenWidth = Screen.width;
-        int screenHeight = Screen.height;
+        //// Obtener la resolución actual de la pantalla
+        //int screenWidth = Screen.width;
+        //int screenHeight = Screen.height;
 
-        // Establecer la relación de aspecto deseada
-        float targetAspect = 4f / 3f;
+        //// Establecer la relación de aspecto deseada
+        //float targetAspect = 4f / 3f;
 
-        // Calcular el tamaño del viewport rect
-        float height = (screenWidth / targetAspect) / screenWidth; //ejemplo: 1920->1440 --> 1440/1920
-        float xOffset = (1f-height) / 2f;
+        //// Calcular el tamaño del viewport rect
+        //float height = (screenWidth / targetAspect) / screenWidth; //ejemplo: 1920->1440 --> 1440/1920
+        //float xOffset = (1f-height) / 2f;
 
-        // Establecer los valores de X, Y, W y H del viewport rect
-        //Camera.main.rect = new Rect(0f, yOffset / screenHeight, 1f, height / screenHeight);
-        Camera.main.rect = new Rect(xOffset, 0f, height, 1f);
+        //// Establecer los valores de X, Y, W y H del viewport rect
+        ////Camera.main.rect = new Rect(0f, yOffset / screenHeight, 1f, height / screenHeight);
+        //Camera.main.rect = new Rect(xOffset, 0f, height, 1f);
     }
     private void Start()
     {

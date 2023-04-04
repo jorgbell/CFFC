@@ -315,7 +315,7 @@ MonoBehaviour:
   - {fileID: 1497139861808820921}
   - {fileID: 2262795966030119941}
   - {fileID: 3891533805175819563}
-  maxOffset: 0.03
+  maxOffset: 0.05
   verticalOffset: 0
   horizontalOffset: 0
   scrollDirection: {x: 0, y: 1, z: 0}
@@ -559,7 +559,7 @@ MonoBehaviour:
   - {fileID: 5842825394821961474}
   - {fileID: 9153465508434783027}
   - {fileID: 1361225806996806042}
-  maxOffset: 0.03
+  maxOffset: 0.05
   verticalOffset: 0
   horizontalOffset: 0
   scrollDirection: {x: 0, y: 1, z: 0}
@@ -797,7 +797,7 @@ MonoBehaviour:
   - {fileID: 7166200332988973126}
   - {fileID: 6487547757600578013}
   - {fileID: 8954160291922089385}
-  maxOffset: 0.03
+  maxOffset: 0.05
   verticalOffset: 0
   horizontalOffset: 0
   scrollDirection: {x: 0, y: 1, z: 0}
@@ -1257,7 +1257,7 @@ MonoBehaviour:
   - {fileID: 5971195828711609466}
   - {fileID: 8313364580787323178}
   - {fileID: 4703313320191648304}
-  maxOffset: 0.03
+  maxOffset: 0.05
   verticalOffset: 0
   horizontalOffset: 0
   scrollDirection: {x: 0, y: 1, z: 0}
@@ -2392,7 +2392,7 @@ MonoBehaviour:
   - {fileID: 3513554566939028174}
   - {fileID: 2835468976633970534}
   - {fileID: 6488211981215847505}
-  maxOffset: 0.03
+  maxOffset: 0.05
   verticalOffset: 0
   horizontalOffset: 0
   scrollDirection: {x: 0, y: 1, z: 0}
@@ -3980,7 +3980,7 @@ MonoBehaviour:
   - {fileID: 8519165303158068607}
   - {fileID: 8519165302474376403}
   - {fileID: 8519165301667803243}
-  maxOffset: 0.03
+  maxOffset: 0.05
   verticalOffset: 0
   horizontalOffset: 0
   scrollDirection: {x: 0, y: 1, z: 0}

@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     GameObject TextFieldObject;
     [SerializeField]
+    GameObject loadingObject;
+    [SerializeField]
     RectTransform localScoreboardContent;
     [SerializeField]
     RectTransform globalScoreboardContent;
@@ -69,6 +71,8 @@ public class MainMenu : MonoBehaviour
     }
     void LoadScoreboards()
     {
+        loadingObject.SetActive(true);
+
         foreach(GameObject instanced in loadedScores)
         {
             Destroy(instanced);
@@ -100,12 +104,14 @@ public class MainMenu : MonoBehaviour
                     newScore.GetComponent<TMP_Text>().text = msg[i].Username + "   " + msg[i].Score;
                     loadedScores.Add(newScore);
                 }
+                loadingObject.SetActive(false);
             }));
 
     }
 
     public void ShowScoreboardContent(bool local)
     {
+
         selectScoreboardContent.gameObject.SetActive(false);
         scoreboardScrollRect.content = local ? localScoreboardContent : globalScoreboardContent;
         localScoreboardContent.gameObject.SetActive(local);
