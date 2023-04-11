@@ -16,8 +16,8 @@ public class Bomb : Weapon
     private void Start()
     {
         m_colorComponent.OnColorChanged.AddListener(OnColorChanged);
-        resetCooldown();
-        RoundManager.instance.eBombExploded.AddListener(resetCooldown);
+        ResetCooldown();
+        RoundManager.instance.eBombExploded.AddListener(ResetCooldown);
     }
 
     private void Update()
@@ -58,6 +58,8 @@ public class Bomb : Weapon
             bombRB.velocity = player.GetComponent<Rigidbody>().velocity / 2 + bombVelocity * transform.forward;
 
             onCooldown = true;
+
+            StartCoroutine("CooldownCoroutine");
         }
     }
 
@@ -112,12 +114,7 @@ public class Bomb : Weapon
 
     protected override void AttackAnim()
     {
-        throw new System.NotImplementedException();
-    }
-
-    protected override void ResetAttackAnim()
-    {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     protected override void OnColorChanged(ColorType colorType)
@@ -125,7 +122,7 @@ public class Bomb : Weapon
         changeHandParticleColor(GetComponentInChildren<ParticleSystem>().colorOverLifetime);
     }
 
-    private void resetCooldown() 
+    protected override void ResetCooldown() 
     { 
         onCooldown = false;
         //var main = GetComponentInChildren<ParticleSystem>().main;

@@ -38,9 +38,9 @@ public abstract class Weapon : MonoBehaviour
             yield return null;
         }
 
-        ResetAttackAnim();
+        ResetCooldown();
         onCooldown = false;
     }
     abstract protected void AttackAnim();
-    abstract protected void ResetAttackAnim();
+    abstract protected void ResetCooldown();
 }

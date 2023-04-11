@@ -42,7 +42,7 @@ public class Knife : Weapon
     {
         transform.localPosition = initialPos;
         transform.localRotation = initialRot;
-        ResetAttackAnim();
+        ResetCooldown();
         turnOffCollider();
     }
 
@@ -60,7 +60,7 @@ public class Knife : Weapon
     {
     }
 
-    protected override void ResetAttackAnim()
+    protected override void ResetCooldown()
     {
         onCooldown = false;
     }

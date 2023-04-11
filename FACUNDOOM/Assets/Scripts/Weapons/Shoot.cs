@@ -105,7 +105,7 @@ public class Shoot : Weapon
         else rotationAxis.Rotate(0, 0, 100f * Time.deltaTime, Space.Self);
     }
 
-    protected override void ResetAttackAnim()
+    protected override void ResetCooldown()
     {
         rotationAxis.localRotation = startingRotation;
     }
