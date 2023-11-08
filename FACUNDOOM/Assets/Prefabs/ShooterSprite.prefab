@@ -7857,7 +7857,7 @@ MonoBehaviour:
   secondsOfMovement: 2
   secondsOfShooting: 0.8
   moveSpeed: 10
-  projectileSpeed: 17
+  projectileSpeed: 20.72
   projectilePrefab: {fileID: 1205186041661606805, guid: 46f0e305f5154604799040506c7e764b, type: 3}
 --- !u!114 &8740899280702751125
 MonoBehaviour:

@@ -3405,8 +3405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpDistance: 5.33
-  jumpForce: 9
+  jumpDistance: 11.36
+  jumpForce: 13.22
   animationSpeed: 0.2
   jumpAngle: 0.6
   waitTime: 0.3

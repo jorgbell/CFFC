@@ -846,6 +846,10 @@ PrefabInstance:
       propertyPath: m_MaxHealth
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7623417929460501645, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: m_currentHealth
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
 --- !u!114 &719310923 stripped
@@ -1545,15 +1549,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418341, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418342, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418343, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}

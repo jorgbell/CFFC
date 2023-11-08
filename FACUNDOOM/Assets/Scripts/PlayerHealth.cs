@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
-    private int m_MaxHealth = 2;
+    private int m_MaxHealth = 3;
 
     [SerializeField]
     float m_timeUntilRecover = 2.0f;
@@ -53,6 +53,8 @@ public class PlayerHealth : MonoBehaviour
         }
         if(m_currentHealth == 0)
         {
+            gameObject.GetComponent<PlayerMovement>().moveSpeed = 0;
+            gameObject.GetComponent<PlayerMovement>().jumpForce = 0;
             RoundManager.instance.ePlayerDied.Invoke();
             GameManager._instance.SetPlayerScore(RoundManager.instance.score);
 

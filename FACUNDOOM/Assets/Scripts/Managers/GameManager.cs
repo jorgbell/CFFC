@@ -71,7 +71,7 @@ public class ScoreList
 {
     [SerializeField]
     public List<Score> scoreboard;
-    private string publicKey = "8406d599367cdfaefe46f0ad56af02240a1e37ae92fa141fcff769b3d5931986";
+    private string publicKey = "bca4614c1af58e9df7da0ed961324642d3c5ecb7322d5cb1851e75b17585c6e4";
     public ScoreList() { scoreboard = new List<Score>(); }
     public string getKey() { return publicKey; }
 }
