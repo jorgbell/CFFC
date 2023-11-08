@@ -16,7 +16,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     GameObject scoreScreen;
     [SerializeField]
-    GameObject optionsScreen;
+    GameObject optionsScreen; 
+    [SerializeField]
+    GameObject tutorialScreen;
     //scoreboard
     [SerializeField]
     GameObject TextFieldObject;
@@ -43,6 +45,7 @@ public class MainMenu : MonoBehaviour
         mainScreen.SetActive(false);
         creditsScreen.SetActive(true);
         scoreScreen.SetActive(false);
+        tutorialScreen.SetActive(false);
     }
 
     public void ShowMain()
@@ -51,6 +54,8 @@ public class MainMenu : MonoBehaviour
         mainScreen.SetActive(true);
         scoreScreen.SetActive(false);
         creditsScreen.SetActive(false);
+        tutorialScreen.SetActive(false);
+
 
     }
     public void ShowOptions()
@@ -59,6 +64,17 @@ public class MainMenu : MonoBehaviour
         creditsScreen.SetActive(false);
         scoreScreen.SetActive(false);
         optionsScreen.SetActive(true);
+        tutorialScreen.SetActive(false);
+
+    }
+    public void ShowTutorial()
+    {
+        mainScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        scoreScreen.SetActive(false);
+        optionsScreen.SetActive(false);
+        tutorialScreen.SetActive(true);
+
     }
     public void ShowScore()
     {
@@ -67,6 +83,7 @@ public class MainMenu : MonoBehaviour
         mainScreen.SetActive(false);
         creditsScreen.SetActive(false);
         scoreScreen.SetActive(true);
+        tutorialScreen.SetActive(false);
         LoadScoreboards();
     }
     void LoadScoreboards()

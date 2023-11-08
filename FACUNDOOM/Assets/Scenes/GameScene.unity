@@ -1268,57 +1268,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
---- !u!1 &1670954435 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1319445566615296795, guid: 1b7d186df465f4c498660fa4141c3cad, type: 3}
-  m_PrefabInstance: {fileID: 1670954434}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1670954436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670954435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41116b672a50654469ee215faac77fc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_bGameStarted: 1
-  eEnemyDied:
-    m_PersistentCalls:
-      m_Calls: []
-  eWrongAnswer:
-    m_PersistentCalls:
-      m_Calls: []
-  eMissedAttack:
-    m_PersistentCalls:
-      m_Calls: []
-  eRandomizeColors:
-    m_PersistentCalls:
-      m_Calls: []
-  ePlayerDied:
-    m_PersistentCalls:
-      m_Calls: []
-  eBombShot:
-    m_PersistentCalls:
-      m_Calls: []
-  eBombExploded:
-    m_PersistentCalls:
-      m_Calls: []
-  eMultiplier:
-    m_PersistentCalls:
-      m_Calls: []
-  eRandomizeColorsCountdown:
-    m_PersistentCalls:
-      m_Calls: []
-  m_player: {fileID: 719310923}
-  CurCam: {fileID: 0}
-  timeBetweenChanges: 10
-  actualMultiplier: 0
-  pointsPerDeath: 50
-  pointsPerDuplicate: 50
 --- !u!1 &1683854014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3163204541062739062, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
