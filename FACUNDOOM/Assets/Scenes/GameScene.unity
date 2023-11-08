@@ -812,7 +812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3163204541062739061, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: jumpForce
-      value: 9
+      value: 12.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3163204541062739061, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
+      propertyPath: moveSpeed
+      value: 9.03
       objectReference: {fileID: 0}
     - target: {fileID: 3163204541062739062, guid: 10817a3da83d85a4eb35c090212870f7, type: 3}
       propertyPath: m_Name
@@ -1541,15 +1545,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418341, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418342, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7179240873008418343, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
       propertyPath: amountToPool
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e493119292e86144cbbdbedd2fe7c643, type: 3}
